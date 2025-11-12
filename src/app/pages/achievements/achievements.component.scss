@@ -1,4 +1,4 @@
-@import "../../../css/variables.scss";
+@use "../../../css/variables" as *;
 
 .achievement-main {
     width: 100%;

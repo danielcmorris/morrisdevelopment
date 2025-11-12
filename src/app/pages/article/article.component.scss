@@ -1,4 +1,4 @@
-@import "../../../css/variables.scss";
+@use '/css/variables' as *;
 
 .article-main {
     width: 100%;
@@ -121,7 +121,7 @@
 
 .article-content-div {
     max-width: 800px;
-    margin: 1rem auto;
+    margin: rem auto;
     padding: 0 5%;
 }
 

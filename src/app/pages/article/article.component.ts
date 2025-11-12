@@ -1,11 +1,14 @@
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, SecurityContext } from '@angular/core';
 import { Article } from '../../../interfaces/article.interface';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
+import { marked } from 'marked';
 
 @Component({
+    standalone:true,
     selector: 'app-article',
-    imports: [],
+    imports: [CommonModule],
     templateUrl: './article.component.html',
     styleUrl: './article.component.scss'
 })
@@ -35,12 +38,30 @@ export class ArticleComponent {
     </blockquote>
   `
   };
+  renderedContent: SafeHtml = '';
 
-sanitizedContent?:SafeHtml;
-    constructor(private sanitizer: DomSanitizer) {
-    // Sanitize the content
-    this.sanitizedContent = this.sanitizer.bypassSecurityTrustHtml(this.article.content);
+
+ ngOnInit() {
+    this.renderMarkdown();
   }
+
+
+  constructor(private sanitizer: DomSanitizer) {
+    
+  }
+  
+
+  async renderMarkdown() {
+    if (this.article?.content) {
+      const html = await marked.parse(this.article.content, {
+        gfm: true,
+        breaks: true
+      });
+      const sanitized = this.sanitizer.sanitize(SecurityContext.HTML, html);
+      this.renderedContent = sanitized || '';
+    }
+  }
+
 
   getSafeHtml(html: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(html);
