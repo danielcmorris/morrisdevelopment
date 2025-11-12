@@ -1,0 +1,46 @@
+<div class="article-main">
+    <div class="basic-article">
+        <div class="article-heading-div">
+            <!-- <div class="article-heading-img-div" data-aos="fade-down">
+                @if (article.coverImage) {
+                    <img [src]="article.coverImage" [alt]="article.title">
+                }
+            </div> -->
+            
+            <div class="article-heading-text-div" data-aos="fade-up">
+                <h1 class="article-heading-text">
+                    {{ article.title }}
+                </h1>
+                @if (article.subtitle) {
+                    <p class="article-header-detail-text subTitle">
+                        {{ article.subtitle }}
+                    </p>
+                }
+                
+                <!-- <div class="article-meta">
+                    @if (article.author) {
+                        <span class="article-author">{{ article.author }}</span>
+                    }
+                    @if (article.date) {
+                        <span class="article-date">{{ article.date | date: 'mediumDate' }}</span>
+                    }
+                    @if (article.readTime) {
+                        <span class="article-read-time">{{ article.readTime }} min read</span>
+                    }
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- @if (article.tags && article.tags.length > 0) {
+        <div class="article-tags-div" data-aos="fade-up">
+            @for (tag of article.tags; track tag) {
+                <span class="article-tag">{{ tag }}</span>
+            }
+        </div>
+    } -->
+
+    <div class="article-content-div" data-aos="fade-up">
+        <div class="article-content" [innerHTML]="sanitizedContent"></div>
+    </div>
+</div>
