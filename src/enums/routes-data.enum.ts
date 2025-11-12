@@ -24,25 +24,27 @@ export const RoutesData: RouteData[] = [
         isVisible: true,
     },
     {
-        routeLinkText: "Experience",
+        routeLinkText: "Articles",
         routeURLName: AppRoutes.EXPERIENCE,
         isVisible: true,
     },
     {
-        routeLinkText: "Education",
+        routeLinkText: "About",
         routeURLName: AppRoutes.EDUCATION,
         isVisible: true,
     },
-    {
-        routeLinkText: "Achievements",
-        routeURLName: AppRoutes.ACHIEVEMENTS,
-        isVisible: true,
-    },
-    {
+     
+    // {
+    //     routeLinkText: "Contact",
+    //     routeURLName: AppRoutes.CONTACT,
+    //     isVisible: true,
+    //     isExternalLink: true,
+    //},
+     {
         routeLinkText: "Contact",
-        routeURLName: AppRoutes.CONTACT,
+        routeURLName: AppRoutes.ERROR,
         isVisible: true,
-        isExternalLink: true,
+        isExternalLink: false,
     },
     {
         routeLinkText: "Error",

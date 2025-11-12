@@ -9,34 +9,34 @@ import { AssetPaths } from "./asset-paths.enum";
 const SocialMediaLinks: ExternalSite[] = [
     {
         name: "Github",
-        link: "https://github.com/dhruvilrathod",
+        link: "https://github.com/morrisdev",
         simpleIconName: "GitHub",
         backgroundColor: "#181717",
     },
     {
         name: "LinkedIn",
-        link: "https://www.linkedin.com/in/dhruvilrathod/",
+        link: "https://www.linkedin.com/in/morrisdev/",
         simpleIconName: "LinkedIn", // this icon is not available in simple icon v14
         backgroundColor: "#0066c8", // manually checked
     },
-    {
-        name: "LeetCode",
-        link: "https://leetcode.com/dhruvilrathod/",
-        simpleIconName: "LeetCode",
-        backgroundColor: "#FFA116",
-    },
+    // {
+    //     name: "LeetCode",
+    //     link: "https://leetcode.com/dhruvilrathod/",
+    //     simpleIconName: "LeetCode",
+    //     backgroundColor: "#FFA116",
+    // },
     {
         name: "Gmail",
-        link: "mailto:thedhruvilrathod@gmail.com",
+        link: "mailto:dmorris@morrisdev.com",
         simpleIconName: "Gmail",
         backgroundColor: "#EA4335",
     },
-    {
-        name: "Instagram",
-        link: "https://www.instagram.com/dhruvil.rthd/",
-        simpleIconName: "Instagram",
-        backgroundColor: "#FF0069",
-    }
+    // {
+    //     name: "Instagram",
+    //     link: "https://www.instagram.com/dhruvil.rthd/",
+    //     simpleIconName: "Instagram",
+    //     backgroundColor: "#FF0069",
+    // }
 ]
 
 // Fullstack skills
@@ -115,10 +115,10 @@ const FullstackSection: SkillSection = {
     imagePath: AssetPaths.FULL_STACK_DEVELOPMENT_SVG,
     skillLinks: FullstackSkills,
     skillsList: [
-        "Building responsive website front-end using Angular",
-        "Developing custom and interactive 3D websites",
-        "Creating application backend in Node, Express & NestJS",
-        "Managing data safely with PostgreSQL, MongoDB and OracleDB",
+        "Building a comprehensive UI around your business",
+        "A database structure that is flexible to grow with you",
+        "Integrating with storage, email, accounting and more",
+        
     ]
 }
 
@@ -180,9 +180,9 @@ const CloudSection: SkillSection = {
     imagePath: AssetPaths.CLOUD_INFRASTRUCTURE_SVG,
     skillLinks: CloudSkills,
     skillsList: [
-        "Experience working on multiple cloud platforms including GCP, AWS, FireBase, and Render",
-        "Hosting and maintaining websites on FireBase hosting and GoDaddy along with integration of databases",
-        "Setting up email triggers and Googlesheet integration for streamline client inquiry",
+        "Working with Azure, Amazon and Google Cloud Services",
+        "Both outsourced hosting and colocated services on site",
+        "Integrations from custom databases into Quickbooks, Penta, QuickBase, Hubspot and more",
     ]
 }
 
@@ -220,9 +220,9 @@ const DesignSection: SkillSection = {
     imagePath: AssetPaths.UI_UX_DESIGN_SVG,
     skillLinks: DesignSkills,
     skillsList: [
-        "Designing highly attractive and responsive user interface for web applications",
-        "Customizing logo designs, creating visiting cards and virtual cards from scratch",
-        "Creating the flow of application functionalities to optimize user experience",
+        "Designing for fast and efficient use by staff",
+        "Custom process flows that run smoothly using background updates",
+        "Optimize user experience with integrated security and user data",
     ]
 }
 
@@ -245,7 +245,7 @@ const DigitalSolutionSection: SkillSection = {
 
 // Personal projects
 const PersonalProjects: ProjectSection = {
-    sectionTitle: "My Projects",
+    sectionTitle: "Past Work",
     sectionSubtitle: "🚀 Showcasing innovative solutions and real-world applications built with cutting-edge technologies.",
     entities: [
         {
@@ -303,84 +303,76 @@ const PersonalProjects: ProjectSection = {
 
 // Freelancing projects
 const FreelancingProjects: ProjectSection = {
-    sectionTitle: "Freelancing",
-    sectionSubtitle: "🚀 Transforming Ideas into Digital Solutions: Tailored Websites, Custom CMS, and More!",
+    sectionTitle: "Active Projects",
+    sectionSubtitle: "🚀 Projects that we currently are working on",
     entities: [
         {
-            title: "South Australia Tiling",
-            coverImagePath: AssetPaths.PROJECT_SA_TILING,
-            liveLink: "https://southaustraliatiling.com.au/",
-            description: "🚀 Built with SSR and SSG to showcase a South Australian tiling and bathroom renovation business, enhancing their online presence and visibility.",
-            techStack: ["Angular 19", "SSR/SSG", "NestJS", "Firebase"],
+            title: "Pinnacle Power Services",
+            coverImagePath: AssetPaths.PROJECT_PINNACLE_POWER,
+            liveLink: "https://pinnaclepowersvcs.com/",
+            description: "🚀 Designed to completely automate the process flow of contstruction from bid to invoice",
+            techStack: ["Angular 20", "MSSQL", "Google Drive", "Ionic"],
             year: 2025
         },
         {
-            title: "Kiwi Finance",
-            coverImagePath: AssetPaths.PROJECT_KIWI_FINANCE,
-            liveLink: "https://kiwifinance.com.au/",
-            description: "💰 Developed a tailored website for a new Perth-based finance and mortgage broking business, combining modern design with a focus on accessibility and client engagement.",
-            techStack: ["Angular", "MongoDB", "NestJS", "Firebase"],
+            title: "DC Electric",
+            coverImagePath: AssetPaths.PROJECT_DC_ELECTRIC,
+            liveLink: "https://dcelectricgroup.com/",
+            description: "💰 Converted old stand along applications into web based invoicing system which integrated multiple platforms into a cohesive interface",
+            techStack: ["Angular", "MSSQL", "Google Storage", "Quickbase"],
             year: 2025
         },
         {
-            title: "RAS Finance Website + CMS",
+            title: "Accessibility Online",
             coverImagePath: AssetPaths.PROJECT_RAS_FINANCE,
-            liveLink: "https://rasfinance.com.au/",
-            description: "📈 Designed a bespoke website for a leading South Australia-based finance and mortgage broking business, showcasing services with a sleek, client-focused design.",
-            techStack: ["Angular", "MongoDB", "NestJS", "Firebase"],
+            liveLink: "https://beta.accessibilityonline.org/",
+            description: "📈 A database of classes and students across the country. Sign ups, classes, automation of scheduling, PDF certificates handled in both and admin and public sites",
+            techStack: ["Angular", "MySQL", ".Net", "C#"],
             year: 2024
         },
-        {
-            title: "Acquire Conveyancing Website",
-            coverImagePath: AssetPaths.PROJECT_ACQUIRE_CONVEYANCING,
-            liveLink: "https://acquireconveyancing.com.au/",
-            description: "🏡 Crafted a tailored website for a South Australia-based conveyancing business, delivering a professional online presence with user-friendly design and local appeal.",
-            techStack: ["Angular", "Tailwind", "Firebase"],
-            year: 2023
-        },
+        
     ]
 }
 
 
 // Job experience
 const JobExperience: ExperienceSection = {
-    experienceSectionTitle: "Work Experience",
+    experienceSectionTitle: "Creative Solutions",
     experiences: [
         {
-            orgLink: "https://acquireconveyancing.com.au/",
-            orgLogoPath: AssetPaths.WORK_ACQUIRE_LOGO,
-            orgName: "Acquire Conveyancing",
+            orgLink: "",
+            orgLogoPath: "https://morrisdev.com/wp-content/uploads/2025/09/header-1024x352.jpg",
+            orgName: "Leveraging AI to search corporate documents",
             positions: [
                 {
-                    positionName: "Conveyancing Assistant",
+                    positionName: "Leveraging AI to search corporate documents",
                     duration: "Apr 2024 - Present",
-                    location: "Adelaide, SA",
-                    locationType: "On-Site",
-                    jobType: "Part-time",
+                    location: "Pinnacle Power Services",
+                     
+                    jobType: "AI,Vector Databases, MPC",
                     workPoints: [
-                        "Ensured secure management of sensitive data with top-notch IT support. 🔒",
-                        "Streamlined property searches by liaising with government agencies. 🏡",
-                        "Prepared legal documents like Cooling Off Forms, Nominations, and Addendums. 📝",
-                        "Optimized software workflows with precise data entry and customized templates in CATS and PEXA. ⚙️",
+                        "Built system to break +100k PDF documents into Chunks",
+                        "Cross Referenced and automated vector embedding",
+                        "Populated Qdrant hosted Vector Database",
+                        "Used Google VectorAI to link to production search service",
                     ]
                 }
             ]
         },
         {
             orgLink: "https://www.asite.com/",
-            orgLogoPath: AssetPaths.WORK_ASITE_LOGO,
-            orgName: "Asite Solution",
+            orgLogoPath: AssetPaths.WORK_GOOGLE_CLOUD_CACHE,
+            orgName: "Bulk JSON Cache System",
             positions: [
                 {
-                    positionName: "Jr Software Engineer",
-                    duration: "Jun 2023 - Mar 2024",
-                    location: "Ahmedabad, India",
-                    locationType: "Hybrid",
-                    jobType: "Full-time",
+                    positionName: "Increased initial login and setup by 500%",
+                    duration: "Jun 2023 - Present",
+                    location: "Pinnacle Power Services",
+                     jobType: "Google Storage, C#, Angular",
                     workPoints: [
-                        "Built the Issue Tracker feature for the cBIM unit, integrating 30+ Angular components like side pane, image carousel, and quill editor. 🚀📋",
-                        "Designed a robust Angular reactive form and a customizable async dropdown for efficient file-folder tree searches, enhancing Record Retention Policy. 📂🔍",
-                        "Debugged and unit-tested code using Karma & Jasmine, achieving an impressive 96% coverage. 🐞✅",
+                        "Automated a daily JSON build of all active jobs and their properties",
+                        "Pushed to google storage and then into BigQuery using JSONL",
+                        "Setup UI to call for signed link directly from Google Storage as initial load for data",
                     ]
                 }
             ]
@@ -390,7 +382,7 @@ const JobExperience: ExperienceSection = {
 
 // Freenacing Experience
 const FreelancingExperience: ExperienceSection = {
-    experienceSectionTitle: "Freelancing",
+    experienceSectionTitle: "Project Development",
     experiences: [
         {
             orgLink: "https://southaustraliatiling.com.au/",
@@ -470,47 +462,35 @@ const FreelancingExperience: ExperienceSection = {
 
 // Internships Experience
 const InternshipExperience: ExperienceSection = {
-    experienceSectionTitle: "Internships",
+    experienceSectionTitle: "How-To",
     experiences: [
         {
-            orgLink: "https://asite.com/",
+            orgLink: " ",
             orgLogoPath: AssetPaths.WORK_ASITE_LOGO,
-            orgName: "Asite Solution",
+            orgName: "Integrating Angular Microsite with .Net",
             positions: [
                 {
-                    positionName: "UI Developer Intern",
-                    duration: "Feb 2023 - May 2023",
-                    location: "Ahmedabad, India",
-                    locationType: "Hybrid",
-                    jobType: "Full-time",
+                    positionName: "Integrating Angular Microsite with .Net",
+                    duration: "Feb 2023 - May 2025",
+                 
+                     jobType: "IIS, C#, Angular",
                     workPoints: [
-                        "Led an 11-member team to design and implement the frontend architecture of an LMS using Angular, following the latest methodologies and best practices. 🚀💻",
-                        "Gained expertise in Angular, jQuery, SCSS, and DSA through personalized training and hands-on assignments during the internship. 🌟📊✨",
+                        "Configuring SSH Servers on Windows Servers",
+                        "Setting up continous integration in Azure DevOps",
+                        "Multi-Server configurations with Azure Front-Door",
                     ]
-                },
-                {
-                    positionName: "Software Engineering Intern",
-                    duration: "Jun 2022 — Jul 2022",
-                    location: "Ahmedabad, India",
-                    locationType: "On-Site",
-                    jobType: "Full-time",
-                    workPoints: [
-                        "Developed an innovative 3D IFC file viewer using Three.js, applying DSA concepts to create a tree-like structure for exploring model internals. 🌐🌳📐",
-                        "Deployed the Node.js backend on Heroku and hosted the frontend on GitHub Pages for seamless accessibility. 🚀💻✨",
-                    ]
-                }
+                } 
             ]
         },
         {
-            orgLink: "https://workxmate.com/",
+            orgLink: " ",
             orgLogoPath: AssetPaths.WORK_WORKXMATE_LOGO,
-            orgName: "WorkXMate Technologies Pvt. Ltd.",
+            orgName: "Quickbase Integration and REST API",
             positions: [
                 {
-                    positionName: "Angular Developer Internship",
+                    positionName: "Quickbase Integration and REST API",
                     duration: "Feb 2022 — Mar 2022",
-                    location: "Noida, India",
-                    locationType: "Remote",
+                     locationType: "Remote",
                     jobType: "Part-time",
                     workPoints: [
                         "Designed and implemented an optimized, cross-browser-compatible Attendance Management Module. 🌐✔️",
@@ -600,18 +580,18 @@ const MastersDegree: EducationSection = {
 
 export const AppConfig = {
     loaderSplashAnimation: true,        // enable or disable splash screen at the initialization of website
-    logoName: "Dhruvil Rathod",         // Signature font logo name in header
-    name: "Dhruvil Rathod",             // your name
-    emailId: "thedhruvilrathod@gmail.com",  // your email id
+    logoName: "morrisdevelopment",         // Signature font logo name in header
+    name: "Custom ERP",             // your name
+    emailId: "dmorris@morrisdevelopment.com",  // your email id
 
     // Google Form Contact Link
-    googleFormContactLink: "https://docs.google.com/forms/d/e/1FAIpQLSfMOsQhl_Lci5s_qrYN-LEWlJ3NoBag-Uyf17IGktExA5KDpw/viewform?usp=header",
+    googleFormContactLink: "",
 
     // Home page
-    professionalTitle: "Development | Cyber Security | Freelancing",
-    professionalSummary: "A results-driven software engineer with expertise in full-stack development of high-quality user-centric solutions in agile environments.",
-    githubProfile: "https://github.com/dhruvilrathod",              // Your github profile link
-    portfolioRepository: "https://github.com/dhruvilrathod/Angular-Master-Portfolio",        // Your portfolio repository link
+    professionalTitle: "When you need to get it done right",
+    professionalSummary: "Design your business database around your business processes",
+    githubProfile: "https://github.com/morrisdev",              // Your github profile link
+    portfolioRepository: "https://github.com/danielcmorris/morrisdev",        // Your portfolio repository link
     socialMedia: SocialMediaLinks,      // use from above
     aboutMe: [                          // all the sections you want to show under "What I do?". 
         FullstackSection,
@@ -621,20 +601,20 @@ export const AppConfig = {
     ],
 
     // Projects page
-    projectsPageTitle: "Projects & Freelancing",    // Title of projects page
-    projectsPageDescription: "My projects leverage a diverse range of cutting-edge technology tools. I specialize in building data science solutions and seamlessly deploying them as web applications using robust cloud infrastructure.",
+    projectsPageTitle: "Projects",    // Title of projects page
+    projectsPageDescription: "We specialize in developing web-based applications for logistics and ERP systems",
     projectSections: [                  // Define and add a custom section if needed
         FreelancingProjects,
         PersonalProjects,
     ],
 
     // Experience page
-    experiencePageTitle: "My Works, Internships and Freelancing",
-    experiencePageDescription: "💼 From Corporate Giants to Creative Freelance Projects: A journey through internships, corporate, and helping local businesses.",
+    experiencePageTitle: "Technical Articles",
+    experiencePageDescription: "💼 We've had to come up with some creative solutions. We publish the more recent ones here so others can benefit",
     experienceSections: [               // Define and add a custom section if needed
         JobExperience,
         InternshipExperience,
-        FreelancingExperience,
+       // FreelancingExperience,
     ],
 
     // Education page

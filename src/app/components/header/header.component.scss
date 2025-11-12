@@ -27,7 +27,7 @@ ul.menu {
     font-family: "Google Sans Regular";
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
     gap: 1rem;
     height: 100%;
 
@@ -46,7 +46,7 @@ ul.menu {
             transition: all 200ms;
             color: $theme-blue;
             text-align: center;
-
+            font-size: 1.4em;
             &:hover {
                 background-color: #A6E1FA;
                 display: block;

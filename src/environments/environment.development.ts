@@ -1,5 +1,5 @@
 export const environment = {
-    APP_URL: "https://angular-master-portfolio.web.app",
-    API_URL: "https://common-server-9df8.onrender.com/",
+    APP_URL: "https://morrisdev.com",
+    API_URL: "https://api.morrisdev.com/",
     RE_CAPTCHA_V3: "6LedUxcqAAAAAKsctlowzDQtHbN43D1y7s8eAyL8",
 };

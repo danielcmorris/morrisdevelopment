@@ -32,7 +32,9 @@ export class HomeComponent implements AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        this._playSplashAnimation();
+         this._globalStatsService.isSplashAnimationPlayed = true;
+            this.isAnimationPlayed = true;
+      //  this._playSplashAnimation();
     }
 
     private _playSplashAnimation(): void {

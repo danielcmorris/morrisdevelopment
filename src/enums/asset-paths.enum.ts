@@ -1,5 +1,5 @@
 export enum AssetPaths {
-    RESUME_IT = "Dhruvil_Rathod.pdf",
+    RESUME_IT = "",
     FEELING_PROUD_SVG = "assets/illustrations/FeelingProud.svg",
     DIGITAL_SOLUTIONS_SVG = "assets/illustrations/DigitalSolutions.svg",
     FULL_STACK_DEVELOPMENT_SVG = "assets/illustrations/FullStackDevelopment.svg",
@@ -16,14 +16,20 @@ export enum AssetPaths {
     PROJECT_MUSIC_PLAYER = "assets/projects-images/music-player.png",
     PROJECT_RAS_FINANCE = "assets/projects-images/ras-finance.png",
     PROJECT_SA_TILING = "assets/projects-images/sa-tiling.png",
+    PROJECT_PINNACLE_POWER = "assets/projects-images/pinnacle-power.png",
+    PROJECT_DC_ELECTRIC = "assets/projects-images/dc-electric.png",
     PROJECT_THREEJS_IFC_VIEWER = "assets/projects-images/threejs-ifc-viewer.png",
-    EXPERIENCE_COVER = "assets/illustrations/ExperienceCover.svg",
+    EXPERIENCE_COVER = "assets/illustrations/developers.png",
     WORK_ACQUIRE_LOGO = "assets/experience-images/acquire-logo.png",
-    WORK_ASITE_LOGO = "assets/experience-images/asite-logo.png",
+    WORK_ASITE_LOGO = "https://azure-training.com/wp-content/uploads/2019/05/frontdoor-e1559155215781.jpg",
+
+    WORK_GOOGLE_CLOUD_CACHE = "assets/education-images/cloud-cache.png",
+
+
     WORK_KIWI_LOGO = "assets/experience-images/kiwi-logo.png",
     WORK_SA_TILING_LOGO = "assets/experience-images/sa-tiling-logo.png",
     WORK_RAS_LOGO = "assets/experience-images/ras-logo.png",
-    WORK_WORKXMATE_LOGO = "assets/experience-images/workxmate-logo.png",
+    WORK_WORKXMATE_LOGO = "https://danonsoftware.com/wp-content/uploads/2020/07/DanOnSoftware.com-REST-API-Orchestration-Document-Management-3-1024x371.png",
     WORK_ADVENT_OF_CODE_LOGO = "assets/experience-images/advent-of-code-logo.jpeg",
     EDUCATION_COVER = "assets/illustrations/EducationCover.svg",
     EDUCATION_GTU_LOGO = "assets/education-images/gtu-logo.png",
