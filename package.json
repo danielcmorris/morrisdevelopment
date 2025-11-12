@@ -20,7 +20,6 @@
     "@angular/router": "^19.2.15",
     "@types/aos": "^3.0.7",
     "aos": "^2.3.4",
-    "ng-recaptcha-2": "^14.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.1"
