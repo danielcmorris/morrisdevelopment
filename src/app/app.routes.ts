@@ -6,6 +6,7 @@ import { ProjectsComponent } from './pages/projects/projects.component';
 import { ExperienceComponent } from './pages/experience/experience.component';
 import { EducationComponent } from './pages/education/education.component';
 import { AchievementsComponent } from './pages/achievements/achievements.component';
+import { ArticleComponent } from './pages/article/article.component';
 
 export const routes: Routes = [
     {
@@ -22,6 +23,11 @@ export const routes: Routes = [
         path: AppRoutes.EXPERIENCE,
         component: ExperienceComponent,
         title: `Experience | Morris Development`,
+    },
+    {
+        path: AppRoutes.EXPERIENCE+"/vector-db",
+        component: ArticleComponent,
+        title: `Vector`,
     },
     {
         path: AppRoutes.EDUCATION,
