@@ -1,11 +1,11 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 import { Article } from '../../../interfaces/article.interface';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
     selector: 'app-article',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './article.component.html',
     styleUrl: './article.component.scss'
 })

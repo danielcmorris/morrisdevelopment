@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, HostListener } from '@angular/core';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { menuOpenCloseAnimation, menuOpenCloseHeightAnimation } from '../../../animations/bruger-menu.animation';
@@ -11,10 +11,9 @@ import { AssetPaths } from '../../../enums/asset-paths.enum';
 @Component({
     selector: 'app-header',
     imports: [
-        RouterLink,
-        RouterLinkActive,
-        CommonModule,
-    ],
+    RouterLink,
+    RouterLinkActive
+],
     animations: [
         menuOpenCloseAnimation,
         menuOpenCloseHeightAnimation,

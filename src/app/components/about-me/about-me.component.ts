@@ -1,13 +1,11 @@
 import { Component } from '@angular/core';
 import { AssetPaths } from '../../../enums/asset-paths.enum';
-import { CommonModule } from '@angular/common';
+
 import { AppConfig } from '../../../enums/app-data';
 
 @Component({
     selector: 'app-about-me',
-    imports: [
-        CommonModule,
-    ],
+    imports: [],
     templateUrl: './about-me.component.html',
     styleUrl: './about-me.component.scss'
 })

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { AssetPaths } from '../../../enums/asset-paths.enum';
 import { AppConfig } from '../../../enums/app-data';
@@ -10,9 +10,8 @@ import AOS from 'aos';
 @Component({
     selector: 'app-projects',
     imports: [
-        CommonModule,
-        ProjectCardComponent,
-    ],
+    ProjectCardComponent
+],
     templateUrl: './projects.component.html',
     styleUrl: './projects.component.scss'
 })
