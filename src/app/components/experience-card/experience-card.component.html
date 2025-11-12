@@ -7,16 +7,16 @@
                     
                     <a
                         [href]="experience().orgLink"
-                        target="_blank"
+                       
                         >
                         <img class="max-h-20 mb-4 mx-auto" [src]="experience().orgLogoPath" [alt]="experience().orgName">
                     </a>
                                         
                     <a 
                         [href]="experience().orgLink"
-                        target="_blank"
+                        
                         class="text-sm w-full text-center font-bold block tracking-wider text-gray-600">
-                        {{ experience().orgName }}
+                        {{ experience().orgName }} 
                     </a>
                 </div>
             </div>
@@ -31,7 +31,7 @@
                         <div class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-blue-800">
                             <h3 class="md:text-left text-xl font-semibold tracking-wide">
                                 
-                                {{ pos.positionName }}
+                             <a  [href]="experience().orgLink"> {{ pos.positionName }}</a>  
 
                                 @if (pos.jobType) {
                                     <span class="md:text-left italic text-xs mt-2 tracking-wide text-gray-600">

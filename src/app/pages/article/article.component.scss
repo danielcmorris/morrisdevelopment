@@ -1,8 +1,8 @@
-@use '/css/variables' as *;
+@use '../../../css/variables' as *;
 
 .article-main {
     width: 100%;
-    margin: 8rem 0;
+    margin: 1rem 0;
 }
 
 .basic-article {
@@ -28,12 +28,12 @@
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
 
-.article-heading-img-div > img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+    > img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
 }
 
 .article-heading-text-div {
@@ -65,7 +65,6 @@
     justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
-    margin-top: 1.5rem;
     color: $theme-secondary;
     font-family: "Google Sans Regular";
     font-size: 16px;
@@ -76,21 +75,22 @@
 .article-read-time {
     display: flex;
     align-items: center;
+
+    &::before {
+        margin-right: 0.5rem;
+    }
 }
 
 .article-author::before {
     content: "✍️";
-    margin-right: 0.5rem;
 }
 
 .article-date::before {
     content: "📅";
-    margin-right: 0.5rem;
 }
 
 .article-read-time::before {
     content: "⏱️";
-    margin-right: 0.5rem;
 }
 
 .article-tags-div {
@@ -98,10 +98,9 @@
     flex-wrap: wrap;
     gap: 1rem;
     justify-content: center;
-    margin: 3rem 5% 2rem 5%;
+    margin: 3rem auto 2rem;
+    padding: 0 5%;
     max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .article-tag {
@@ -112,16 +111,16 @@
     font-family: "Google Sans Medium";
     font-size: 14px;
     transition: all 0.3s ease;
-}
 
-.article-tag:hover {
-    background-color: rgba($theme-blue, 0.2);
-    transform: translateY(-2px);
+    &:hover {
+        background-color: rgba($theme-blue, 0.2);
+        transform: translateY(-2px);
+    }
 }
 
 .article-content-div {
     max-width: 800px;
-    margin: rem auto;
+   // margin: 4rem auto;
     padding: 0 5%;
 }
 
@@ -129,96 +128,96 @@
     font-family: "Google Sans Regular";
     font-size: 18px;
     line-height: 1.8;
-    color: $theme-secondary;
+    color:rgb(37, 36, 42);
 
-    // Changed from :deep() to ::ng-deep
-    ::ng-deep h2 {
-        font-size: 36px;
-        font-weight: 600;
-        color: $theme-blue;
-        font-family: "Google Sans Medium";
-        margin: 3rem 0 1.5rem 0;
-    }
-
-    ::ng-deep h3 {
-        font-size: 28px;
-        font-weight: 500;
-        color: $theme-blue;
-        font-family: "Google Sans Medium";
-        margin: 2.5rem 0 1rem 0;
-    }
-
-    ::ng-deep p {
-        margin: 1.5rem 0;
-    }
-
-    ::ng-deep a {
-        color: $theme-blue;
-        text-decoration: none;
-        border-bottom: 2px solid transparent;
-        transition: border-bottom 0.3s ease;
-        
-        &:hover {
-            border-bottom: 2px solid $theme-blue;
+    ::ng-deep {
+        h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: $theme-blue;
+            font-family: "Google Sans Medium";
+          //  margin: 3rem 0 1.5rem 0;
         }
-    }
 
-    ::ng-deep ul, 
-    ::ng-deep ol {
-        margin: 1.5rem 0;
-        padding-left: 2rem;
-    }
+        h3 {
+            font-size: 26px;
+            font-weight: 500;
+            color: $theme-blue;
+            font-family: "Google Sans Medium";
+           // margin: 2.5rem 0 1rem 0;
+        }
 
-    ::ng-deep li {
-        margin: 0.75rem 0;
-    }
+        p {
+            margin: 1.5rem 0;
+        }
 
-    ::ng-deep blockquote {
-        border-left: 4px solid $theme-blue;
-        padding-left: 1.5rem;
-        margin: 2rem 0;
-        font-style: italic;
-        color: $theme-secondary;
-    }
+        a {
+            color: $theme-blue;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s ease;
+            
+            &:hover {
+                border-bottom: 2px solid $theme-blue;
+            }
+        }
 
-    ::ng-deep code {
-        background-color: rgba($theme-blue, 0.1);
-        padding: 0.2rem 0.5rem;
-        border-radius: 4px;
-        font-family: 'Courier New', monospace;
-        font-size: 16px;
-    }
+        ul, ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
 
-    ::ng-deep pre {
-        background-color: rgba($theme-blue, 0.05);
-        padding: 1.5rem;
-        border-radius: 8px;
-        overflow-x: auto;
-        margin: 2rem 0;
+        li {
+            margin: 0.75rem 0;
+        }
+
+        blockquote {
+            border-left: 4px solid $theme-blue;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: $theme-secondary;
+        }
 
         code {
-            background-color: transparent;
-            padding: 0;
+            background-color: rgba($theme-blue, 0.1);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
         }
-    }
 
-    ::ng-deep img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 8px;
-        margin: 2rem auto;
-        display: block;
+        pre {
+            background-color: rgba($theme-blue, 0.05);
+            padding: 1.5rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 2rem 0;
+
+            code {
+                background-color: transparent;
+                padding: 0;
+            }
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 2rem auto;
+            display: block;
+        }
     }
 }
 
 @media (max-width: 1380px) {
     .article-main {
-        margin-top: 4rem;
+        margin-top: 1rem;
     }
 
     .article-heading-text {
         font-size: 50px;
-        margin-top: 80px;
+        margin-top: 20px;
     }
 }
 
@@ -230,8 +229,7 @@
 
     .article-header-detail-text {
         font-size: 16px;
-        margin-right: 0px;
-        margin-left: 0px;
+        margin: 0;
         line-height: normal;
         text-align: center;
     }
@@ -245,12 +243,14 @@
         font-size: 16px;
         line-height: 1.7;
 
-        ::ng-deep h2 {
-            font-size: 28px;
-        }
+        ::ng-deep {
+            h2 {
+                font-size: 28px;
+            }
 
-        ::ng-deep h3 {
-            font-size: 22px;
+            h3 {
+                font-size: 22px;
+            }
         }
     }
 

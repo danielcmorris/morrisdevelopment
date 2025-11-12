@@ -340,7 +340,7 @@ const JobExperience: ExperienceSection = {
     experienceSectionTitle: "Creative Solutions",
     experiences: [
         {
-            orgLink: "",
+            orgLink: "/articles/vector-db",
             orgLogoPath: "https://morrisdev.com/wp-content/uploads/2025/09/header-1024x352.jpg",
             orgName: "Leveraging AI to search corporate documents",
             positions: [
@@ -360,7 +360,7 @@ const JobExperience: ExperienceSection = {
             ]
         },
         {
-            orgLink: "https://www.asite.com/",
+            orgLink: "/articles/google-cache",
             orgLogoPath: AssetPaths.WORK_GOOGLE_CLOUD_CACHE,
             orgName: "Bulk JSON Cache System",
             positions: [

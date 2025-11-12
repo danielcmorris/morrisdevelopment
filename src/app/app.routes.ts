@@ -20,14 +20,18 @@ export const routes: Routes = [
         title: `Projects | Morris Development`,
     },
     {
-        path: AppRoutes.EXPERIENCE,
+        path: AppRoutes.ARTICLES,
         component: ExperienceComponent,
         title: `Experience | Morris Development`,
     },
     {
-        path: AppRoutes.EXPERIENCE+"/vector-db",
+        path: AppRoutes.ARTICLES + "/:slug",
         component: ArticleComponent,
         title: `Vector`,
+    },
+    {
+        path: 'articles/:slug',
+        component: ArticleComponent
     },
     {
         path: AppRoutes.EDUCATION,
