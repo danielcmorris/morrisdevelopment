@@ -4,11 +4,10 @@ import { Article } from '../../../interfaces/article.interface';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-article',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './article.component.html',
-  styleUrl: './article.component.scss'
+    selector: 'app-article',
+    imports: [CommonModule],
+    templateUrl: './article.component.html',
+    styleUrl: './article.component.scss'
 })
 export class ArticleComponent {
   // In your parent component

@@ -3,7 +3,6 @@ import { AppConfig } from '../../../enums/app-data';
 
 @Component({
     selector: 'app-footer',
-    standalone: true,
     imports: [],
     templateUrl: './footer.component.html',
     styleUrl: './footer.component.scss'

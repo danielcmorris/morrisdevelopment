@@ -5,7 +5,6 @@ import { AssetPaths } from '../../../enums/asset-paths.enum';
 
 @Component({
     selector: 'app-social-media-links',
-    standalone: true,
     imports: [
         CommonModule
     ],

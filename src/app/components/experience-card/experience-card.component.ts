@@ -4,7 +4,6 @@ import { Experience } from '../../../interfaces/work-experience.interface';
 
 @Component({
     selector: 'app-experience-card',
-    standalone: true,
     imports: [],
     templateUrl: './experience-card.component.html',
     styleUrl: './experience-card.component.scss'

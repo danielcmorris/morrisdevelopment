@@ -7,7 +7,6 @@ import { AppRoutes } from '../../../enums/routes-data.enum';
 
 @Component({
     selector: 'app-education',
-    standalone: true,
     imports: [
         EducationCardComponent,
     ],

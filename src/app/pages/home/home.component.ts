@@ -9,7 +9,6 @@ import { AppRoutes } from '../../../enums/routes-data.enum';
 
 @Component({
     selector: 'app-home',
-    standalone: true,
     imports: [
         SplashComponent,
         SocialMediaLinksComponent,

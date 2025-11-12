@@ -7,7 +7,6 @@ import { GlobalStatsService } from '../../services/global-stats/global-stats.ser
 
 @Component({
     selector: 'app-experience',
-    standalone: true,
     imports: [
         ExperienceCardComponent,
     ],

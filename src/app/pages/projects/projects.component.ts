@@ -9,7 +9,6 @@ import AOS from 'aos';
 
 @Component({
     selector: 'app-projects',
-    standalone: true,
     imports: [
         CommonModule,
         ProjectCardComponent,

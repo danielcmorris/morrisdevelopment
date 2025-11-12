@@ -5,7 +5,6 @@ import { AppConfig } from '../../../enums/app-data';
 
 @Component({
     selector: 'app-about-me',
-    standalone: true,
     imports: [
         CommonModule,
     ],

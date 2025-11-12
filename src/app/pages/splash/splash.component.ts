@@ -3,7 +3,6 @@ import { LoaderLogoComponent } from '../../components/loader-logo/loader-logo.co
 
 @Component({
     selector: 'app-splash',
-    standalone: true,
     imports: [
         LoaderLogoComponent
     ],

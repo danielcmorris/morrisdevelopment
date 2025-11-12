@@ -7,7 +7,6 @@ import { ProjectCardComponent } from '../../components/project-card/project-card
 
 @Component({
     selector: 'app-achievements',
-    standalone: true,
     imports: [
         ProjectCardComponent
     ],

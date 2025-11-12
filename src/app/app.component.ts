@@ -11,7 +11,6 @@ import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.c
 
 @Component({
     selector: 'app-root',
-    standalone: true,
     imports: [
         RouterOutlet,
         HeaderComponent,
