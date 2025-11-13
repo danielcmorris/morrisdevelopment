@@ -365,7 +365,7 @@ const JobExperience: ExperienceSection = {
             orgName: "Bulk JSON Cache System",
             positions: [
                 {
-                    positionName: "Increased initial login and setup by 500%",
+                    positionName: "Reduced initial login and setup time by 500%",
                     duration: "Jun 2023 - Present",
                     location: "Pinnacle Power Services",
                      jobType: "Google Storage, C#, Angular",
