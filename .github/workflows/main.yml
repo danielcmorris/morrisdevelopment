@@ -25,7 +25,7 @@ jobs:
         run: npm install
 
       - name: Build project
-        run: npm run build
+        run: npm run build -- --base-href /beta/ --deploy-url /beta/
 
       # 4. Set build output directory
       #    CHANGE this to your actual build folder:
