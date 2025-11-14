@@ -270,7 +270,7 @@ const PersonalProjects: ProjectSection = {
             title: "Pinnacle Fleet",
             coverImagePath: AssetPaths.PROJECT_LMS_APP,
             githubLink: "/projects/pinnacle-fleet",
-            description: "An add-on app to handle the fleet management of the Pinnacle Power Services vehicles, integrating with Google Maps API for real-time tracking.",
+            description: "An add-on app to handle the fleet management of the Pinnacle Power Services vehicles, integrating multiple systems for tracking, maintenance and depreciation.",
             techStack: ["Ionic", "MSSQL", "IndexedDB", "Google Cloud"],
             year: 2023
         },
@@ -460,7 +460,7 @@ const FreelancingExperience: ExperienceSection = {
     ]
 }
 
-// Internships Experience
+// Articles
 const InternshipExperience: ExperienceSection = {
     experienceSectionTitle: "How-To",
     experiences: [
