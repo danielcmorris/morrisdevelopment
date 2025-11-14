@@ -19,6 +19,11 @@ export const routes: Routes = [
         component: ProjectsComponent,
         title: `Projects | Morris Development`,
     },
+      {
+        path: AppRoutes.PROJECTS +'/dash',
+        component: ProjectsComponent,
+        title: `Dash | Morris Development`,
+    },
     {
         path: AppRoutes.ARTICLES,
         component: ExperienceComponent,
@@ -27,7 +32,7 @@ export const routes: Routes = [
     {
         path: AppRoutes.ARTICLES + "/:slug",
         component: ArticleComponent,
-        title: `Vector`,
+        title: `Articles | Morris Development`,
     },
     {
         path: 'articles/:slug',

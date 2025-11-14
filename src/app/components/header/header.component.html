@@ -1,10 +1,15 @@
-<div class="header h-auto flex align-center justify-between gap-8" data-aos="fade-down">
+ 
+<div class="header h-auto flex align-center justify-between gap-8" data-aos="fade-down" >
 
     <div class="w-[80%] lg:w-fit flex align-center justify-center">
         
         <div class="logo-name-container">
             <a href="/">
-                <img src="https://morrisdev.com/wp-content/uploads/2016/09/cropped-MorrisDevelopment.jpg">
+                @if(theme.isDarkMode() ){
+                    <img src="/assets/images/logo-dark.png"   alt="Morris Development Logo">
+                }@else{     
+                    <img src="/assets/images/logo-light.jpg"alt="Morris Development Logo">
+                }
             </a>
         </div>
         
@@ -18,7 +23,7 @@
     </button>
 
     <div class="hidden lg:block grow">
-        <ul class="menu">
+        <ul class="menu  ">
             @for (l of linksData; track $index) {
                 @if (l.isVisible) {
                     <li>
@@ -34,13 +39,14 @@
                             </a>
                         }
                         @else {
-                            <a 
+                            <a  
+
                                 [routerLink]="l.routeURLName" 
                                 [routerLinkActive]="['font-bold']"
                                 [routerLinkActiveOptions]="{exact: true}" 
                                 [title]="l.routeTooltipValue ?? l.routeLinkText"
                                 >
-                                {{ l.routeLinkText }}
+                                {{ l.routeLinkText }} 
                             </a>
                         }
                     </li>
@@ -49,15 +55,22 @@
         </ul>
     </div>
 
-    <!-- <div class="h-full hidden lg:block">
+    <div class="h-full hidden lg:block">
         <button 
-            class="general-button"
+            class="general-button dark:text-gray-100"
             type="button"
-            (click)="resumeDownload()">
-            Resume
-            <i class="fa-solid fa-download"></i>
+            (click)="theme.toggleTheme()">
+            @if(!theme.isDarkMode() ){
+                 <i class="fa-solid fa-moon"></i>
+                 Dark Mode
+            }@else{
+                <i class="fa-solid fa-sun"></i>
+                Light Mode
+            }
+       
+       
         </button>
-    </div> -->
+    </div>
 
 
 </div>
@@ -78,7 +91,7 @@
                             >{{ l.routeLinkText }}</a>
                         }
                         @else {
-                            <a 
+                            <a class="dark:text-gray-100"
                             [routerLink]="l.routeURLName" 
                             [routerLinkActive]="['font-bold']"
                             [routerLinkActiveOptions]="{exact: true}" 

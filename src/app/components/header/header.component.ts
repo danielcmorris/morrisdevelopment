@@ -6,6 +6,7 @@ import { RoutesData } from '../../../enums/routes-data.enum';
 import { AppConfig } from '../../../enums/app-data';
 import { HttpClient } from '@angular/common/http';
 import { AssetPaths } from '../../../enums/asset-paths.enum';
+import { ThemeService } from '../../services/theme.service';
 
 
 @Component({
@@ -30,6 +31,7 @@ export class HeaderComponent {
     constructor(
         private readonly _router: Router,
         private readonly _httpClient: HttpClient,
+        public theme: ThemeService
     ) {
         _router.events.subscribe((val) => {
             if (val instanceof NavigationEnd) {

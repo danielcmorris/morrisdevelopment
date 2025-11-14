@@ -245,90 +245,90 @@ const DigitalSolutionSection: SkillSection = {
 
 // Personal projects
 const PersonalProjects: ProjectSection = {
-    sectionTitle: "Past Work",
-    sectionSubtitle: "🚀 Showcasing innovative solutions and real-world applications built with cutting-edge technologies.",
+    sectionTitle: "Custom Apps",
+    sectionSubtitle: "Integrated with our intranet systems, we built these apps to handle outside worker needs.",
     entities: [
+        // {
+        //     title: "Full ERP System for Event Industry",
+        //     coverImagePath: AssetPaths.PROJECT_THREEJS_IFC_VIEWER,
+        //     liveLink: "/projects/erp",
+        //     githubLink: "https://github.com/dhruvilrathod/three_ifc_angular",
+        //     description: "This is the enterprise version of the well known Intellievent system (which we also built). From bid to billing, this system handles everything an event company needs.",
+        //     techStack: ["Angular", "ThreeJS", "ExpressJS", "Heroku"],
+        //     year: 2022
+        // },
         {
-            title: "Web-Based 3D IFC File Viewer",
-            coverImagePath: AssetPaths.PROJECT_THREEJS_IFC_VIEWER,
-            liveLink: "https://dhruvilrathod.github.io/webifcviewer/",
-            githubLink: "https://github.com/dhruvilrathod/three_ifc_angular",
-            description: "🧱 This tool enables seamless visualization of IFC files in your browser. Toggle elements, explore real-time details by hovering, search and highlight elements, and interact with ease for a dynamic 3D experience.",
-            techStack: ["Angular", "ThreeJS", "ExpressJS", "Heroku"],
-            year: 2022
-        },
-        {
-            title: "Customizable Multi-Select Dropdown",
+            title: "Job Management App",
             coverImagePath: AssetPaths.PROJECT_CUSTOM_DROPDOWN,
-            githubLink: "https://github.com/dhruvilrathod/custom-dropdown/tree/resource-tree-utility",
-            description: "🌲 An Angular-based, asynchronous multi-select dropdown designed for tree-structured data with custom validation. It's a powerful replacement for jQuery's Select2.",
-            techStack: ["Angular", "TypeScript", "SCSS"],
+            githubLink: "/projects/site-review",
+            description: "Fully off-line capable system designed for field workers to review job sites, capture photos, automate field reports and sign off on work completed.",
+            techStack: ["Angular", "IndexedDB", "Ionic"],
             year: 2023,
             branch: "resource-tree-utility"
         },
         {
-            title: "Learning Management System",
+            title: "Pinnacle Fleet",
             coverImagePath: AssetPaths.PROJECT_LMS_APP,
-            githubLink: "https://github.com/dhruvilrathod/lms-asite",
-            description: "📚 A production-grade frontend for a Learning Management System, designed with scalability in mind to deliver a seamless and efficient user experience.",
-            techStack: ["Angular", "PrimeNG", "Tailwind", "Figma"],
+            githubLink: "/projects/pinnacle-fleet",
+            description: "An add-on app to handle the fleet management of the Pinnacle Power Services vehicles, integrating with Google Maps API for real-time tracking.",
+            techStack: ["Ionic", "MSSQL", "IndexedDB", "Google Cloud"],
             year: 2023
         },
         {
-            title: "Angular + NestJS Boilerplate",
+            title: "Field Time Sheet",
             coverImagePath: AssetPaths.PROJECT_ANGULAR_NEST_DOCKER,
-            githubLink: "https://github.com/dhruvilrathod/sample-angular-nest",
-            description: "🛠️ A production-grade boilerplate integrating Angular, NestJS, and Nginx for seamless fullstack development. Perfect for kickstarting robust and scalable web applications.",
-            techStack: ["Angular", "NestJS", "NgINX", "Docker"],
+            githubLink: "/projects/field-time-sheet",
+            description: "Used by over 100 crews in the field, this app allows workers to log hours and automatically calculates overtime, missed meals and subsidies based upon union rules",
+            techStack: ["Angular", "Ionic", "MSSQL", "Penta"],
             year: 2023
         },
-        {
-            title: "Hospital Management System Dashboard",
-            coverImagePath: AssetPaths.PROJECT_HMS_APP,
-            githubLink: "https://github.com/freelancer-dhruvil/hms-demo",
-            description: "🏥 Transformed Figma designs into a fully functional, user-friendly dashboard for a Hospital Management System, ensuring precision and intuitive interface.",
-            techStack: ["Angular", "PrimeNG", "PrimeFlex", "Figma"],
-            year: 2024
-        },
-        {
-            title: "Cross-Platform Music Player",
-            coverImagePath: AssetPaths.PROJECT_MUSIC_PLAYER,
-            githubLink: "https://github.com/dhruvilrathod/music_player",
-            description: "🎵 Developed with Angular and NestJS, this music player evolved into a fullstack app and was wrapped with ElectronJS for a seamless desktop experience.",
-            techStack: ["Angular", "NestJS", "ElectronJS", "ExpressJS"],
-            year: 2023
-        }
+        // {
+        //     title: "Hospital Management System Dashboard",
+        //     coverImagePath: AssetPaths.PROJECT_HMS_APP,
+        //     githubLink: "https://github.com/freelancer-dhruvil/hms-demo",
+        //     description: "🏥 Transformed Figma designs into a fully functional, user-friendly dashboard for a Hospital Management System, ensuring precision and intuitive interface.",
+        //     techStack: ["Angular", "PrimeNG", "PrimeFlex", "Figma"],
+        //     year: 2024
+        // },
+        // {
+        //     title: "Cross-Platform Music Player",
+        //     coverImagePath: AssetPaths.PROJECT_MUSIC_PLAYER,
+        //     githubLink: "https://github.com/dhruvilrathod/music_player",
+        //     description: "🎵 Developed with Angular and NestJS, this music player evolved into a fullstack app and was wrapped with ElectronJS for a seamless desktop experience.",
+        //     techStack: ["Angular", "NestJS", "ElectronJS", "ExpressJS"],
+        //     year: 2023
+        // }
     ]
 }
 
 // Freelancing projects
 const FreelancingProjects: ProjectSection = {
     sectionTitle: "Active Projects",
-    sectionSubtitle: "🚀 Projects that we currently are working on",
+    sectionSubtitle: "Our systems are built for the long term, with maintainability and scalability in mind.",
     entities: [
         {
             title: "Pinnacle Power Services",
             coverImagePath: AssetPaths.PROJECT_PINNACLE_POWER,
-            liveLink: "https://pinnaclepowersvcs.com/",
-            description: "🚀 Designed to completely automate the process flow of contstruction from bid to invoice",
+            liveLink: "/projects/dash",
+            description: "Designed to completely automate the process flow of contstruction from bid to invoice. Integrated with Google Cloud Storage, BigQuery and custom AI search",
             techStack: ["Angular 20", "MSSQL", "Google Drive", "Ionic"],
-            year: 2025
+            year: "2020 - Present"
         },
         {
             title: "DC Electric",
             coverImagePath: AssetPaths.PROJECT_DC_ELECTRIC,
             liveLink: "https://dcelectricgroup.com/",
-            description: "💰 Converted old stand along applications into web based invoicing system which integrated multiple platforms into a cohesive interface",
-            techStack: ["Angular", "MSSQL", "Google Storage", "Quickbase"],
-            year: 2025
+            description: "Converted old stand along applications into web based invoicing system which integrated multiple platforms into a cohesive interface",
+            techStack: ["Angular", "MSSQL", "Google Storage"],
+            year: "2012 - Present"
         },
         {
             title: "Accessibility Online",
             coverImagePath: AssetPaths.PROJECT_RAS_FINANCE,
             liveLink: "https://beta.accessibilityonline.org/",
-            description: "📈 A database of classes and students across the country. Sign ups, classes, automation of scheduling, PDF certificates handled in both and admin and public sites",
-            techStack: ["Angular", "MySQL", ".Net", "C#"],
-            year: 2024
+            description: "A fully accessible system designed for screen-readers, allowing users to sign up for classes, generated certifications in both and admin and public sites",
+            techStack: ["Angular", "MySQL", ".Net", "C#", "AWS"],
+            year: "2005 - Present"
         },
         
     ]
@@ -465,7 +465,7 @@ const InternshipExperience: ExperienceSection = {
     experienceSectionTitle: "How-To",
     experiences: [
         {
-            orgLink: " ",
+            orgLink: "articles/microsites",
             orgLogoPath: AssetPaths.WORK_ASITE_LOGO,
             orgName: "Integrating Angular Microsite with .Net",
             positions: [

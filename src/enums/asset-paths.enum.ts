@@ -17,7 +17,7 @@ export enum AssetPaths {
     PROJECT_RAS_FINANCE = "assets/projects-images/ras-finance.png",
     PROJECT_SA_TILING = "assets/projects-images/sa-tiling.png",
     PROJECT_PINNACLE_POWER = "assets/projects-images/pinnacle-power.png",
-    PROJECT_DC_ELECTRIC = "assets/projects-images/dc-electric.png",
+    PROJECT_DC_ELECTRIC = "assets/projects-images/dc-electric.jpg",
     PROJECT_THREEJS_IFC_VIEWER = "assets/projects-images/threejs-ifc-viewer.png",
     EXPERIENCE_COVER = "assets/illustrations/developers.png",
     WORK_ACQUIRE_LOGO = "assets/experience-images/acquire-logo.png",

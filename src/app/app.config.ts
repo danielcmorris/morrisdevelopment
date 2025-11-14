@@ -4,6 +4,7 @@ import { provideRouter, withInMemoryScrolling } from '@angular/router';
 import { routes } from './app.routes';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideHttpClient } from '@angular/common/http';
+import { MarkdownModule } from 'ngx-markdown';
 
 export const appConfig: ApplicationConfig = {
     providers: [
@@ -14,7 +15,8 @@ export const appConfig: ApplicationConfig = {
                 scrollPositionRestoration: "top",
             })
         ),
-        importProvidersFrom([BrowserAnimationsModule]),
+        importProvidersFrom([BrowserAnimationsModule, MarkdownModule.forRoot() ,]),
+        
         provideHttpClient(),
         // {
             // provide: RECAPTCHA_V3_SITE_KEY,

@@ -1,5 +1,4 @@
-@use "../../../css/variables" as *;
-
+ 
 .main {
     width: 90%;
     margin: 0px auto;
@@ -31,7 +30,7 @@
 }
 
 .greeting-text {
-    color: $theme-blue;
+    color: var(--theme-blue);
     margin-top: 80px;
     font-size: 70px;
     line-height: 1.1;
@@ -39,13 +38,13 @@
 }
 
 .greeting-nickname {
-    color: $theme-blue;
+    color: var(--theme-blue);
     font-size: 30px;
     font-family: "Google Sans Bold Italic";
 }
 
 .greeting-text-p {
-    color: $theme-secondary;
+    color: var(--theme-secondary);
     font-size: 40px;
     line-height: 50px;
     margin-right: 40px;

@@ -3,7 +3,7 @@ export interface Project {
     title: string,
     techStack: string[],
     description: string,
-    year: number
+    year: string | number,
     githubLink?: string,
     liveLink?: string,
     branch?: string,

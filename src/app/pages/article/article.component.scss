@@ -1,5 +1,4 @@
-@use '../../../css/variables' as *;
-
+ 
 .article-main {
     width: 100%;
     margin: 1rem 0;
@@ -44,7 +43,7 @@
 .article-heading-text {
     font-size: 56px;
     font-weight: 400;
-    color: $theme-blue;
+    color: var(--theme-blue);
     font-family: "Google Sans Medium";
     line-height: 1.1;
     text-align: center;
@@ -54,7 +53,7 @@
 .article-header-detail-text {
     font-size: 20px;
     line-height: 30px;
-    color: $theme-secondary;
+    color:  var(--theme-secondary);
     margin: 1rem 20px 2rem 20px;
     font-family: "Google Sans Medium";
 }
@@ -65,7 +64,7 @@
     justify-content: center;
     gap: 1.5rem;
     flex-wrap: wrap;
-    color: $theme-secondary;
+    color:  var(--theme-secondary);
     font-family: "Google Sans Regular";
     font-size: 16px;
 }
@@ -104,8 +103,8 @@
 }
 
 .article-tag {
-    background-color: rgba($theme-blue, 0.1);
-    color: $theme-blue;
+    background-color: rgba(var(--theme-blue), 0.1);
+    color: var(--theme-blue);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-family: "Google Sans Medium";
@@ -113,7 +112,7 @@
     transition: all 0.3s ease;
 
     &:hover {
-        background-color: rgba($theme-blue, 0.2);
+        background-color: rgba(var(--theme-blue), 0.2);
         transform: translateY(-2px);
     }
 }
@@ -134,7 +133,7 @@
         h2 {
             font-size: 28px;
             font-weight: 600;
-            color: $theme-blue;
+            color: var(--theme-blue);
             font-family: "Google Sans Medium";
           //  margin: 3rem 0 1.5rem 0;
         }
@@ -142,7 +141,7 @@
         h3 {
             font-size: 26px;
             font-weight: 500;
-            color: $theme-blue;
+            color: var(--theme-blue);
             font-family: "Google Sans Medium";
            // margin: 2.5rem 0 1rem 0;
         }
@@ -152,13 +151,13 @@
         }
 
         a {
-            color: $theme-blue;
+            color: var(--theme-blue);
             text-decoration: none;
             border-bottom: 2px solid transparent;
             transition: border-bottom 0.3s ease;
             
             &:hover {
-                border-bottom: 2px solid $theme-blue;
+                border-bottom: 2px solid var(--theme-blue);
             }
         }
 
@@ -172,15 +171,15 @@
         }
 
         blockquote {
-            border-left: 4px solid $theme-blue;
+            border-left: 4px solid var(--theme-blue);
             padding-left: 1.5rem;
             margin: 2rem 0;
             font-style: italic;
-            color: $theme-secondary;
+            color:  var(--theme-secondary);
         }
 
         code {
-            background-color: rgba($theme-blue, 0.1);
+            background-color: rgba(var(--theme-blue), 0.1);
             padding: 0.2rem 0.5rem;
             border-radius: 4px;
             font-family: 'Courier New', monospace;
@@ -188,7 +187,7 @@
         }
 
         pre {
-            background-color: rgba($theme-blue, 0.05);
+            background-color: rgba(var(--theme-blue), 0.05);
             padding: 1.5rem;
             border-radius: 8px;
             overflow-x: auto;
