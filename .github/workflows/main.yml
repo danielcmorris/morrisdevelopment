@@ -34,7 +34,7 @@ jobs:
       #    - React: build
       - name: Set build output dir
         id: setdir
-        run: echo "BUILD_DIR=dist" >> $GITHUB_OUTPUT
+        run: echo "BUILD_DIR=dist/morrisdev/browser" >> $GITHUB_OUTPUT
 
       # 5. Prepare SSH key
       - name: Setup SSH key
@@ -50,8 +50,8 @@ jobs:
       # 6. Deploy via rsync over SSH
       - name: Deploy to HostGator
         run: |
-          sudo apt-get update
-          sudo apt-get install -y rsync
+          # sudo apt-get update
+          # sudo apt-get install -y rsync
 
           echo "Deploying to ${{ secrets.SSH_HOST }} ..."
           cd "${{ steps.setdir.outputs.BUILD_DIR }}"
