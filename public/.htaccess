@@ -1,10 +1,16 @@
-RewriteEngine On
-RewriteBase /
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
 
-# Don't rewrite existing files or directories
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule ^ - [L]
+  # DO NOT rewrite existing files or directories
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
 
-# Everything else goes to index.html
-RewriteRule . /index.html [L]
+  # Everything else goes to index.html (for Angular routes)
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Make sure JS is sent as JS, not HTML
+AddType application/javascript .js
+AddType text/css .css
