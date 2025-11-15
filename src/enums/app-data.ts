@@ -307,10 +307,10 @@ const FreelancingProjects: ProjectSection = {
     sectionSubtitle: "Our systems are built for the long term, with maintainability and scalability in mind.",
     entities: [
         {
-            title: "Pinnacle Power Services",
+            title: "Pinnacle Power ERP",
             coverImagePath: AssetPaths.PROJECT_PINNACLE_POWER,
             liveLink: "/projects/dash",
-            description: "Designed to completely automate the process flow of contstruction from bid to invoice. Integrated with Google Cloud Storage, BigQuery and custom AI search",
+            description: "Designed to completely automate the process flow of contstruction from bid to invoice. Integrated with Google Cloud Storage, BigQuery and PENTA",
             techStack: ["Angular 20", "MSSQL", "Google Drive", "Ionic"],
             year: "2020 - Present"
         },
@@ -318,8 +318,8 @@ const FreelancingProjects: ProjectSection = {
             title: "DC Electric",
             coverImagePath: AssetPaths.PROJECT_DC_ELECTRIC,
             liveLink: "https://dcelectricgroup.com/",
-            description: "Converted old stand along applications into web based invoicing system which integrated multiple platforms into a cohesive interface",
-            techStack: ["Angular", "MSSQL", "Google Storage"],
+            description: "Internal Billing System, linking their Quickbooks Enterprise system to custom project management and invoicing system, storing generated invoices and documents in Azure Storage",
+            techStack: ["Angular", "MSSQL", "Azure Storage"],
             year: "2012 - Present"
         },
         {
