@@ -3,7 +3,12 @@
         <div class="experience-heading-div">
 
             <div class="experience-heading-img-div" data-aos="fade-right">
-                <img [src]="assetPaths.EXPERIENCE_COVER" alt="Projects & Freelancing">
+               
+                   @if(theme.isDarkMode() ){
+                    <img src="assets/articles/cycle-dark.png?x"   alt="Technical Articles">
+                }@else{     
+                    <img src="assets/articles/cycle.png"alt="Technical Articles">
+                }
             </div>
             
             <div class="experience-heading-text-div" data-aos="fade-left">

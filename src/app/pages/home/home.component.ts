@@ -10,8 +10,7 @@ import { AppRoutes } from '../../../enums/routes-data.enum';
 @Component({
     selector: 'app-home',
     imports: [
-        SplashComponent,
-        SocialMediaLinksComponent,
+        SplashComponent, 
         AboutMeComponent
     ],
     templateUrl: './home.component.html',

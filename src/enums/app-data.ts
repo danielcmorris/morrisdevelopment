@@ -243,10 +243,10 @@ const DigitalSolutionSection: SkillSection = {
     ]
 }
 
-// Personal projects
-const PersonalProjects: ProjectSection = {
-    sectionTitle: "Custom Apps",
-    sectionSubtitle: "Integrated with our intranet systems, we built these apps to handle outside worker needs.",
+// Apps associated with projects
+const IntegratedApps: ProjectSection = {
+    sectionTitle: "Integrated Apps for Field Workers",
+    sectionSubtitle: "Field workers can access the tools they need and keep office staff updated in real-time.",
     entities: [
         // {
         //     title: "Full ERP System for Event Industry",
@@ -301,16 +301,16 @@ const PersonalProjects: ProjectSection = {
     ]
 }
 
-// Freelancing projects
-const FreelancingProjects: ProjectSection = {
+// Active Projects
+const ActiveProjects: ProjectSection = {
     sectionTitle: "Active Projects",
-    sectionSubtitle: "Our systems are built for the long term, with maintainability and scalability in mind.",
+    sectionSubtitle: "Our systems are built for the long term, with maintainability and scalability in mind. Development continues as your business grows.",
     entities: [
         {
             title: "Pinnacle Power ERP",
             coverImagePath: AssetPaths.PROJECT_PINNACLE_POWER,
             liveLink: "/projects/dash",
-            description: "Designed to completely automate the process flow of contstruction from bid to invoice. Integrated with Google Cloud Storage, BigQuery and PENTA",
+            description: "Designed to completely automate the process flow of contstruction from bid to invoice. Integrated with Fleet.io, Google Cloud Storage,  BigQuery and PENTA Accounting.",
             techStack: ["Angular 20", "MSSQL", "Google Drive", "Ionic"],
             year: "2020 - Present"
         },
@@ -365,7 +365,7 @@ const JobExperience: ExperienceSection = {
             orgName: "Bulk JSON Cache System",
             positions: [
                 {
-                    positionName: "Reduced initial login and setup time by 500%",
+                    positionName: "Cloud Storage JSON Cache integrated with IndexedDB ",
                     duration: "Jun 2023 - Present",
                     location: "Pinnacle Power Services",
                      jobType: "Google Storage, C#, Angular",
@@ -380,83 +380,84 @@ const JobExperience: ExperienceSection = {
     ]
 }
 
+
 // Freenacing Experience
 const FreelancingExperience: ExperienceSection = {
     experienceSectionTitle: "Project Development",
     experiences: [
-        {
-            orgLink: "https://southaustraliatiling.com.au/",
-            orgLogoPath: AssetPaths.WORK_SA_TILING_LOGO,
-            orgName: "South Australia Tiling",
-            positions: [
-                {
-                    positionName: "Professional Freelancer",
-                    duration: "2025",
-                    location: "Adelaide, WA",
-                    locationType: "Remote",
-                    jobType: "Contract",
-                    workPoints: [
-                        "Designed and developed a visually appealing website to highlight the high-quality work of a South Australian tiling and bathroom renovation business, improving their online presence.📊",
-                        "Utilized Server-Side Rendering (SSR) and Static Site Generation (SSG) to enhance search engine visibility and drive organic traffic to the website. 🚀",
-                    ]
-                }
-            ]
-        },
-        {
-            orgLink: "https://kiwifinance.com.au/",
-            orgLogoPath: AssetPaths.WORK_KIWI_LOGO,
-            orgName: "Kiwi Finance",
-            positions: [
-                {
-                    positionName: "Professional Freelancer",
-                    duration: "2025",
-                    location: "Perth, WA",
-                    locationType: "Remote",
-                    jobType: "Contract",
-                    workPoints: [
-                        "Designed and developed an SEO-friendly website with financial calculators, and a custom contact form tailored to Astute Financial's requirements. 🌐📊",
-                        "Streamlined data collection and client inquiries by integrating the contact form with Google Sheets and Gmail. 📋",
-                    ]
-                }
-            ]
-        },
-        {
-            orgLink: "https://rasfinance.com.au/",
-            orgLogoPath: AssetPaths.WORK_RAS_LOGO,
-            orgName: "RAS Finance",
-            positions: [
-                {
-                    positionName: "Professional Freelancer",
-                    duration: "2024",
-                    location: "Adelaide, SA",
-                    locationType: "Hybrid",
-                    jobType: "Contract",
-                    workPoints: [
-                        "Built a dynamic website featuring financial calculators, a CMS for articles, and a sleek contact form. 📊📝",
-                        "Streamlined client inquiries by integrating the contact form with Google Sheets and Gmail. 📧📋✨",
-                    ]
-                }
-            ]
-        },
-        {
-            orgLink: "https://acquireconveyancing.com.au/",
-            orgLogoPath: AssetPaths.WORK_ACQUIRE_LOGO,
-            orgName: "Acquire Conveyancing",
-            positions: [
-                {
-                    positionName: "Professional Freelancer",
-                    duration: "2023",
-                    location: "Adelaide, SA",
-                    locationType: "Remote",
-                    jobType: "Contract",
-                    workPoints: [
-                        "Crafted a professional logo, business cards, and responsive website using Illustrator. 🎨💼",
-                        "Set up a custom domain email and Office 365 with SharePoint for seamless operations. 📧🔗",
-                        "Developed and hosted an SEO-friendly website with a contact form to boost online presence. 🌐📈",
-                    ]
-                }
-            ]
-        },
+        // {
+        //     orgLink: "https://southaustraliatiling.com.au/",
+        //     orgLogoPath: AssetPaths.WORK_SA_TILING_LOGO,
+        //     orgName: "South Australia Tiling",
+        //     positions: [
+        //         {
+        //             positionName: "Professional Freelancer",
+        //             duration: "2025",
+        //             location: "Adelaide, WA",
+        //             locationType: "Remote",
+        //             jobType: "Contract",
+        //             workPoints: [
+        //                 "Designed and developed a visually appealing website to highlight the high-quality work of a South Australian tiling and bathroom renovation business, improving their online presence.📊",
+        //                 "Utilized Server-Side Rendering (SSR) and Static Site Generation (SSG) to enhance search engine visibility and drive organic traffic to the website. 🚀",
+        //             ]
+        //         }
+        //     ]
+        // },
+        // {
+        //     orgLink: "https://kiwifinance.com.au/",
+        //     orgLogoPath: AssetPaths.WORK_KIWI_LOGO,
+        //     orgName: "Kiwi Finance",
+        //     positions: [
+        //         {
+        //             positionName: "Professional Freelancer",
+        //             duration: "2025",
+        //             location: "Perth, WA",
+        //             locationType: "Remote",
+        //             jobType: "Contract",
+        //             workPoints: [
+        //                 "Designed and developed an SEO-friendly website with financial calculators, and a custom contact form tailored to Astute Financial's requirements. 🌐📊",
+        //                 "Streamlined data collection and client inquiries by integrating the contact form with Google Sheets and Gmail. 📋",
+        //             ]
+        //         }
+        //     ]
+        // },
+        // {
+        //     orgLink: "https://rasfinance.com.au/",
+        //     orgLogoPath: AssetPaths.WORK_RAS_LOGO,
+        //     orgName: "RAS Finance",
+        //     positions: [
+        //         {
+        //             positionName: "Professional Freelancer",
+        //             duration: "2024",
+        //             location: "Adelaide, SA",
+        //             locationType: "Hybrid",
+        //             jobType: "Contract",
+        //             workPoints: [
+        //                 "Built a dynamic website featuring financial calculators, a CMS for articles, and a sleek contact form. 📊📝",
+        //                 "Streamlined client inquiries by integrating the contact form with Google Sheets and Gmail. 📧📋✨",
+        //             ]
+        //         }
+        //     ]
+        // },
+        // {
+        //     orgLink: "https://acquireconveyancing.com.au/",
+        //     orgLogoPath: AssetPaths.WORK_ACQUIRE_LOGO,
+        //     orgName: "Acquire Conveyancing",
+        //     positions: [
+        //         {
+        //             positionName: "Professional Freelancer",
+        //             duration: "2023",
+        //             location: "Adelaide, SA",
+        //             locationType: "Remote",
+        //             jobType: "Contract",
+        //             workPoints: [
+        //                 "Crafted a professional logo, business cards, and responsive website using Illustrator. 🎨💼",
+        //                 "Set up a custom domain email and Office 365 with SharePoint for seamless operations. 📧🔗",
+        //                 "Developed and hosted an SEO-friendly website with a contact form to boost online presence. 🌐📈",
+        //             ]
+        //         }
+        //     ]
+        // },
     ]
 }
 
@@ -467,7 +468,7 @@ const InternshipExperience: ExperienceSection = {
         {
             orgLink: "articles/microsites",
             orgLogoPath: AssetPaths.WORK_ASITE_LOGO,
-            orgName: "Integrating Angular Microsite with .Net",
+            orgName: "Integrating Angular Microsites with .Net",
             positions: [
                 {
                     positionName: "Integrating Angular Microsite with .Net",
@@ -507,15 +508,15 @@ const InternshipExperience: ExperienceSection = {
 const CommunityInvolvement: ProjectSection = {
     sectionTitle: "Community Involvement",
     entities: [
-        {
-            liveLink: "https://adventofcode.com/",
-            coverImagePath: AssetPaths.ACHIEVEMENT_AOC_PIC,
-            techStack: ["Python"],
-            title: "Advent of Code 2024",
-            description: "📅 Completed all Advent of Code 2024 problems within a personal deadline of 1 day each, showcasing strong DSA and problem-solving skills.🎯",
-            year: 2024,
-            githubLink: "https://github.com/dhruvilrathod/RSP/tree/master/advent_of_code",
-        },
+        // {
+        //     liveLink: "https://adventofcode.com/",
+        //     coverImagePath: AssetPaths.ACHIEVEMENT_AOC_PIC,
+        //     techStack: ["Python"],
+        //     title: "Advent of Code 2024",
+        //     description: "📅 Completed all Advent of Code 2024 problems within a personal deadline of 1 day each, showcasing strong DSA and problem-solving skills.🎯",
+        //     year: 2024,
+        //     githubLink: "https://github.com/dhruvilrathod/RSP/tree/master/advent_of_code",
+        // },
     ]
 }
 
@@ -523,23 +524,23 @@ const CommunityInvolvement: ProjectSection = {
 const AchievementInvolvement: ProjectSection = {
     sectionTitle: "Achievements",
     entities: [
-        {
-            liveLink: "https://www.linkedin.com/posts/dhruvilrathod_competitiveprogramming-codingchallenges-teamwork-activity-7291965632684695553-CTqM?utm_source=share&utm_medium=member_desktop&rcm=ACoAADi05s0B8nMLyX_mC2aovn2P6w6tNr-b3AA",
-            coverImagePath: AssetPaths.ACHIEVEMENT_CPC_RSP_WIN_PIC,
-            techStack: ["C++", "Python"],
-            title: "CPC X RSP 2025",
-            description: "🏆 Secured 3rd place in a high-stakes coding competition, tackling complex algorithms under pressure! Grateful for an incredible team and experience at CPC X RSP competition.",
-            year: 2025,
-        },
-        {
-            coverImagePath: AssetPaths.ACHIEVEMENT_UNISA_CHANCELLORS_LETTER_2024_PIC,
-            liveLink: "unisa-chancellors-letter-of-commandation-2024.html",
-            // liveLink: "public/unisa-chancellors-letter-of-commandation-2024.html",
-            techStack: ["Cisco", "FortiGate", "ISO 270001"],
-            title: "Chancellor's Commendation Letter (2024)",
-            description: "🚀 Awarded for academic excellence with a cumulative program GPA in the TOP 5% of all students, and invited to join the Golden Key International Honour Society.",
-            year: 2024,
-        },
+        // {
+        //     liveLink: "https://www.linkedin.com/posts/dhruvilrathod_competitiveprogramming-codingchallenges-teamwork-activity-7291965632684695553-CTqM?utm_source=share&utm_medium=member_desktop&rcm=ACoAADi05s0B8nMLyX_mC2aovn2P6w6tNr-b3AA",
+        //     coverImagePath: AssetPaths.ACHIEVEMENT_CPC_RSP_WIN_PIC,
+        //     techStack: ["C++", "Python"],
+        //     title: "CPC X RSP 2025",
+        //     description: "🏆 Secured 3rd place in a high-stakes coding competition, tackling complex algorithms under pressure! Grateful for an incredible team and experience at CPC X RSP competition.",
+        //     year: 2025,
+        // },
+        // {
+        //     coverImagePath: AssetPaths.ACHIEVEMENT_UNISA_CHANCELLORS_LETTER_2024_PIC,
+        //     liveLink: "unisa-chancellors-letter-of-commandation-2024.html",
+        //     // liveLink: "public/unisa-chancellors-letter-of-commandation-2024.html",
+        //     techStack: ["Cisco", "FortiGate", "ISO 270001"],
+        //     title: "Chancellor's Commendation Letter (2024)",
+        //     description: "🚀 Awarded for academic excellence with a cumulative program GPA in the TOP 5% of all students, and invited to join the Golden Key International Honour Society.",
+        //     year: 2024,
+        // },
     ]
 }
 
@@ -577,15 +578,13 @@ const MastersDegree: EducationSection = {
 }
 
 
-
 export const AppConfig = {
     loaderSplashAnimation: true,        // enable or disable splash screen at the initialization of website
     logoName: "morrisdevelopment",         // Signature font logo name in header
     name: "Custom ERP",             // your name
     emailId: "dmorris@morrisdevelopment.com",  // your email id
 
-    // Google Form Contact Link
-    googleFormContactLink: "",
+ 
 
     // Home page
     professionalTitle: "When you need to get it done right",
@@ -604,11 +603,11 @@ export const AppConfig = {
     projectsPageTitle: "Projects",    // Title of projects page
     projectsPageDescription: "We specialize in developing web-based applications for logistics and ERP systems",
     projectSections: [                  // Define and add a custom section if needed
-        FreelancingProjects,
-        PersonalProjects,
+        ActiveProjects,
+        IntegratedApps,
     ],
 
-    // Experience page
+    // Blog pages
     experiencePageTitle: "Technical Articles",
     experiencePageDescription: "💼 We've had to come up with some creative solutions. We publish the more recent ones here so others can benefit",
     experienceSections: [               // Define and add a custom section if needed
@@ -633,4 +632,19 @@ export const AppConfig = {
         AchievementInvolvement,
         CommunityInvolvement,
     ],
-}
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

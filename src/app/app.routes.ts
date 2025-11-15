@@ -7,6 +7,8 @@ import { ExperienceComponent } from './pages/experience/experience.component';
 import { EducationComponent } from './pages/education/education.component';
 import { AchievementsComponent } from './pages/achievements/achievements.component';
 import { ArticleComponent } from './pages/article/article.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 export const routes: Routes = [
     {
@@ -44,9 +46,14 @@ export const routes: Routes = [
         title: `Education | Morris Development`,
     },
     {
-        path: AppRoutes.ACHIEVEMENTS,
-        component: AchievementsComponent,
-        title: `Achievements | Morris Development`,
+        path: 'about',
+        component: AboutComponent,
+        title: `About | Morris Development`,
+    },
+    {
+        path: 'contact',
+        component: ContactComponent,
+        title: `Contact | Morris Development`,
     },
     {
         path: "**",
