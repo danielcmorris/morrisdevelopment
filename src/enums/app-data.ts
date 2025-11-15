@@ -259,7 +259,7 @@ const PersonalProjects: ProjectSection = {
         // },
         {
             title: "Job Management App",
-            coverImagePath: AssetPaths.PROJECT_CUSTOM_DROPDOWN,
+            coverImagePath: AssetPaths.PROJECT_SITE_REVIEW,
             githubLink: "/projects/site-review",
             description: "Fully off-line capable system designed for field workers to review job sites, capture photos, automate field reports and sign off on work completed.",
             techStack: ["Angular", "IndexedDB", "Ionic"],
@@ -268,7 +268,7 @@ const PersonalProjects: ProjectSection = {
         },
         {
             title: "Pinnacle Fleet",
-            coverImagePath: AssetPaths.PROJECT_LMS_APP,
+            coverImagePath: AssetPaths.PROJECT_FLEET,
             githubLink: "/projects/pinnacle-fleet",
             description: "An add-on app to handle the fleet management of the Pinnacle Power Services vehicles, integrating multiple systems for tracking, maintenance and depreciation.",
             techStack: ["Ionic", "MSSQL", "IndexedDB", "Google Cloud"],
@@ -276,7 +276,7 @@ const PersonalProjects: ProjectSection = {
         },
         {
             title: "Field Time Sheet",
-            coverImagePath: AssetPaths.PROJECT_ANGULAR_NEST_DOCKER,
+            coverImagePath: AssetPaths.PROJECT_TIME_SHEET,
             githubLink: "/projects/field-time-sheet",
             description: "Used by over 100 crews in the field, this app allows workers to log hours and automatically calculates overtime, missed meals and subsidies based upon union rules",
             techStack: ["Angular", "Ionic", "MSSQL", "Penta"],
@@ -324,7 +324,7 @@ const FreelancingProjects: ProjectSection = {
         },
         {
             title: "Accessibility Online",
-            coverImagePath: AssetPaths.PROJECT_RAS_FINANCE,
+            coverImagePath: AssetPaths.PROJECT_ACCESSONLINE,
             liveLink: "https://beta.accessibilityonline.org/",
             description: "A fully accessible system designed for screen-readers, allowing users to sign up for classes, generated certifications in both and admin and public sites",
             techStack: ["Angular", "MySQL", ".Net", "C#", "AWS"],

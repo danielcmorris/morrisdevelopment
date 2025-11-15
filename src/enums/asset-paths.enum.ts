@@ -16,8 +16,17 @@ export enum AssetPaths {
     PROJECT_MUSIC_PLAYER = "assets/projects-images/music-player.png",
     PROJECT_RAS_FINANCE = "assets/projects-images/ras-finance.png",
     PROJECT_SA_TILING = "assets/projects-images/sa-tiling.png",
+
+
     PROJECT_PINNACLE_POWER = "assets/projects-images/pinnacle-power.png",
     PROJECT_DC_ELECTRIC = "assets/projects-images/dc-electric.jpg",
+    PROJECT_TIME_SHEET = "assets/projects-images/time-sheet.png",
+    PROJECT_FLEET = "assets/projects-images/fleet.png",
+    PROJECT_SITE_REVIEW = "assets/projects-images/site-review.png",
+    PROJECT_ACCESSONLINE = "assets/projects-images/access-online.png",
+
+
+    
     PROJECT_THREEJS_IFC_VIEWER = "assets/projects-images/threejs-ifc-viewer.png",
     EXPERIENCE_COVER = "assets/illustrations/developers.png",
     WORK_ACQUIRE_LOGO = "assets/experience-images/acquire-logo.png",

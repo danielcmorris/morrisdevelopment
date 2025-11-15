@@ -47,19 +47,32 @@
                     },
                     "configurations": {
                         "production": {
+                            "optimization": {
+                                "scripts": true,
+                                "styles": {
+                                    "minify": true,
+                                    "inlineCritical": true
+                                },
+                                "fonts": {
+                                    "inline": true
+                                }
+                            },
+                            "extractLicenses": true,
+                            "sourceMap": false,
+                            "outputHashing": "all",
+                            "namedChunks": false, 
                             "budgets": [
                                 {
                                     "type": "initial",
-                                    "maximumWarning": "50MB",
-                                    "maximumError": "50MB"
+                                    "maximumWarning": "2MB",
+                                    "maximumError": "5MB"
                                 },
                                 {
                                     "type": "anyComponentStyle",
-                                    "maximumWarning": "50MB",
-                                    "maximumError": "50MB"
+                                    "maximumWarning": "500KB",
+                                    "maximumError": "1MB"
                                 }
-                            ],
-                            "outputHashing": "all"
+                            ]
                         },
                         "development": {
                             "optimization": false,
