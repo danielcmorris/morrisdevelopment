@@ -337,8 +337,28 @@ const ActiveProjects: ProjectSection = {
 
 // Job experience
 const JobExperience: ExperienceSection = {
-    experienceSectionTitle: "Creative Solutions",
+    experienceSectionTitle: "",
     experiences: [
+        {
+            orgLink: "/samples/embedding",
+            orgLogoPath: "/assets/articles/How-Embeddings-Work.jpg",
+            orgName: "AI Vector Embeddings Explained and Demonstrated",
+            positions: [
+                {
+                    positionName: "AI Vector Embeddings Explained and Demonstrated",
+                    duration: "May 2025 - Present",
+                    location: "Pinnacle Power Services",
+                     
+                    jobType: "OpenAI,Qdrant,Vector Databases",
+                    workPoints: [
+                        "Working Sample of AI Vector Embeddings",
+                        "Learning what a Vector Embedding is and how it works",
+                        "How to write the code to generate embeddings",
+                        "Understanding the full process of using this with AI",
+                    ]
+                }
+            ]
+        },
         {
             orgLink: "/articles/vector-db",
             orgLogoPath: "https://morrisdev.com/wp-content/uploads/2025/09/header-1024x352.jpg",
@@ -373,6 +393,42 @@ const JobExperience: ExperienceSection = {
                         "Automated a daily JSON build of all active jobs and their properties",
                         "Pushed to google storage and then into BigQuery using JSONL",
                         "Setup UI to call for signed link directly from Google Storage as initial load for data",
+                    ]
+                }
+            ]
+        },
+         {
+            orgLink: "articles/microsites",
+            orgLogoPath: AssetPaths.WORK_ASITE_LOGO,
+            orgName: "Integrating Angular Microsites with .Net",
+            positions: [
+                {
+                    positionName: "Integrating Angular Microsite with .Net",
+                    duration: "Feb 2023 - May 2025",
+                 
+                     jobType: "IIS, C#, Angular",
+                    workPoints: [
+                        "Configuring SSH Servers on Windows Servers",
+                        "Setting up continous integration in Azure DevOps",
+                        "Multi-Server configurations with Azure Front-Door",
+                    ]
+                } 
+            ]
+        },
+         {
+            orgLink: " ",
+            orgLogoPath: AssetPaths.WORK_WORKXMATE_LOGO,
+            orgName: "Quickbase Integration and REST API",
+            positions: [
+                {
+                    positionName: "Quickbase Integration and REST API",
+                    duration: "Feb 2022 — Mar 2022",
+                     locationType: "Remote",
+                    jobType: "Part-time",
+                    workPoints: [
+                        "Designed and implemented an optimized, cross-browser-compatible Attendance Management Module. 🌐✔️",
+                        "Built a RESTful Node.js server integrated with Oracle DB for seamless code migration. 🚀📊",
+                        "Developed intuitive web forms with robust validation and error handling for a smooth user experience. 🖋️⚙️✨",
                     ]
                 }
             ]
@@ -463,44 +519,10 @@ const FreelancingExperience: ExperienceSection = {
 
 // Articles
 const InternshipExperience: ExperienceSection = {
-    experienceSectionTitle: "How-To",
+    experienceSectionTitle: "",
     experiences: [
-        {
-            orgLink: "articles/microsites",
-            orgLogoPath: AssetPaths.WORK_ASITE_LOGO,
-            orgName: "Integrating Angular Microsites with .Net",
-            positions: [
-                {
-                    positionName: "Integrating Angular Microsite with .Net",
-                    duration: "Feb 2023 - May 2025",
-                 
-                     jobType: "IIS, C#, Angular",
-                    workPoints: [
-                        "Configuring SSH Servers on Windows Servers",
-                        "Setting up continous integration in Azure DevOps",
-                        "Multi-Server configurations with Azure Front-Door",
-                    ]
-                } 
-            ]
-        },
-        {
-            orgLink: " ",
-            orgLogoPath: AssetPaths.WORK_WORKXMATE_LOGO,
-            orgName: "Quickbase Integration and REST API",
-            positions: [
-                {
-                    positionName: "Quickbase Integration and REST API",
-                    duration: "Feb 2022 — Mar 2022",
-                     locationType: "Remote",
-                    jobType: "Part-time",
-                    workPoints: [
-                        "Designed and implemented an optimized, cross-browser-compatible Attendance Management Module. 🌐✔️",
-                        "Built a RESTful Node.js server integrated with Oracle DB for seamless code migration. 🚀📊",
-                        "Developed intuitive web forms with robust validation and error handling for a smooth user experience. 🖋️⚙️✨",
-                    ]
-                }
-            ]
-        },
+        
+       
     ]
 }
 

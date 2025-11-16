@@ -9,6 +9,7 @@ import { AchievementsComponent } from './pages/achievements/achievements.compone
 import { ArticleComponent } from './pages/article/article.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { EmbeddingComponent } from './ai/embedding/embedding.component';
 
 export const routes: Routes = [
     {
@@ -54,6 +55,11 @@ export const routes: Routes = [
         path: 'contact',
         component: ContactComponent,
         title: `Contact | Morris Development`,
+    },
+    {
+        path: 'samples/embedding',
+        component: EmbeddingComponent,
+        title: `Embedding | Morris Development`,
     },
     {
         path: "**",

@@ -1,0 +1,99 @@
+<div class="experience-main">
+    <div class="basic-experience">
+        <div class="experience-heading-div">
+
+            <div class="experience-heading-img-div" data-aos="fade-right">
+                <div class="space-y-4 max-w-md mx-auto p-6 rounded-xl shadow-sm 
+            bg-white dark:bg-gray-800">
+                    <div>
+                        @if(embedding!="") {
+                        <h2 class="text-lg font-medium text-green-600 dark:text-green-400 mb-2">
+                            Embedding Generated Successfully!
+                        </h2>
+                        <div class="max-w-[700px] max-h-[500px] overflow-y-auto overflow-x-hidden">
+                            <pre class="whitespace-pre-wrap break-all p-4 rounded-lg 
+                                        bg-gray-100 dark:bg-gray-800 
+                                            text-gray-800 dark:text-gray-100">
+                            {{ embedding }}
+                            </pre>
+                        </div>
+                        <div style="padding:10px">
+                            <button (click)="embedding=''" type="button" class="w-full py-2 px-4 rounded-lg font-medium
+                                    bg-blue-600 text-white
+                                    hover:bg-blue-700 
+                                    dark:bg-blue-500 dark:hover:bg-blue-600
+                                    focus:outline-none focus:ring-2 focus:ring-blue-400
+                                    transition">
+                                Clear Embedding
+                            </button>
+                        </div>
+                        }
+                    </div>
+                    @if(embedding=="") {
+
+                    <div>
+                        <label for="embedText" class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1">
+                            Enter text to embed
+                        </label>
+                        @if(showSpinner){
+                        <div style="width:100%;text-align: center;" class="flex justify-center">
+                            <div class="h-20 w-20 rounded-full border-4 
+            border-gray-300 dark:border-gray-700
+            border-t-blue-500 dark:border-t-blue-300
+            animate-spin"></div>
+                        </div>
+                        }@else{
+
+                        <textarea id="embedText" type="text" [(ngModel)]="sampleText" placeholder="Type something…"
+                            rows="5" class="w-full rounded-lg border border-gray-300 dark:border-gray-600 
+             bg-white dark:bg-gray-700 
+             text-gray-900 dark:text-gray-100
+             px-4 py-2 
+             focus:outline-none focus:ring-2 
+             focus:ring-blue-500 dark:focus:ring-blue-400
+             transition"></textarea>
+
+                        }
+                    </div>
+
+                    <button (click)="onClick()" type="button" class="w-full py-2 px-4 rounded-lg font-medium
+           bg-blue-600 text-white
+           hover:bg-blue-700 
+           dark:bg-blue-500 dark:hover:bg-blue-600
+           focus:outline-none focus:ring-2 focus:ring-blue-400
+           transition">
+                        Generate Embedding
+                    </button>
+
+
+
+
+
+
+                    }
+
+
+                </div>
+
+                <!--                
+                   @if(theme.isDarkMode() ){
+                    <img src="assets/articles/cycle-dark.png?x"   alt="Technical Articles">
+                }@else{     
+                    <img src="assets/articles/cycle.png"alt="Technical Articles">
+                } -->
+            </div>
+
+            <div class="experience-heading-text-div" data-aos="fade-left">
+                <h1 class="experience-heading-text">
+                    Using Vector Embeddings
+                </h1>
+                <p class="experience-header-detail-text subTitle">
+                    Enter example text to generate its embedding vector representation from OpenAI.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<markdown class="markdown-body" [attr.data-color-mode]="theme.isDarkMode() ? 'dark' : 'light'" [src]="articlePath">
+</markdown>
