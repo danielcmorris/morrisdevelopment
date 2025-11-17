@@ -15,6 +15,8 @@ Almost every major AI service has embeddings, and there are a lot of small apps 
 ### OpenAI
 I've found this to be the easiest.  Here's the basic code just to get the embedding that we are using on this page:
 ```csharp
+
+// note, this is directly out of my Qdrant controller. The next article will show a bit more about that part of the process
    public class QdrantLookupController : ControllerBase
    {
        private static readonly HttpClient _httpClient = new HttpClient();
