@@ -118,7 +118,7 @@ const FullstackSection: SkillSection = {
         "Building a comprehensive UI around your business",
         "A database structure that is flexible to grow with you",
         "Integrating with storage, email, accounting and more",
-        
+
     ]
 }
 
@@ -330,10 +330,65 @@ const ActiveProjects: ProjectSection = {
             techStack: ["Angular", "MySQL", ".Net", "C#", "AWS"],
             year: "2005 - Present"
         },
-        
+
     ]
 }
 
+const StaffDetails: ProjectSection = {
+    sectionTitle: "Staff Details",
+    sectionSubtitle: "Meet the team behind Morris Development.",
+    entities: [
+        {
+            title: "Daniel Morris ",
+            subtitle: "CEO & Lead Developer",
+            coverImagePath: "https://www.snapdragonerp.com/assets/img/team/dan.png",
+            description: "Full Stack Developer with over 25 years of experience in designing and implementing web-based ERP systems",
+            techStack: ["Angular", "MS SQL", "C#", "AWS", "Azure", "Google Cloud Services", "Qdrant", "OpenAI","VertexAI", "BigQuery"],
+            year: ""
+        },
+         {
+            title: "Ignatio DeJean, Angular Specialist",
+            subtitle:"Angular Specialist",
+            coverImagePath: "https://www.snapdragonerp.com/assets/img/team/nacho.png",
+            description: "A decade of experience in front-end development, specializing in Angular applications for enterprise logistics solutions.",
+            techStack: ["Angular", "Ionic", "RxJs", "Figma", "Adobe XD"],
+            year: ""
+        },
+        {
+            title: "Yuriy Frankiv",
+             subtitle:"Lead .Net Developer",
+            coverImagePath: "https://www.snapdragonerp.com/assets/img/team/yuriy.jpg",
+            description: "Extensive experience in .Net development, Angular front-end, and cloud integrations for logistics and ERP applications.",
+            techStack: ["Angular","Ionic", "MS SQL", "C#", "AWS",  "Google Cloud Services"],
+            year: ""
+        },
+         {
+            title: "Robert McIntire",
+            subtitle:"MS SQL & Integrations Specialist",
+            coverImagePath: "https://www.snapdragonerp.com/assets/img/team/Rob.png",
+            description: "Expert in backend development and database management with over 20 years of experience in building scalable ERP systems.",
+            techStack: [ "MS SQL", "C#", "Azure", "Google Cloud Services"],
+            year: ""
+        },
+         
+         {
+            title: "Marguerite Morris",
+            subtitle:"Content Management Specialist",
+            coverImagePath: "https://www.snapdragonerp.com/assets/img/team/marguerite.png",
+            description: "Providing expert content management and documentation services",
+            techStack: ["WordPress", "HTML", "OpenProject", ],
+            year: ""
+        },
+         {
+            title: "Gina Morris",
+            subtitle: "CFO",
+            coverImagePath: "https://www.snapdragonerp.com/assets/img/team/Gina.png",
+            description: "20 years of experience in financial management and strategic planning for technology companies.",
+            techStack: ["Quickbooks Enterprise", "Excel", "OpenProject"],
+            year: ""
+        }
+    ]
+}
 
 // Job experience
 const JobExperience: ExperienceSection = {
@@ -348,7 +403,7 @@ const JobExperience: ExperienceSection = {
                     positionName: "AI Vector Embeddings Explained and Demonstrated",
                     duration: "May 2025 - Present",
                     location: "Pinnacle Power Services",
-                     
+
                     jobType: "OpenAI,Qdrant,Vector Databases",
                     workPoints: [
                         "Working Sample of AI Vector Embeddings",
@@ -368,7 +423,7 @@ const JobExperience: ExperienceSection = {
                     positionName: "Leveraging AI to search corporate documents",
                     duration: "Apr 2024 - Present",
                     location: "Pinnacle Power Services",
-                     
+
                     jobType: "AI,Vector Databases, MPC",
                     workPoints: [
                         "Built system to break +100k PDF documents into Chunks",
@@ -388,7 +443,7 @@ const JobExperience: ExperienceSection = {
                     positionName: "Cloud Storage JSON Cache integrated with IndexedDB ",
                     duration: "Jun 2023 - Present",
                     location: "Pinnacle Power Services",
-                     jobType: "Google Storage, C#, Angular",
+                    jobType: "Google Storage, C#, Angular",
                     workPoints: [
                         "Automated a daily JSON build of all active jobs and their properties",
                         "Pushed to google storage and then into BigQuery using JSONL",
@@ -397,7 +452,7 @@ const JobExperience: ExperienceSection = {
                 }
             ]
         },
-         {
+        {
             orgLink: "articles/microsites",
             orgLogoPath: AssetPaths.WORK_ASITE_LOGO,
             orgName: "Integrating Angular Microsites with .Net",
@@ -405,17 +460,17 @@ const JobExperience: ExperienceSection = {
                 {
                     positionName: "Integrating Angular Microsite with .Net",
                     duration: "Feb 2023 - May 2025",
-                 
-                     jobType: "IIS, C#, Angular",
+
+                    jobType: "IIS, C#, Angular",
                     workPoints: [
                         "Configuring SSH Servers on Windows Servers",
                         "Setting up continous integration in Azure DevOps",
                         "Multi-Server configurations with Azure Front-Door",
                     ]
-                } 
+                }
             ]
         },
-         {
+        {
             orgLink: " ",
             orgLogoPath: AssetPaths.WORK_WORKXMATE_LOGO,
             orgName: "Quickbase Integration and REST API",
@@ -423,7 +478,7 @@ const JobExperience: ExperienceSection = {
                 {
                     positionName: "Quickbase Integration and REST API",
                     duration: "Feb 2022 — Mar 2022",
-                     locationType: "Remote",
+                    locationType: "Remote",
                     jobType: "Part-time",
                     workPoints: [
                         "Designed and implemented an optimized, cross-browser-compatible Attendance Management Module. 🌐✔️",
@@ -521,8 +576,8 @@ const FreelancingExperience: ExperienceSection = {
 const InternshipExperience: ExperienceSection = {
     experienceSectionTitle: "",
     experiences: [
-        
-       
+
+
     ]
 }
 
@@ -606,7 +661,7 @@ export const AppConfig = {
     name: "Custom ERP",             // your name
     emailId: "dmorris@morrisdevelopment.com",  // your email id
 
- 
+
 
     // Home page
     professionalTitle: "When you need to get it done right",
@@ -635,7 +690,7 @@ export const AppConfig = {
     experienceSections: [               // Define and add a custom section if needed
         JobExperience,
         InternshipExperience,
-       // FreelancingExperience,
+        // FreelancingExperience,
     ],
 
     // Education page
@@ -646,7 +701,12 @@ export const AppConfig = {
         BachelorsDegree,
     ],
 
-
+    // About Page
+    aboutPageTitle: "About Morris Development",
+    aboutPageDescription: "🌐 Crafting Tailored Digital Solutions: Empowering Businesses with Custom Web Applications and Expert Consultancy 🚀",
+    staffSections: [
+        StaffDetails,
+    ],
     // Achievements Page
     achievementsPageTitle: "Achievements, Participation and Community Involvement",
     achievementsPageDescription: "🚀 Milestones, Contributions & Impact: Driving Innovation, Engaging Communities, and Making a Difference 🌍",
@@ -654,7 +714,7 @@ export const AppConfig = {
         AchievementInvolvement,
         CommunityInvolvement,
     ],
- }
+}
 
 
 
