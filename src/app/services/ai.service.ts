@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
+import { ContactUs } from '../../interfaces/contactUs';
 
 @Injectable({
   providedIn: 'root',
@@ -13,5 +14,9 @@ export class AiService {
     getEmbedding(text: string) {
 
         return this.http.post(this.server + '/api/qdrantlookup/embedding', { text:text });
+    }
+    getContactUsResponse(data: ContactUs) {
+
+        return this.http.post(this.server + '/api/qdrantlookup/auto-responder', data);
     }
 }
