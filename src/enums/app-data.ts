@@ -335,8 +335,8 @@ const ActiveProjects: ProjectSection = {
 }
 
 const StaffDetails: ProjectSection = {
-    sectionTitle: "Staff Details",
-    sectionSubtitle: "Meet the team behind Morris Development.",
+    sectionTitle: "Meet the Team",
+    sectionSubtitle: "Complex ERP systems require a dedicated team of experts to design, build, maintain and support. Our team has decades of experience in logistics and ERP systems.",
     entities: [
         {
             title: "Daniel Morris ",
@@ -585,15 +585,15 @@ const InternshipExperience: ExperienceSection = {
 const CommunityInvolvement: ProjectSection = {
     sectionTitle: "Community Involvement",
     entities: [
-        // {
-        //     liveLink: "https://adventofcode.com/",
-        //     coverImagePath: AssetPaths.ACHIEVEMENT_AOC_PIC,
-        //     techStack: ["Python"],
-        //     title: "Advent of Code 2024",
-        //     description: "📅 Completed all Advent of Code 2024 problems within a personal deadline of 1 day each, showcasing strong DSA and problem-solving skills.🎯",
-        //     year: 2024,
-        //     githubLink: "https://github.com/dhruvilrathod/RSP/tree/master/advent_of_code",
-        // },
+        {
+            liveLink: "https://adventofcode.com/",
+            coverImagePath: AssetPaths.ACHIEVEMENT_AOC_PIC,
+            techStack: ["Python"],
+            title: "Advent of Code 2024",
+            description: "📅 Completed all Advent of Code 2024 problems within a personal deadline of 1 day each, showcasing strong DSA and problem-solving skills.🎯",
+            year: 2024,
+            githubLink: "https://github.com/dhruvilrathod/RSP/tree/master/advent_of_code",
+        },
     ]
 }
 
@@ -705,7 +705,8 @@ export const AppConfig = {
     aboutPageTitle: "About Morris Development",
     aboutPageDescription: "🌐 Crafting Tailored Digital Solutions: Empowering Businesses with Custom Web Applications and Expert Consultancy 🚀",
     staffSections: [
-        StaffDetails,
+        StaffDetails
+        
     ],
     // Achievements Page
     achievementsPageTitle: "Achievements, Participation and Community Involvement",

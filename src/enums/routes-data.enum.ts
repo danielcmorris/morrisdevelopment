@@ -30,7 +30,7 @@ export const RoutesData: RouteData[] = [
         isVisible: true,
     },
     {
-        routeLinkText: "About",
+        routeLinkText: "Staff",
         routeURLName: AppRoutes.ABOUT,
         isVisible: true,
     },

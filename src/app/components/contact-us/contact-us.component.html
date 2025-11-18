@@ -1,0 +1,194 @@
+  <div >
+      <div
+        class="w-full max-w-xl rounded-2xl shadow-lg border border-gray-200/70 bg-white
+               dark:bg-slate-900 dark:border-slate-700 dark:shadow-slate-900/50 p-8"
+      >
+        <div class="flex items-center justify-between mb-6">
+          <div>
+            <h1 class="text-2xl font-semibold text-gray-900 dark:text-gray-100">
+              Contact Us
+            </h1>
+            <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">
+              Have a question or need help? Send us a message.
+            </p>
+          </div>
+ 
+        </div>
+
+        <form
+          [formGroup]="form"
+          (ngSubmit)="onSubmit()"
+          class="space-y-5"
+          novalidate
+        >
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Name -->
+            <div>
+              <label
+                for="name"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1"
+              >
+                Name
+              </label>
+              <input
+                id="name"
+                type="text"
+                formControlName="name"
+                class="block w-full rounded-xl border border-gray-300
+                       bg-white px-3 py-2 text-sm text-gray-900 shadow-sm
+                       focus:border-blue-500 focus:ring-2 focus:ring-blue-500/40
+                       dark:bg-slate-900 dark:border-slate-700 dark:text-gray-100
+                       dark:focus:border-blue-400 dark:focus:ring-blue-400/40"
+                placeholder="Jane Doe"
+              />
+              <p
+                *ngIf="submitted && form.controls['name'].invalid"
+                class="mt-1 text-xs text-red-500"
+              >
+                Name is required.
+              </p>
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label
+                for="email"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1"
+              >
+                Email
+              </label>
+              <input
+                id="email"
+                type="email"
+                formControlName="email"
+                class="block w-full rounded-xl border border-gray-300
+                       bg-white px-3 py-2 text-sm text-gray-900 shadow-sm
+                       focus:border-blue-500 focus:ring-2 focus:ring-blue-500/40
+                       dark:bg-slate-900 dark:border-slate-700 dark:text-gray-100
+                       dark:focus:border-blue-400 dark:focus:ring-blue-400/40"
+                placeholder="you@example.com"
+              />
+              <p
+                *ngIf="submitted && form.controls['email'].invalid"
+                class="mt-1 text-xs text-red-500"
+              >
+                Please enter a valid email.
+              </p>
+            </div>
+          </div>
+
+          <!-- Subject -->
+          <div>
+            <label
+              for="subject"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1"
+            >
+              Subject
+            </label>
+            <input
+              id="subject"
+              type="text"
+              formControlName="subject"
+              class="block w-full rounded-xl border border-gray-300
+                     bg-white px-3 py-2 text-sm text-gray-900 shadow-sm
+                     focus:border-blue-500 focus:ring-2 focus:ring-blue-500/40
+                     dark:bg-slate-900 dark:border-slate-700 dark:text-gray-100
+                     dark:focus:border-blue-400 dark:focus:ring-blue-400/40"
+              placeholder="How can we help?"
+            />
+            <p
+              *ngIf="submitted && form.controls['subject'].invalid"
+              class="mt-1 text-xs text-red-500"
+            >
+              Subject is required.
+            </p>
+          </div>
+
+          <!-- Message -->
+          <div>
+            <label
+              for="message"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-200 mb-1"
+            >
+              Message
+            </label>
+            <textarea
+              id="message"
+              rows="5"
+              formControlName="message"
+              class="block w-full rounded-xl border border-gray-300
+                     bg-white px-3 py-2 text-sm text-gray-900 shadow-sm
+                     focus:border-blue-500 focus:ring-2 focus:ring-blue-500/40
+                     dark:bg-slate-900 dark:border-slate-700 dark:text-gray-100
+                     dark:focus:border-blue-400 dark:focus:ring-blue-400/40
+                     resize-y"
+              placeholder="Tell us a bit more about what you need..."
+            ></textarea>
+            <p
+              *ngIf="submitted && form.controls['message'].invalid"
+              class="mt-1 text-xs text-red-500"
+            >
+              Message must be at least 10 characters.
+            </p>
+          </div>
+
+          <!-- Optional extras -->
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+            <label class="inline-flex items-center gap-2 text-xs text-gray-600 dark:text-gray-300">
+              <input
+                type="checkbox"
+                formControlName="acceptsMarketing"
+                class="h-4 w-4 rounded border-gray-300 text-blue-600
+                       focus:ring-blue-500 dark:bg-slate-900 dark:border-slate-600"
+              />
+              <span>Keep me updated about news and features</span>
+            </label>
+
+          
+          </div>
+
+          <!-- Submit -->
+          <div class="pt-2 flex items-center justify-between gap-3">
+            <button
+              type="submit"
+              [disabled]="form.invalid && submitted"
+              class="inline-flex items-center justify-center gap-2 rounded-xl
+                     bg-blue-600 px-4 py-2 text-sm font-medium text-white
+                     shadow-sm hover:bg-blue-700 focus:outline-none
+                     focus:ring-2 focus:ring-blue-500 focus:ring-offset-2
+                     focus:ring-offset-gray-100
+                     disabled:opacity-60 disabled:cursor-not-allowed
+                     dark:bg-blue-500 dark:hover:bg-blue-400
+                     dark:focus:ring-offset-slate-900"
+            >
+              <span>Send message</span>
+              <svg
+                class="h-4 w-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 10l9-7 9 7-9 7-9-7z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 10l9 7 9-7M3 10v8l9 7 9-7v-8"
+                />
+              </svg>
+            </button>
+
+            <span
+              *ngIf="success"
+              class="text-xs font-medium text-emerald-600 dark:text-emerald-400"
+            >
+              Thanks! Your message has been sent.
+            </span>
+          </div>
+        </form>
+      </div>
+    </div>

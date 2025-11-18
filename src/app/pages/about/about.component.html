@@ -2,44 +2,64 @@
     <div class="basic-app">
         <div class="app-heading-div">
 
-            <div class="app-heading-img-div" data-aos="fade-right">
-               
-                   @if(theme.isDarkMode() ){
-                    <img src="assets/articles/cycle-dark.png?x"   alt="Technical Articles">
-                }@else{     
-                    <img src="assets/articles/cycle.png"alt="Technical Articles">
+            <!-- <div class="app-heading-img-div" data-aos="fade-right">
+
+                @if(theme.isDarkMode() ){
+                <img src="assets/articles/cycle-dark.png?x" alt="Technical Articles">
+                }@else{
+                <img src="assets/articles/cycle.png" alt="Technical Articles">
                 }
             </div>
-            
+
             <div class="app-heading-text-div" data-aos="fade-left">
                 <h1 class="app-heading-text">
-                    Morris Development
+                    Approach to Development
                 </h1>
                 <p class="app-header-detail-text subTitle">
                     Our mission, values, and the team behind the scenes.
                 </p>
             </div>
-        </div>
+        </div> -->
+<!-- 
+        <div class="section-heading-text-div" data-aos="fade-up">
+
+
+            <p class="section-header-detail-text">
+                Iterative Development combined with Incremental Releases
+            </p>
+            <p class="section-header-detail-smaller">
+                Internal systems are quite different than public-facing applications. They often require unique workflows and specialized integrations far beyond standard web development practices.
+                With these apps, any downtime will halt business operations, leading to significant quantifiable losses.  We employ an incremental release system, where updates can be 
+                deployed quickly and with little or no risk of outages.
+                  
+                 
+            </p>
+            <p class="section-header-detail-smaller">
+                By breaking down the development process into smaller, more manageable parts, we can identify and address potential issues early on, reducing the risk of major disruptions during deployment. 
+                This approach not only enhances the overall quality of the application but also ensures that it aligns closely with your business needs and operational requirements.
+
+        </div> -->
     </div>
+
     @for (ps of appConfig.staffSections; track $index) {
 
-        <div class="section-heading-text-div" data-aos="fade-up">
-            <h1 class="section-heading-text">
-                {{ ps.sectionTitle }}
-            </h1>
-    
-            <p class="section-header-detail-text">
-                {{ ps.sectionSubtitle }}
-            </p>
-        </div>
-    
-    
-        <div class="projects-cards-div-main">
+    <div class="section-heading-text-div" data-aos="fade-up">
+        <h1 class="section-heading-text">
+            {{ ps.sectionTitle }}
+        </h1>
 
-            @for (p of ps.entities; track $index) {
-                <app-project-card class="w-full lg:w-1/2 xl:w-1/3" [projectData]="p"></app-project-card>
-            }
-        </div>
+        <p class="section-header-detail-text">
+            {{ ps.sectionSubtitle }}
+        </p>
+    </div>
+
+
+    <div class="projects-cards-div-main">
+
+        @for (p of ps.entities; track $index) {
+        <app-project-card class="w-full lg:w-1/2 xl:w-1/3" [projectData]="p"></app-project-card>
+        }
+    </div>
 
     }
 </div>
