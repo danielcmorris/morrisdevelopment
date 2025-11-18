@@ -4,7 +4,7 @@ import { Injectable, signal } from '@angular/core';
   providedIn: 'root'
 })
 export class ThemeService {
-  isDarkMode = signal(false);
+  isDarkMode = signal(true);
 
   constructor() {
     // Load saved preference
