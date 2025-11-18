@@ -260,8 +260,7 @@ const IntegratedApps: ProjectSection = {
         {
             title: "Job Management App",
             coverImagePath: AssetPaths.PROJECT_SITE_REVIEW,
-            githubLink: "/projects/site-review",
-            description: "Fully off-line capable system designed for field workers to review job sites, capture photos, automate field reports and sign off on work completed.",
+             description: "Fully off-line capable system designed for field workers to review job sites, capture photos, automate field reports and sign off on work completed.",
             techStack: ["Angular", "IndexedDB", "Ionic"],
             year: 2023,
             branch: "resource-tree-utility"
@@ -269,16 +268,14 @@ const IntegratedApps: ProjectSection = {
         {
             title: "Pinnacle Fleet",
             coverImagePath: AssetPaths.PROJECT_FLEET,
-            githubLink: "/projects/pinnacle-fleet",
-            description: "An add-on app to handle the fleet management of the Pinnacle Power Services vehicles, integrating multiple systems for tracking, maintenance and depreciation.",
+             description: "An add-on app to handle the fleet management of the Pinnacle Power Services vehicles, integrating multiple systems for tracking, maintenance and depreciation.",
             techStack: ["Ionic", "MSSQL", "IndexedDB", "Google Cloud"],
             year: 2023
         },
         {
             title: "Field Time Sheet",
             coverImagePath: AssetPaths.PROJECT_TIME_SHEET,
-            githubLink: "/projects/field-time-sheet",
-            description: "Used by over 100 crews in the field, this app allows workers to log hours and automatically calculates overtime, missed meals and subsidies based upon union rules",
+             description: "Used by over 100 crews in the field, this app allows workers to log hours and automatically calculates overtime, missed meals and subsidies based upon union rules",
             techStack: ["Angular", "Ionic", "MSSQL", "Penta"],
             year: 2023
         },
@@ -309,16 +306,14 @@ const ActiveProjects: ProjectSection = {
         {
             title: "Pinnacle Power ERP",
             coverImagePath: AssetPaths.PROJECT_PINNACLE_POWER,
-            liveLink: "/projects/dash",
-            description: "Designed to completely automate the process flow of contstruction from bid to invoice. Integrated with Fleet.io, Google Cloud Storage,  BigQuery and PENTA Accounting.",
+             description: "Designed to completely automate the process flow of contstruction from bid to invoice. Integrated with Fleet.io, Google Cloud Storage,  BigQuery and PENTA Accounting.",
             techStack: ["Angular 20", "MSSQL", "Google Drive", "Ionic"],
             year: "2020 - Present"
         },
         {
             title: "DC Electric",
             coverImagePath: AssetPaths.PROJECT_DC_ELECTRIC,
-            liveLink: "https://dcelectricgroup.com/",
-            description: "Internal Billing System, linking their Quickbooks Enterprise system to custom project management and invoicing system, storing generated invoices and documents in Azure Storage",
+             description: "Internal Billing System, linking their Quickbooks Enterprise system to custom project management and invoicing system, storing generated invoices and documents in Azure Storage",
             techStack: ["Angular", "MSSQL", "Azure Storage"],
             year: "2012 - Present"
         },
