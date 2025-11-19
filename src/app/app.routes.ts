@@ -10,6 +10,7 @@ import { ArticleComponent } from './pages/article/article.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { EmbeddingComponent } from './ai/embedding/embedding.component';
+import { DocumentEditorComponent } from './components/document-editor/document-editor.component';
 
 export const routes: Routes = [
     {
@@ -40,6 +41,10 @@ export const routes: Routes = [
     {
         path: 'articles/:slug',
         component: ArticleComponent
+    },
+    {
+        path: 'article/editor',
+        component: DocumentEditorComponent
     },
     {
         path: AppRoutes.EDUCATION,
