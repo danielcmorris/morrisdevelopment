@@ -260,7 +260,7 @@ const IntegratedApps: ProjectSection = {
         {
             title: "Job Management App",
             coverImagePath: AssetPaths.PROJECT_SITE_REVIEW,
-             description: "Fully off-line capable system designed for field workers to review job sites, capture photos, automate field reports and sign off on work completed.",
+            description: "Fully off-line capable system designed for field workers to review job sites, capture photos, automate field reports and sign off on work completed.",
             techStack: ["Angular", "IndexedDB", "Ionic"],
             year: 2023,
             branch: "resource-tree-utility"
@@ -268,14 +268,14 @@ const IntegratedApps: ProjectSection = {
         {
             title: "Pinnacle Fleet",
             coverImagePath: AssetPaths.PROJECT_FLEET,
-             description: "An add-on app to handle the fleet management of the Pinnacle Power Services vehicles, integrating multiple systems for tracking, maintenance and depreciation.",
+            description: "An add-on app to handle the fleet management of the Pinnacle Power Services vehicles, integrating multiple systems for tracking, maintenance and depreciation.",
             techStack: ["Ionic", "MSSQL", "IndexedDB", "Google Cloud"],
             year: 2023
         },
         {
             title: "Field Time Sheet",
             coverImagePath: AssetPaths.PROJECT_TIME_SHEET,
-             description: "Used by over 100 crews in the field, this app allows workers to log hours and automatically calculates overtime, missed meals and subsidies based upon union rules",
+            description: "Used by over 100 crews in the field, this app allows workers to log hours and automatically calculates overtime, missed meals and subsidies based upon union rules",
             techStack: ["Angular", "Ionic", "MSSQL", "Penta"],
             year: 2023
         },
@@ -306,14 +306,14 @@ const ActiveProjects: ProjectSection = {
         {
             title: "Pinnacle Power ERP",
             coverImagePath: AssetPaths.PROJECT_PINNACLE_POWER,
-             description: "Designed to completely automate the process flow of contstruction from bid to invoice. Integrated with Fleet.io, Google Cloud Storage,  BigQuery and PENTA Accounting.",
+            description: "Designed to completely automate the process flow of contstruction from bid to invoice. Integrated with Fleet.io, Google Cloud Storage,  BigQuery and PENTA Accounting.",
             techStack: ["Angular 20", "MSSQL", "Google Drive", "Ionic"],
             year: "2020 - Present"
         },
         {
             title: "DC Electric",
             coverImagePath: AssetPaths.PROJECT_DC_ELECTRIC,
-             description: "Internal Billing System, linking their Quickbooks Enterprise system to custom project management and invoicing system, storing generated invoices and documents in Azure Storage",
+            description: "Internal Billing System, linking their Quickbooks Enterprise system to custom project management and invoicing system, storing generated invoices and documents in Azure Storage",
             techStack: ["Angular", "MSSQL", "Azure Storage"],
             year: "2012 - Present"
         },
@@ -338,12 +338,12 @@ const StaffDetails: ProjectSection = {
             subtitle: "CEO & Lead Developer",
             coverImagePath: "https://www.snapdragonerp.com/assets/img/team/dan.png",
             description: "Full Stack Developer with over 25 years of experience in designing and implementing web-based ERP systems",
-            techStack: ["Angular", "MS SQL", "C#", "AWS", "Azure", "Google Cloud Services", "Qdrant", "OpenAI","VertexAI", "BigQuery"],
+            techStack: ["Angular", "MS SQL", "C#", "AWS", "Azure", "Google Cloud Services", "Qdrant", "OpenAI", "VertexAI", "BigQuery"],
             year: ""
         },
-         {
+        {
             title: "Ignatio DeJean, Angular Specialist",
-            subtitle:"Angular Specialist",
+            subtitle: "Angular Specialist",
             coverImagePath: "https://www.snapdragonerp.com/assets/img/team/nacho.png",
             description: "A decade of experience in front-end development, specializing in Angular applications for enterprise logistics solutions.",
             techStack: ["Angular", "Ionic", "RxJs", "Figma", "Adobe XD"],
@@ -351,30 +351,30 @@ const StaffDetails: ProjectSection = {
         },
         {
             title: "Yuriy Frankiv",
-             subtitle:"Lead .Net Developer",
+            subtitle: "Lead .Net Developer",
             coverImagePath: "https://www.snapdragonerp.com/assets/img/team/yuriy.jpg",
             description: "Extensive experience in .Net development, Angular front-end, and cloud integrations for logistics and ERP applications.",
-            techStack: ["Angular","Ionic", "MS SQL", "C#", "AWS",  "Google Cloud Services"],
+            techStack: ["Angular", "Ionic", "MS SQL", "C#", "AWS", "Google Cloud Services"],
             year: ""
         },
-         {
+        {
             title: "Robert McIntire",
-            subtitle:"MS SQL & Integrations Specialist",
+            subtitle: "MS SQL & Integrations Specialist",
             coverImagePath: "https://www.snapdragonerp.com/assets/img/team/Rob.png",
             description: "Expert in backend development and database management with over 20 years of experience in building scalable ERP systems.",
-            techStack: [ "MS SQL", "C#", "Azure", "Google Cloud Services"],
+            techStack: ["MS SQL", "C#", "Azure", "Google Cloud Services"],
             year: ""
         },
-         
-         {
+
+        {
             title: "Marguerite Morris",
-            subtitle:"Content Management Specialist",
+            subtitle: "Content Management Specialist",
             coverImagePath: "https://www.snapdragonerp.com/assets/img/team/marguerite.png",
             description: "Providing expert content management and documentation services",
-            techStack: ["WordPress", "HTML", "OpenProject", ],
+            techStack: ["WordPress", "HTML", "OpenProject",],
             year: ""
         },
-         {
+        {
             title: "Gina Morris",
             subtitle: "CFO",
             coverImagePath: "https://www.snapdragonerp.com/assets/img/team/Gina.png",
@@ -397,7 +397,7 @@ const JobExperience: ExperienceSection = {
                 {
                     positionName: "AI Vector Embeddings Explained and Demonstrated",
                     duration: "OpenAI, Qdrant, Vector Databases",
-                   
+
                     jobType: "",
                     workPoints: [
                         "Working Sample of AI Vector Embeddings",
@@ -415,10 +415,7 @@ const JobExperience: ExperienceSection = {
             positions: [
                 {
                     positionName: "Leveraging AI to search corporate documents",
-                    duration: "Apr 2024 - Present",
-                    location: "Pinnacle Power Services",
-
-                    jobType: "AI,Vector Databases, MPC",
+                    duration: "AI,Vector Databases, MPC", 
                     workPoints: [
                         "Built system to break +100k PDF documents into Chunks",
                         "Cross Referenced and automated vector embedding",
@@ -435,9 +432,8 @@ const JobExperience: ExperienceSection = {
             positions: [
                 {
                     positionName: "Cloud Storage JSON Cache integrated with IndexedDB ",
-                    duration: "Jun 2023 - Present",
-                    location: "Pinnacle Power Services",
-                    jobType: "Google Storage, C#, Angular",
+                    duration: "Google Storage, C#, Angular",
+                 
                     workPoints: [
                         "Automated a daily JSON build of all active jobs and their properties",
                         "Pushed to google storage and then into BigQuery using JSONL",
@@ -471,18 +467,18 @@ const JobExperience: ExperienceSection = {
             positions: [
                 {
                     positionName: "Quickbase Integration and REST API",
-                    duration: "Feb 2022 — Mar 2022",
-                 
-                    
+                    duration: "Angular, QuickBase API, C# .Net Core",
+
+
                     workPoints: [
-                        "Designed and implemented an optimized, cross-browser-compatible Attendance Management Module. 🌐✔️",
-                        "Built a RESTful Node.js server integrated with Oracle DB for seamless code migration. 🚀📊",
-                        "Developed intuitive web forms with robust validation and error handling for a smooth user experience. 🖋️⚙️✨",
+                        "Integrated Quickbase with custom REST API backend using C# and .Net Core.",
+                        "Generated PDF Reports from Quickbase data for automated emailing to clients.",
+                        "Linked Quickbase data to PDF Forms for invoicing",
                     ]
                 }
             ]
         },
-         {
+        {
             orgLink: "/articles/indexeddb",
             orgLogoPath: "assets/articles/signalR-indexeddb.jpg",
             orgName: "Using IndexedDB to enhance performance",
@@ -490,12 +486,10 @@ const JobExperience: ExperienceSection = {
                 {
                     positionName: "Using IndexedDB to enhance performance",
                     duration: "Angular, Typescript, IndexedDB",
-                   
-                  
                     workPoints: [
-                        "Designed and implemented an optimized, cross-browser-compatible Attendance Management Module. 🌐✔️",
-                        "Built a RESTful Node.js server integrated with Oracle DB for seamless code migration. 🚀📊",
-                        "Developed intuitive web forms with robust validation and error handling for a smooth user experience. 🖋️⚙️✨",
+                        "Replaced in-memory data structures with IndexedDB for large datasets.",
+                        "Structured a synchronization mechanism using SignalR for real-time updates.",
+                        "Rolled out to production with zero failures since January 2022.",
                     ]
                 }
             ]
@@ -718,7 +712,7 @@ export const AppConfig = {
     aboutPageDescription: "🌐 Crafting Tailored Digital Solutions: Empowering Businesses with Custom Web Applications and Expert Consultancy 🚀",
     staffSections: [
         StaffDetails
-        
+
     ],
     // Achievements Page
     achievementsPageTitle: "Achievements, Participation and Community Involvement",
