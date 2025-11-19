@@ -396,10 +396,9 @@ const JobExperience: ExperienceSection = {
             positions: [
                 {
                     positionName: "AI Vector Embeddings Explained and Demonstrated",
-                    duration: "May 2025 - Present",
-                    location: "Pinnacle Power Services",
-
-                    jobType: "OpenAI,Qdrant,Vector Databases",
+                    duration: "OpenAI, Qdrant, Vector Databases",
+                   
+                    jobType: "",
                     workPoints: [
                         "Working Sample of AI Vector Embeddings",
                         "Learning what a Vector Embedding is and how it works",
@@ -454,9 +453,9 @@ const JobExperience: ExperienceSection = {
             positions: [
                 {
                     positionName: "Integrating Angular Microsite with .Net",
-                    duration: "Feb 2023 - May 2025",
+                    duration: "IIS, C#, Angular",
 
-                    jobType: "IIS, C#, Angular",
+                    jobType: "",
                     workPoints: [
                         "Configuring SSH Servers on Windows Servers",
                         "Setting up continous integration in Azure DevOps",
@@ -473,8 +472,26 @@ const JobExperience: ExperienceSection = {
                 {
                     positionName: "Quickbase Integration and REST API",
                     duration: "Feb 2022 — Mar 2022",
-                    locationType: "Remote",
-                    jobType: "Part-time",
+                 
+                    
+                    workPoints: [
+                        "Designed and implemented an optimized, cross-browser-compatible Attendance Management Module. 🌐✔️",
+                        "Built a RESTful Node.js server integrated with Oracle DB for seamless code migration. 🚀📊",
+                        "Developed intuitive web forms with robust validation and error handling for a smooth user experience. 🖋️⚙️✨",
+                    ]
+                }
+            ]
+        },
+         {
+            orgLink: "/articles/indexeddb",
+            orgLogoPath: "assets/articles/signalR-indexeddb.jpg",
+            orgName: "Using IndexedDB to enhance performance",
+            positions: [
+                {
+                    positionName: "Using IndexedDB to enhance performance",
+                    duration: "Angular, Typescript, IndexedDB",
+                   
+                  
                     workPoints: [
                         "Designed and implemented an optimized, cross-browser-compatible Attendance Management Module. 🌐✔️",
                         "Built a RESTful Node.js server integrated with Oracle DB for seamless code migration. 🚀📊",
@@ -684,7 +701,7 @@ export const AppConfig = {
     experiencePageDescription: "💼 We've had to come up with some creative solutions. We publish the more recent ones here so others can benefit",
     experienceSections: [               // Define and add a custom section if needed
         JobExperience,
-        InternshipExperience,
+        //InternshipExperience,
         // FreelancingExperience,
     ],
 
