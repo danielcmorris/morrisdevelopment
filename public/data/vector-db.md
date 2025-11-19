@@ -31,3 +31,9 @@ When you have a product which needs to be replaced, you can simply take the prev
 
 The result set will include the metadata that you uploaded originally, so you can then easily pull the selected ProductID from your database, check to see what the availability is for each of those, and if the user selects one, you can simply swap out the Product ID of the item that was out of stock with the new item.
 
+## Future Thoughts
+One thing we’re certain to see in the near future is moving the LLM and the vector database locally. There are already a slew of LLMs you can run locally, on linux, mac and windows. Having this come embedded in a browser seems like a no-brainer. That means we’ll be able to do this embedding without an external call to an LLM. It’s quite likely that we’ll be able to have users posting the vector array directly rather than calling an LLM first. We may even be able to keep a local set of data. We already use local databases like IndexedDB, there is certain to be a Vector database option in the near future.
+
+
+While there is a lot of hate on LLMs due to environmental and energy use, the reality is that only a very few of them are serious energy costs. For the ones you’d download and install locally, the work is already done and the processor need is negligible. Moreover, I’d be astonished if companies didn’t start offering access to their own Vector Databases. Imagine if Lenovo, Apple, and other PC companies offered an API to their vector database. You’d be able to run a search from any website that would then have the latest data about that product. Add several thousand of these to a curated list of vendors and you’d be able to compete with “Amazon” on a WordPress website.
+
