@@ -6,7 +6,7 @@
 /bazel-out
 /dist
 /dist/*
-
+/environments/environment.development.ts
 # Node
 /node_modules
 npm-debug.log

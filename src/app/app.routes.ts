@@ -11,6 +11,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { EmbeddingComponent } from './ai/embedding/embedding.component';
 import { DocumentEditorComponent } from './components/document-editor/document-editor.component';
+import { ArticleEditorComponent } from './pages/admin/article-editor/article-editor.component';
 
 export const routes: Routes = [
     {
@@ -43,8 +44,12 @@ export const routes: Routes = [
         component: ArticleComponent
     },
     {
-        path: 'article/editor',
-        component: DocumentEditorComponent
+        path: 'admin/article-editor',
+        component: ArticleEditorComponent
+    },
+    {
+        path: 'admin/article-editor/:articleId',
+        component: ArticleEditorComponent
     },
     {
         path: AppRoutes.EDUCATION,

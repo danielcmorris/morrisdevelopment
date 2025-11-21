@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AiService } from '../../services/ai.service';
@@ -11,7 +11,7 @@ import { Article } from '../../../interfaces/article.interface';
   templateUrl: './document-editor.component.html',
   styleUrls: ['./document-editor.component.scss']
 })
-export class DocumentEditorComponent {
+export class DocumentEditorComponent implements OnInit {
   title: string = '';
   description: string = '';
   content: string = '';
@@ -19,10 +19,31 @@ export class DocumentEditorComponent {
   url: string = '';
   
   isSaving: boolean = false;
+@Input() set article(value: Article | null) {
+  this._article = value;
+  if (value) {
+    this.title = value.title || '';
+    this.description = value.description || '';
+    this.content = value.content || '';
+    this.tags = value.tags?.join(', ') || '';
+    this.url = value.contentUrl || '';
+  }
+}
+private _article: Article | null = null;
+  constructor(private aiService: AiService) {
 
-  constructor(private aiService: AiService) {}
+  }
 
-
+  ngOnInit(): void {
+   console.log('DocumentEditorComponent initialized with article:', this._article);
+   if (this._article) {
+     this.title = this._article.title || '';
+     this.description = this._article.description || '';
+     this.content = this._article.content || '';
+     this.tags = this._article.tags?.join(', ') || '';
+     this.url = this._article.contentUrl || '';
+   }
+  }
   saveDocument(): void {
     if (!this.title.trim()) {
       alert('Please enter a document title');
