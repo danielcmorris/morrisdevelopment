@@ -3,7 +3,7 @@ export enum AssetPaths {
     FEELING_PROUD_SVG = "assets/illustrations/FeelingProud.svg",
     DIGITAL_SOLUTIONS_SVG = "assets/illustrations/DigitalSolutions.svg",
     FULL_STACK_DEVELOPMENT_SVG = "assets/illustrations/FullStackDevelopment.svg",
-    CLOUD_INFRASTRUCTURE_SVG = "assets/illustrations/CouldInfrastructure.svg",
+    CLOUD_INFRASTRUCTURE_SVG = "assets/illustrations/cloud-infrastructure3.png",
     UI_UX_DESIGN_SVG = "assets/illustrations/UIUXDesign.svg",
     PROJECTS_COVER = "assets/illustrations/ProjectsCover.svg",
     PROJECT_ACQUIRE_CONVEYANCING = "assets/projects-images/acquire-conveyancing.png",
