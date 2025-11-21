@@ -6,7 +6,8 @@
 /bazel-out
 /dist
 /dist/*
-/environments/environment.development.ts
+ 
+ 
 # Node
 /node_modules
 npm-debug.log
@@ -41,3 +42,4 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+src/environments/environment.development.ts
