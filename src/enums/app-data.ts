@@ -336,7 +336,7 @@ const StaffDetails: ProjectSection = {
         {
             title: "Daniel Morris ",
             subtitle: "CEO & Lead Developer",
-            coverImagePath: "https://www.snapdragonerp.com/assets/img/team/dan.png",
+            coverImagePath: "/assets/images/team/dan.png",
             description: "Full Stack Developer with over 25 years of experience in designing and implementing web-based ERP systems",
             techStack: ["Angular", "MS SQL", "C#", "AWS", "Azure", "Google Cloud Services", "Qdrant", "OpenAI", "VertexAI", "BigQuery"],
             year: ""
@@ -344,7 +344,7 @@ const StaffDetails: ProjectSection = {
         {
             title: "Ignatio DeJean, Angular Specialist",
             subtitle: "Angular Specialist",
-            coverImagePath: "https://www.snapdragonerp.com/assets/img/team/nacho.png",
+            coverImagePath: "/assets/images/team/nacho.png",
             description: "A decade of experience in front-end development, specializing in Angular applications for enterprise logistics solutions.",
             techStack: ["Angular", "Ionic", "RxJs", "Figma", "Adobe XD"],
             year: ""
@@ -352,7 +352,7 @@ const StaffDetails: ProjectSection = {
         {
             title: "Yuriy Frankiv",
             subtitle: "Lead .Net Developer",
-            coverImagePath: "https://www.snapdragonerp.com/assets/img/team/yuriy.jpg",
+            coverImagePath: "/assets/images/team/yuriy.jpg",
             description: "Extensive experience in .Net development, Angular front-end, and cloud integrations for logistics and ERP applications.",
             techStack: ["Angular", "Ionic", "MS SQL", "C#", "AWS", "Google Cloud Services"],
             year: ""
@@ -360,8 +360,8 @@ const StaffDetails: ProjectSection = {
         {
             title: "Robert McIntire",
             subtitle: "MS SQL & Integrations Specialist",
-            coverImagePath: "https://www.snapdragonerp.com/assets/img/team/Rob.png",
-            description: "Expert in backend development and database management with over 20 years of experience in building scalable ERP systems.",
+            coverImagePath: "/assets/images/team/Rob.png",
+            description: "Expert in backend development with over 20 years of experience in building scalable ERP systems.",
             techStack: ["MS SQL", "C#", "Azure", "Google Cloud Services"],
             year: ""
         },
@@ -369,7 +369,7 @@ const StaffDetails: ProjectSection = {
         {
             title: "Marguerite Morris",
             subtitle: "Content Management Specialist",
-            coverImagePath: "https://www.snapdragonerp.com/assets/img/team/marguerite.png",
+            coverImagePath: "/assets/images/team/marguerite.png",
             description: "Providing expert content management and documentation services",
             techStack: ["WordPress", "HTML", "OpenProject",],
             year: ""
@@ -377,7 +377,7 @@ const StaffDetails: ProjectSection = {
         {
             title: "Gina Morris",
             subtitle: "CFO",
-            coverImagePath: "https://www.snapdragonerp.com/assets/img/team/Gina.png",
+            coverImagePath: "/assets/images/team/Gina.png",
             description: "20 years of experience in financial management and strategic planning for technology companies.",
             techStack: ["Quickbooks Enterprise", "Excel", "OpenProject"],
             year: ""
