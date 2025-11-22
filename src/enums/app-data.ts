@@ -182,6 +182,7 @@ const CloudSection: SkillSection = {
     skillsList: [
         "Working with Azure, Amazon and Google Cloud Services",
         "Both outsourced hosting and colocated services on site",
+        "Leverating Vector Databases with Open AI to provide custom data solutions",
         "Integrations from custom databases into Quickbooks, Penta, QuickBase, Hubspot and more",
     ]
 }
