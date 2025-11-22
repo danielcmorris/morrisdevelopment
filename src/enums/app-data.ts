@@ -342,7 +342,7 @@ const StaffDetails: ProjectSection = {
             year: ""
         },
         {
-            title: "Ignatio DeJean, Angular Specialist",
+            title: "Ignatio DeJean",
             subtitle: "Angular Specialist",
             coverImagePath: "/assets/images/team/nacho.png",
             description: "A decade of experience in front-end development, specializing in Angular applications for enterprise logistics solutions.",
