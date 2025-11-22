@@ -338,7 +338,7 @@ const StaffDetails: ProjectSection = {
             subtitle: "CEO & Lead Developer",
             coverImagePath: "/assets/images/team/dan.png",
             description: "Full Stack Developer with over 25 years of experience in designing and implementing web-based ERP systems",
-            techStack: ["Angular", "MS SQL", "C#", "AWS", "Azure", "Google Cloud Services", "Qdrant", "OpenAI", "VertexAI", "BigQuery"],
+            techStack: ["Angular", "MS SQL", "C#", "AWS", "Azure", "Google Cloud Services", "Qdrant", "OpenAI", "BigQuery"],
             year: ""
         },
         {
