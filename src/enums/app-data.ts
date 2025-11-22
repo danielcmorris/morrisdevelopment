@@ -262,15 +262,15 @@ const IntegratedApps: ProjectSection = {
             coverImagePath: AssetPaths.PROJECT_SITE_REVIEW,
             description: "Fully off-line capable system designed for field workers to review job sites, capture photos, automate field reports and sign off on work completed.",
             techStack: ["Angular", "IndexedDB", "Ionic"],
-            year: 2023,
+            year: 2008,
             branch: "resource-tree-utility"
         },
         {
             title: "Pinnacle Fleet",
             coverImagePath: AssetPaths.PROJECT_FLEET,
             description: "An add-on app to handle the fleet management of the Pinnacle Power Services vehicles, integrating multiple systems for tracking, maintenance and depreciation.",
-            techStack: ["Ionic", "MSSQL", "IndexedDB", "Google Cloud"],
-            year: 2023
+            techStack: ["Ionic", "MSSQL", "IndexedDB", "GSS"],
+            year: 2011
         },
         {
             title: "Field Time Sheet",
