@@ -24,4 +24,8 @@ export class AiService {
 
         return this.http.post(this.server + '/api/qdrantlookup/add-article', data);
     }
+    searchArticle(data: string) {
+        let url = `${this.server}/api/article/search-library?q=${data}`
+        return this.http.post(url,'');
+    }
 }
