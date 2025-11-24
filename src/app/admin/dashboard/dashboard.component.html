@@ -1,0 +1,198 @@
+<div class="min-h-screen bg-gray-50 dark:bg-gray-900 p-6">
+  <div class="max-w-7xl mx-auto">
+    <!-- Header -->
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold text-gray-900 dark:text-white">Dashboard</h1>
+      <p class="text-gray-600 dark:text-gray-400 mt-2">Welcome back! Here's what's happening.</p>
+    </div>
+
+    <!-- Dashboard Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      
+      <!-- Articles Section -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+        <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+          <div class="flex items-center">
+            <svg class="w-6 h-6 text-blue-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Articles</h2>
+          </div>
+        </div>
+        
+        <div class="p-6 space-y-4">
+          <!-- Action Buttons -->
+          <div class="space-y-2">
+            <button class="w-full px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium transition-colors duration-150 flex items-center justify-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+              </svg>
+              Add Article
+            </button>
+            <button routerLink="/admin/articles" class="w-full px-4 py-3 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white rounded-lg font-medium transition-colors duration-150">
+              View Article List
+            </button>
+          </div>
+
+          <!-- Recent Articles -->
+          <div class="mt-6">
+            <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 uppercase tracking-wide">Recently Viewed</h3>
+            <div class="space-y-2">
+              <div *ngFor="let article of recentArticles" class="p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors cursor-pointer">
+                <p class="text-sm font-medium text-gray-900 dark:text-white truncate">{{ article.title }}</p>
+                <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">{{ article.viewedAt | date:'short' }}</p>
+              </div>
+              <div *ngIf="recentArticles.length === 0" class="p-3 text-sm text-gray-500 dark:text-gray-400 text-center">
+                No recent articles
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Files Section -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+        <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+          <div class="flex items-center">
+            <svg class="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-white">Files</h2>
+          </div>
+        </div>
+        
+        <div class="p-6 space-y-4">
+          <!-- Action Buttons -->
+          <div class="space-y-2">
+            <button class="w-full px-4 py-3 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-colors duration-150 flex items-center justify-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+              </svg>
+              Upload File
+            </button>
+            <button class="w-full px-4 py-3 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white rounded-lg font-medium transition-colors duration-150">
+              View Uploaded Files
+            </button>
+          </div>
+
+          <!-- Recent Files -->
+          <div class="mt-6">
+            <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 uppercase tracking-wide">Recently Uploaded</h3>
+            <div class="space-y-2">
+              <div *ngFor="let file of recentFiles" class="p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors cursor-pointer">
+                <div class="flex items-center justify-between">
+                  <div class="flex-1 min-w-0">
+                    <p class="text-sm font-medium text-gray-900 dark:text-white truncate">{{ file.name }}</p>
+                    <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">{{ file.uploadedAt | date:'short' }}</p>
+                  </div>
+                  <span class="ml-2 text-xs text-gray-500 dark:text-gray-400">{{ file.size }}</span>
+                </div>
+              </div>
+              <div *ngIf="recentFiles.length === 0" class="p-3 text-sm text-gray-500 dark:text-gray-400 text-center">
+                No recent files
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OpenProject Section -->
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+        <div class="p-6 border-b border-gray-200 dark:border-gray-700">
+          <div class="flex items-center">
+            <svg class="w-6 h-6 text-purple-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+            </svg>
+            <h2 class="text-xl font-semibold text-gray-900 dark:text-white">OpenProject</h2>
+          </div>
+        </div>
+        
+        <div class="p-6 space-y-4">
+          <!-- Action Buttons -->
+          <div class="space-y-2">
+            <button class="w-full px-4 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-colors duration-150 flex items-center justify-center">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
+              </svg>
+              Add Work Package
+            </button>
+            <button class="w-full px-4 py-3 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 text-gray-900 dark:text-white rounded-lg font-medium transition-colors duration-150">
+              View Open Packages
+            </button>
+          </div>
+
+          <!-- Recent Work Packages -->
+          <div class="mt-6">
+            <h3 class="text-sm font-semibold text-gray-700 dark:text-gray-300 mb-3 uppercase tracking-wide">Recent Packages</h3>
+            <div class="space-y-2">
+              <div *ngFor="let package of recentWorkPackages" class="p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors cursor-pointer">
+                <p class="text-sm font-medium text-gray-900 dark:text-white truncate">{{ package.title }}</p>
+                <div class="flex items-center justify-between mt-1">
+                  <span class="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium"
+                        [ngClass]="{
+                          'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400': package.status === 'In Progress',
+                          'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-400': package.status === 'Open',
+                          'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-400': package.status === 'Closed'
+                        }">
+                    {{ package.status }}
+                  </span>
+                  <span class="text-xs text-gray-500 dark:text-gray-400">{{ package.createdAt | date:'short' }}</span>
+                </div>
+              </div>
+              <div *ngIf="recentWorkPackages.length === 0" class="p-3 text-sm text-gray-500 dark:text-gray-400 text-center">
+                No recent packages
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stats Cards (Optional) -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Total Articles</p>
+            <p class="text-2xl font-bold text-gray-900 dark:text-white mt-1">124</p>
+          </div>
+          <div class="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-full">
+            <svg class="w-6 h-6 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Files Stored</p>
+            <p class="text-2xl font-bold text-gray-900 dark:text-white mt-1">87</p>
+          </div>
+          <div class="p-3 bg-green-100 dark:bg-green-900/30 rounded-full">
+            <svg class="w-6 h-6 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <p class="text-sm text-gray-600 dark:text-gray-400">Active Packages</p>
+            <p class="text-2xl font-bold text-gray-900 dark:text-white mt-1">23</p>
+          </div>
+          <div class="p-3 bg-purple-100 dark:bg-purple-900/30 rounded-full">
+            <svg class="w-6 h-6 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

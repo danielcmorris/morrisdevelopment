@@ -55,7 +55,7 @@ export class ArticleComponent implements OnInit {
     this.loading = true;
     this.error = false;
     console.log('loading ' + slug)
-    this.articleService.getArticle(slug).subscribe({
+    this.articleService.getArticle_old(slug).subscribe({
       next: (article) => {
         console.log('got article',article)
         this.article = article;

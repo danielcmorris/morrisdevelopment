@@ -48,14 +48,18 @@ export const routes: Routes = [
         path: 'admin',
         canActivate: [authGuard],
         children: [
-
             {
                 path: 'home',
-                loadComponent: () => import('./admin/admin-home/admin-home.component')
+                loadComponent: () => import('./admin/dashboard/dashboard.component')
             },
+
              {
                 path: 'login',
                 loadComponent: () => import('./admin/login/login.component')
+            },
+             {
+                path: 'articles',
+                loadComponent: () => import('./admin/articles/article-list/article-list.component')
             },
             {
                 path: 'article-editor',

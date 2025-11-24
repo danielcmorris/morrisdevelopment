@@ -1,0 +1,70 @@
+/* Smooth transitions for all interactive elements */
+button,
+a,
+tr,
+input {
+  transition-property: background-color, border-color, color, opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Table row hover effect */
+tbody tr {
+  transition: background-color 0.15s ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 dark:bg-gray-600 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400 dark:bg-gray-500;
+}
+
+/* Ensure table is responsive */
+.overflow-x-auto {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(209 213 219) rgb(243 244 246);
+}
+
+.dark .overflow-x-auto {
+  scrollbar-color: rgb(75 85 99) rgb(31 41 55);
+}
+
+/* Pagination button transitions */
+.pagination-button {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Action button hover effects */
+button svg {
+  transition: transform 0.2s ease-in-out;
+}
+
+button:hover svg {
+  transform: scale(1.1);
+}
+
+/* Loading state (optional) */
+.loading {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}

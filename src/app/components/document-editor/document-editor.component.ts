@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AiService } from '../../services/ai.service';
 import { Article } from '../../../interfaces/article.interface';
+import { dateTimestampProvider } from 'rxjs/internal/scheduler/dateTimestampProvider';
 
 @Component({
   selector: 'app-document-editor',
@@ -58,7 +59,13 @@ private _article: Article | null = null;
       description: this.description.trim(),
       content: this.content.trim(),
       tags: this.tags.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0),
-      contentUrl: this.url.trim()
+      contentUrl: this.url.trim(),
+      articleID:0,
+      sourceURL:"",
+      date:dateTimestampProvider,
+      createDate:new Date(),
+      status:"Draft",
+      author:""
     };
 
     console.log('Saving document:', documentData);
