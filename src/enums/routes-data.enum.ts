@@ -9,6 +9,7 @@ export enum AppRoutes {
     ACHIEVEMENTS = "achievements",
     ARTICLES = "articles",
     ABOUT = "about",
+    LOGIN = "admin/login",
     // Your google form link
     CONTACT = "contact",
 }
@@ -38,6 +39,14 @@ export const RoutesData: RouteData[] = [
      {
         routeLinkText: "Contact",
         routeURLName: AppRoutes.CONTACT,
+        isVisible: true,
+        isExternalLink: false,
+    },
+    
+   
+     {
+        routeLinkText: "Login",
+        routeURLName: AppRoutes.LOGIN,
         isVisible: true,
         isExternalLink: false,
     },
