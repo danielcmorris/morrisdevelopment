@@ -12,6 +12,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { EmbeddingComponent } from './ai/embedding/embedding.component';
 import { DocumentEditorComponent } from './components/document-editor/document-editor.component';
 import { ArticleEditorComponent } from './pages/admin/article-editor/article-editor.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     {
@@ -24,8 +25,8 @@ export const routes: Routes = [
         component: ProjectsComponent,
         title: `Projects | Morris Development`,
     },
-      {
-        path: AppRoutes.PROJECTS +'/dash',
+    {
+        path: AppRoutes.PROJECTS + '/dash',
         component: ProjectsComponent,
         title: `Dash | Morris Development`,
     },
@@ -44,13 +45,34 @@ export const routes: Routes = [
         component: ArticleComponent
     },
     {
-        path: 'admin/article-editor',
-        component: ArticleEditorComponent
+        path: 'admin',
+        canActivate: [authGuard],
+        children: [
+
+            {
+                path: 'home',
+                loadComponent: () => import('./admin/admin-home/admin-home.component')
+            },
+             {
+                path: 'login',
+                loadComponent: () => import('./admin/login/login.component')
+            },
+            {
+                path: 'article-editor',
+                component: ArticleEditorComponent
+            },
+            {
+                path: 'article-editor/:articleId',
+                component: ArticleEditorComponent
+            },
+            {
+                path: '',
+                redirectTo: 'home',
+                pathMatch: 'full'
+            }
+        ]
     },
-    {
-        path: 'admin/article-editor/:articleId',
-        component: ArticleEditorComponent
-    },
+
     {
         path: AppRoutes.EDUCATION,
         component: EducationComponent,
