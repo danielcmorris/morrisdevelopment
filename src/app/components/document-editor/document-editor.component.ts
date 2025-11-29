@@ -18,32 +18,93 @@ export class DocumentEditorComponent implements OnInit {
   content: string = '';
   tags: string = '';
   url: string = '';
-  
-  isSaving: boolean = false;
-@Input() set article(value: Article | null) {
-  this._article = value;
-  if (value) {
-    this.title = value.title || '';
-    this.description = value.description || '';
-    this.content = value.content || '';
-    this.tags = value.tags?.join(', ') || '';
-    this.url = value.contentUrl || '';
-  }
-}
-private _article: Article | null = null;
-  constructor(private aiService: AiService) {
+  author: string = "";
+  sourceURL: string = "";
 
+
+
+  selectedFile: File | null = null;
+
+  isSaving: boolean = false;
+
+  @Input() set article(value: Article | null) {
+    this._article = value;
+    if (value) {
+      this.title = value.title || '';
+      this.description = value.description || '';
+      this.content = value.content || '';
+      this.tags = value.tags?.join(', ') || '';
+      this.url = value.contentUrl || '';
+      this.sourceURL = value.sourceURL || '';
+      this.author = value.author || '';
+    }
   }
+  private _article: Article | null = null;
+
+  constructor(private aiService: AiService) { }
 
   ngOnInit(): void {
-   console.log('DocumentEditorComponent initialized with article:', this._article);
-   if (this._article) {
-     this.title = this._article.title || '';
-     this.description = this._article.description || '';
-     this.content = this._article.content || '';
-     this.tags = this._article.tags?.join(', ') || '';
-     this.url = this._article.contentUrl || '';
-   }
+    console.log('DocumentEditorComponent initialized with article:', this._article);
+    if (this._article) {
+      this.title = this._article.title || '';
+      this.description = this._article.description || '';
+      this.content = this._article.content || '';
+      this.tags = this._article.tags?.join(', ') || '';
+      this.url = this._article.contentUrl || '';
+      this.sourceURL = this._article.sourceURL || '';
+      this.author = this._article.author || '';
+    }
+  }
+
+  onFileSelected(event: any): void {
+    const file = event.target.files[0];
+    if (file && file.type === 'application/pdf') {
+      this.selectedFile = file;
+      console.log('PDF file selected:', file.name);
+    } else if (file) {
+      alert('Please select a PDF file');
+      event.target.value = '';
+    }
+  }
+
+  isAnalyzing=false;
+  process() {
+
+
+    if(!this.title) this.title="Searching Title..."
+    this.isAnalyzing = true;
+
+    const formData = new FormData();
+    formData.append('title', this.title.trim());
+    formData.append('description', this.description.trim());
+    formData.append('content', this.content.trim());
+    formData.append('tags', JSON.stringify(this.tags.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0)));
+    formData.append('contentUrl', this.url.trim());
+    formData.append('sourceURL', this.sourceURL.trim());
+    formData.append('author', this.author.trim());
+
+    if (this.selectedFile) {
+      formData.append('file', this.selectedFile);
+    }
+
+    console.log('Saving document with file:', this.selectedFile?.name);
+    let command = 'summarize';
+    this.aiService.postArticle(formData, command).subscribe({
+      next: (obj: any) => {
+        console.log('Document saved successfully', obj);
+        const tagsString = obj.tags.join(',');
+
+        this.description = obj.description
+        this.title = obj.title;
+        this.tags = tagsString;
+        this.author = obj.author;
+        this.isAnalyzing = false;
+      },
+      error: (error) => {
+        console.error('Error analyzing document', error);
+        this.isAnalyzing = false;
+      }
+    });
   }
   saveDocument(): void {
     if (!this.title.trim()) {
@@ -53,48 +114,32 @@ private _article: Article | null = null;
 
     this.isSaving = true;
 
-    // Prepare document data
-    const documentData: Article = {
-      title: this.title.trim(),
-      description: this.description.trim(),
-      content: this.content.trim(),
-      tags: this.tags.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0),
-      contentUrl: this.url.trim(),
-      articleID:0,
-      sourceURL:"",
-      date:dateTimestampProvider,
-      createDate:new Date(),
-      status:"Draft",
-      author:""
-    };
+    const formData = new FormData();
+    formData.append('title', this.title.trim());
+    formData.append('description', this.description.trim());
+    formData.append('content', this.content.trim());
+    formData.append('tags', JSON.stringify(this.tags.split(',').map(tag => tag.trim()).filter(tag => tag.length > 0)));
+    formData.append('contentUrl', this.url.trim());
+    formData.append('sourceURL', this.sourceURL.trim());
+    formData.append('author', this.author.trim());
 
-    console.log('Saving document:', documentData);
+    if (this.selectedFile) {
+      formData.append('file', this.selectedFile);
+    }
 
-    this.aiService.postArticle(documentData).subscribe(obj=>{
+    console.log('Saving document with file:', this.selectedFile?.name);
+
+    this.aiService.postArticle(formData,"upsert").subscribe({
+      next: (obj) => {
         console.log('Document saved successfully', obj);
         this.resetForm();
         this.isSaving = false;
-    })
-    // TODO: Implement your server upload logic here
-    // Example:
-    // this.httpClient.post('/api/documents', documentData).subscribe({
-    //   next: (response) => {
-    //     console.log('Document saved successfully', response);
-    //     this.resetForm();
-    //     this.isSaving = false;
-    //   },
-    //   error: (error) => {
-    //     console.error('Error saving document', error);
-    //     this.isSaving = false;
-    //   }
-    // });
-
-    // Simulating save for now
-  //   setTimeout(() => {
-  //     this.isSaving = false;
-  //     alert('Document saved successfully!');
-  //     this.resetForm();
-  //   }, 1000);
+      },
+      error: (error) => {
+        console.error('Error saving document', error);
+        this.isSaving = false;
+      }
+    });
   }
 
   resetForm(): void {
@@ -103,6 +148,9 @@ private _article: Article | null = null;
     this.content = '';
     this.tags = '';
     this.url = '';
+    this.author = '';
+    this.sourceURL = '';
+    this.selectedFile = null;
   }
 
   clearForm(): void {

@@ -5,27 +5,28 @@ import { ContactUs } from '../../interfaces/contactUs';
 import { Article } from '../../interfaces/article.interface';
 
 @Injectable({
-  providedIn: 'root',
+    providedIn: 'root',
 })
 export class AiService {
     server = environment.API_URL;
-    
 
-    constructor(private http: HttpClient) {}
+
+    constructor(private http: HttpClient) { }
     getEmbedding(text: string) {
 
-        return this.http.post(this.server + '/api/qdrantlookup/embedding', { text:text });
+        return this.http.post(this.server + '/api/qdrantlookup/embedding', { text: text });
     }
     getContactUsResponse(data: ContactUs) {
 
         return this.http.post(this.server + '/api/qdrantlookup/auto-responder', data);
     }
-     postArticle(data: Article) {
+    postArticle(data: Article | FormData, command: string = 'summarize') {
+        let url = this.server + `/api/admin/article/process?command=${command}`;
 
-        return this.http.post(this.server + '/api/qdrantlookup/add-article', data);
+        return this.http.post(url, data);
     }
     searchArticle(data: string) {
         let url = `${this.server}/api/article/search-library?q=${data}`
-        return this.http.post(url,'');
+        return this.http.post(url, '');
     }
 }

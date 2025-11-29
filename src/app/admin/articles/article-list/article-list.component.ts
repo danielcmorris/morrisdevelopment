@@ -3,16 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ArticleService } from '../../../services/article.service';
+import { Article } from '../../../../interfaces/article.interface';
 
-export interface Article {
-  articleID: number;
-  title: string;
-  author: string;
-  createDate: Date;
-  sourceURL: string;
-  tags: string[];
-  status: 'Draft' | 'Published' | 'Archived' | 'Review';
-}
+ 
 
 @Component({
   selector: 'app-article-list',
@@ -54,7 +47,7 @@ export default class ArticleListComponent implements OnInit {
         title: 'Getting Started with Angular',
         author: 'John Doe',
         createDate: new Date('2024-01-15'),
-        sourceURL: 'https://example.com/angular-intro',
+      sourceURL: 'https://example.com/angular-intro',
         tags: ['Angular', 'Tutorial', 'Beginner'],
         status: 'Published'
       },
@@ -121,8 +114,8 @@ export default class ArticleListComponent implements OnInit {
       const term = this.searchTerm.toLowerCase();
       filtered = filtered.filter(article =>
         article.title.toLowerCase().includes(term) ||
-        article.author.toLowerCase().includes(term) ||
-        article.tags.some(tag => tag.toLowerCase().includes(term)) ||
+        article.author?.toLowerCase().includes(term) ||
+        article.tags?.some(tag => tag.toLowerCase().includes(term)) ||
         article.status.toLowerCase().includes(term) ||
         article.articleID.toString().includes(term)
       );

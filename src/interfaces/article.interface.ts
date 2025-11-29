@@ -1,16 +1,17 @@
 export interface Article {
-  articleID:number;
+  articleID: number;
   title: string;
   subtitle?: string;
-  author: string;
+  author?: string;
   date?: any;
   coverImage?: string;
-  description: string;
-  content: string; // HTML content
+  description?: string;
+  content?: string; // HTML content
   contentUrl?: string;
-  tags: string[];
+  tags?: string[];
   readTime?: number; // in minutes
-  createDate:Date;
-  status:"Draft" | "Published" | "Archived" | "Review"
-  sourceURL:string;
+  createDate?: Date;
+  img?:"";
+  status: "Draft" | "Published" | "Archived" | "Review"
+  sourceURL?: string;
 }
