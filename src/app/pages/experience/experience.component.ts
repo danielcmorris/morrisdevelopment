@@ -9,12 +9,13 @@ import { CommonModule } from '@angular/common';
 import { AiService } from '../../services/ai.service';
 import { LoadingBarComponent } from '../../components/loading-bar/loading-bar.component';
 import { FormsModule } from '@angular/forms';
+import { ArticleCardComponent } from "../../components/article-card/article-card.component";
+import { Article } from '../../../interfaces/article.interface';
  
 @Component({
     selector: 'app-experience',
-    imports: [CommonModule, LoadingBarComponent,FormsModule ,
-        ExperienceCardComponent,
-    ],
+    imports: [CommonModule, LoadingBarComponent, FormsModule,
+    ExperienceCardComponent, ArticleCardComponent],
     templateUrl: './experience.component.html',
     styleUrl: './experience.component.scss'
 })
@@ -24,6 +25,8 @@ export class ExperienceComponent {
     public searchText = "";
     public searching = false;
     public showResponse = false;
+
+    public articles:Article[] = []
     constructor(
         private _globalStates: GlobalStatsService, public theme: ThemeService, private ai: AiService
     ) {
@@ -42,7 +45,18 @@ export class ExperienceComponent {
                 console.log(retval);
 
                 let resources:any = [];
+
+
+
                 retval.resources.forEach((e:any) => {
+                    let article:Article = {
+                        articleID: e.articleID,
+                        title:e.articleName,
+                        status:'Published',
+                        description: e.summary,
+                        sourceURL: e.sourceUrl,
+                    }
+                    this.articles.push(article);
                     let resource = {
                         orgLink:e.sourceUrl,
                         orgLogoPath: e.imageUrl,

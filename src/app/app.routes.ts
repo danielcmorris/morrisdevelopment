@@ -33,7 +33,7 @@ export const routes: Routes = [
     {
         path: AppRoutes.ARTICLES,
         component: ExperienceComponent,
-        title: `Experience | Morris Development`,
+        title: `Technical Articles | Morris Development`,
     },
     {
         path: AppRoutes.ARTICLES + "/:slug",
@@ -58,15 +58,12 @@ export const routes: Routes = [
                 loadComponent: () => import('./admin/login/login.component')
             },
              {
-                path: 'articles',
+                path: 'articles', title: 'Articles',
                 loadComponent: () => import('./admin/articles/article-list/article-list.component')
             },
+            
             {
-                path: 'article-editor',
-                component: ArticleEditorComponent
-            },
-            {
-                path: 'article-editor/:articleId',
+                path: 'articles/:articleId',
                 component: ArticleEditorComponent
             },
             {

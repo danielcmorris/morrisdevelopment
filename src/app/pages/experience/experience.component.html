@@ -68,6 +68,11 @@
 
         </div>
         }
+ 
+        @for (article of articles;track $index){
+            <app-article-card [article]="article" ></app-article-card>
+        }
+
         @for (exps of appConfig.experienceSections; track $index) {
 
         <div class="section-heading-text-div" data-aos="fade-up">
@@ -84,6 +89,7 @@
 
             @for (exp of exps.experiences; track $index) {
             <app-experience-card [experience]="exp" class="w-full"></app-experience-card>
+            
             }
 
         </div>
