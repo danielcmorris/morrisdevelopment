@@ -38,12 +38,12 @@ jobs:
         id: setdir
         run: echo "BUILD_DIR=dist/morrisdev/browser" >> $GITHUB_OUTPUT
 
-      # 5. Prepare SSH key
+    # 5. Prepare SSH key
       - name: Setup SSH key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
-          chmod 600 ~/.ssh/id_rsa
+          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_ed25519  # Changed from id_rsa
+          chmod 600 ~/.ssh/id_ed25519
 
           # Optional: skip host key checking (easier but less secure)
           printf "Host *\n  StrictHostKeyChecking no\n" > ~/.ssh/config
@@ -59,9 +59,6 @@ jobs:
       # 7. Deploy via rsync over SSH
       - name: Deploy to HostGator
         run: |
-          # sudo apt-get update
-          # sudo apt-get install -y rsync
-
           echo "Deploying to ${{ secrets.SSH_HOST }} ..."
           cd "${{ steps.setdir.outputs.BUILD_DIR }}"
 
