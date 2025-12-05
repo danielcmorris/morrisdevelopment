@@ -48,7 +48,14 @@ jobs:
           printf "Host *\n  StrictHostKeyChecking no\n" > ~/.ssh/config
           chmod 600 ~/.ssh/config
 
-      # 6. Deploy via rsync over SSH
+      # 6. Install Rsync and SSH so we can push to remote
+      - name: Install rsync and SSH
+        run: |
+          apt-get update
+          apt-get install -y rsync openssh-client
+
+
+      # 7. Deploy via rsync over SSH
       - name: Deploy to HostGator
         run: |
           # sudo apt-get update
