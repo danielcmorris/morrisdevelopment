@@ -3,7 +3,7 @@ name: Build and Deploy to HostGator via SSH
 on:
   push:
     branches:
-      - master # or your deployment branch
+      - master
 
 jobs:
   build-and-deploy:
@@ -14,7 +14,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2. Set up Node (for Angular/React/Node-based static site)
+      # 2. Set up Node
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
@@ -27,42 +27,27 @@ jobs:
 
       - name: Build project
         run: npm run build
-      #  run: npm run build -- --base-href /beta/ --deploy-url /beta/
 
       # 4. Set build output directory
-      #    CHANGE this to your actual build folder:
-      #    - Angular 16+: dist/<app-name>/browser
-      #    - Older Angular: dist/<app-name>
-      #    - React: build
       - name: Set build output dir
         id: setdir
         run: echo "BUILD_DIR=dist/morrisdev/browser" >> $GITHUB_OUTPUT
 
-    # 5. Prepare SSH key
-      - name: Setup SSH key
-        run: |
-          mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_ed25519  # Changed from id_rsa
-          chmod 600 ~/.ssh/id_ed25519
-
-          # Optional: skip host key checking (easier but less secure)
-          printf "Host *\n  StrictHostKeyChecking no\n" > ~/.ssh/config
-          chmod 600 ~/.ssh/config
-
-      # 6. Install Rsync and SSH so we can push to remote
-      - name: Install rsync and SSH
+      # 5. Install rsync, SSH, and sshpass
+      - name: Install deployment tools
         run: |
           apt-get update
-          apt-get install -y rsync openssh-client
+          apt-get install -y rsync openssh-client sshpass
 
-
-      # 7. Deploy via rsync over SSH
+      # 6. Deploy via rsync with password
       - name: Deploy to HostGator
+        env:
+          SSHPASS: ${{ secrets.SSH_PASSWORD }}
         run: |
           echo "Deploying to ${{ secrets.SSH_HOST }} ..."
           cd "${{ steps.setdir.outputs.BUILD_DIR }}"
 
-          rsync -avz --delete \
-            -e "ssh -p ${{ secrets.SSH_PORT }} -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes -o StrictHostKeyChecking=no" \
+          sshpass -e rsync -avz --delete \
+            -e "ssh -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no" \
             ./ \
             "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:${{ secrets.REMOTE_PATH }}/"
