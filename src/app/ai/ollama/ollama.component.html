@@ -1,0 +1,45 @@
+<div style="padding:30px">
+    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
+        <div class="p-6 sm:p-8 space-y-6">
+            <!-- Header -->
+            <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
+                <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Question Ollama</h1>
+            </div>
+
+            <!-- Response Display -->
+            <div
+                class="min-h-[200px] max-h-[60vh] p-4 rounded-lg border border-gray-200 dark:border-gray-700 overflow-y-auto">
+                <div *ngIf="displayText" [innerHTML]="displayText"
+                    class="prose prose-sm dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 whitespace-pre-wrap">
+                </div>
+                <div *ngIf="!displayText" class="text-gray-400 dark:text-gray-500 italic">
+                    Response will appear here...
+                </div>
+            </div>
+
+            <!-- Input Section -->
+            <div class="flex flex-col gap-4">
+                <textarea [(ngModel)]="question" placeholder="Ask a question..."
+                    class="w-full h-32 px-4 py-3 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent resize-none text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"></textarea>
+
+                <!-- Button (shown when not loading) -->
+                <button *ngIf="!isLoading" (click)="search()" [disabled]="!question?.trim()"
+                    class="w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:hover:bg-gray-400 dark:bg-blue-500 dark:hover:bg-blue-600 dark:disabled:bg-gray-600 dark:disabled:hover:bg-gray-600 text-white rounded-lg font-medium transition-colors duration-150 flex items-center justify-center gap-2 disabled:cursor-not-allowed">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path
+                            d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                    </svg>
+                    Send
+                </button>
+
+                <!-- Spinner (shown while loading) -->
+                <div *ngIf="isLoading" class="w-full sm:w-auto flex justify-center py-3">
+                    <div class="h-8 w-8 rounded-full border-4 
+            border-gray-300 dark:border-gray-700
+            border-t-blue-500 dark:border-t-blue-300
+            animate-spin"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
