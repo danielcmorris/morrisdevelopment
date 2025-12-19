@@ -13,6 +13,7 @@ import { EmbeddingComponent } from './ai/embedding/embedding.component';
 import { DocumentEditorComponent } from './components/document-editor/document-editor.component';
 import { ArticleEditorComponent } from './pages/admin/article-editor/article-editor.component';
 import { authGuard } from './guards/auth.guard';
+import { OllamaComponent } from './ai/ollama/ollama.component';
 
 export const routes: Routes = [
     {
@@ -43,6 +44,10 @@ export const routes: Routes = [
     {
         path: 'articles/:slug',
         component: ArticleComponent
+    },
+    {
+        path: 'ai/ollama',
+        component: OllamaComponent
     },
     {
         path: 'admin',
