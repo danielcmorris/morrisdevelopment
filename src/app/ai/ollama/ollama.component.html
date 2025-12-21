@@ -23,7 +23,7 @@
                     class="w-full h-32 px-4 py-3 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent resize-none text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"></textarea>
 
                 <!-- Button (shown when not loading) -->
-                <button *ngIf="!isLoading" (click)="search()" [disabled]="!question?.trim()"
+                <button *ngIf="!isLoading" (click)="search()" [disabled]="!question.trim()"
                     class="w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:hover:bg-gray-400 dark:bg-blue-500 dark:hover:bg-blue-600 dark:disabled:bg-gray-600 dark:disabled:hover:bg-gray-600 text-white rounded-lg font-medium transition-colors duration-150 flex items-center justify-center gap-2 disabled:cursor-not-allowed">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                         <path
