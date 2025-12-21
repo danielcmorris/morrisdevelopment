@@ -1,14 +1,15 @@
 <div class="p-8">
-  <div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
-    <div class="p-6 sm:p-8 space-y-6">
-      
-      <!-- Header -->
-      <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
+     <!-- Header -->
+      <div class="p-4 border-b border-gray-200 dark:border-gray-700">
         <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Question Ollama</h1>
       </div>
 
+  <div class="max-w-6xl mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
+    <div class="p-4 sm:p-8 space-y-6">
+      
+     
       <!-- Conversation Display -->
-      <div #chatContainer class="min-h-[200px] max-h-[60vh] p-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 overflow-y-auto scroll-smooth">
+      <div #chatContainer class="min-h-[200px] max-h-[50vh] p-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 overflow-y-auto scroll-smooth">
         
         <!-- No messages yet -->
         <div *ngIf="!conversation || conversation.length === 0" class="text-gray-400 dark:text-gray-500 italic text-center py-8">
