@@ -1,45 +1,90 @@
-<div style="padding:30px">
-    <div class="bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
-        <div class="p-6 sm:p-8 space-y-6">
-            <!-- Header -->
-            <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
-                <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Question Ollama</h1>
-            </div>
+<div class="p-8">
+  <div class="max-w-4xl mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden">
+    <div class="p-6 sm:p-8 space-y-6">
+      
+      <!-- Header -->
+      <div class="border-b border-gray-200 dark:border-gray-700 pb-4">
+        <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Question Ollama</h1>
+      </div>
 
-            <!-- Response Display -->
-            <div
-                class="min-h-[200px] max-h-[60vh] p-4 rounded-lg border border-gray-200 dark:border-gray-700 overflow-y-auto">
-                <div *ngIf="displayText" [innerHTML]="displayText"
-                    class="prose prose-sm dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 whitespace-pre-wrap">
-                </div>
-                <div *ngIf="!displayText" class="text-gray-400 dark:text-gray-500 italic">
-                    Response will appear here...
-                </div>
-            </div>
-
-            <!-- Input Section -->
-            <div class="flex flex-col gap-4">
-                <textarea [(ngModel)]="question" placeholder="Ask a question..."
-                    class="w-full h-32 px-4 py-3 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent resize-none text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500"></textarea>
-
-                <!-- Button (shown when not loading) -->
-                <button *ngIf="!isLoading" (click)="search()" [disabled]="!question.trim()"
-                    class="w-full sm:w-auto px-6 py-3 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400 disabled:hover:bg-gray-400 dark:bg-blue-500 dark:hover:bg-blue-600 dark:disabled:bg-gray-600 dark:disabled:hover:bg-gray-600 text-white rounded-lg font-medium transition-colors duration-150 flex items-center justify-center gap-2 disabled:cursor-not-allowed">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                        <path
-                            d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
-                    </svg>
-                    Send
-                </button>
-
-                <!-- Spinner (shown while loading) -->
-                <div *ngIf="isLoading" class="w-full sm:w-auto flex justify-center py-3">
-                    <div class="h-8 w-8 rounded-full border-4 
-            border-gray-300 dark:border-gray-700
-            border-t-blue-500 dark:border-t-blue-300
-            animate-spin"></div>
-                </div>
-            </div>
+      <!-- Conversation Display -->
+      <div #chatContainer class="min-h-[200px] max-h-[60vh] p-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 overflow-y-auto scroll-smooth">
+        
+        <!-- No messages yet -->
+        <div *ngIf="!conversation || conversation.length === 0" class="text-gray-400 dark:text-gray-500 italic text-center py-8">
+          Response will appear here...
         </div>
+
+        <!-- Conversation messages -->
+        <div *ngIf="conversation && conversation.length > 0" class="space-y-4">
+          @for (item of conversation; track $index) {
+            
+            <!-- AI Message -->
+            @if (item.source === 'ai') {
+              <div class="flex justify-start">
+                <div class="max-w-[80%] bg-white dark:bg-gray-700 rounded-lg shadow-md p-4 border border-gray-200 dark:border-gray-600">
+                  <div class="flex items-start gap-3">
+                    <span class="text-2xl flex-shrink-0">🤖</span>
+                    <p class="text-gray-800 dark:text-gray-200 whitespace-pre-wrap" [innerHTML]="item.response"></p>
+                  </div>
+                </div>
+              </div>
+            }
+            
+            <!-- User Message -->
+            @else {
+              <div class="flex justify-end">
+                <div class="max-w-[80%] bg-blue-500 dark:bg-blue-600 rounded-lg shadow-md p-4">
+                  <p class="text-white whitespace-pre-wrap" [innerHTML]="item.question"></p>
+                </div>
+              </div>
+            }
+            
+          }
+        </div>
+      </div>
+
+      <!-- Input Section -->
+      <div class="space-y-4">
+        <textarea 
+          [(ngModel)]="question" 
+          (keydown.enter)="onEnterKey($event )"
+          placeholder="Ask a question..."
+          class="w-full h-32 px-4 py-3 bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-600 rounded-lg 
+                 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent focus:outline-none
+                 resize-none text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500
+                 transition-colors duration-200">
+        </textarea>
+
+        <!-- Send Button -->
+        <button 
+          *ngIf="!isLoading" 
+          (click)="search()" 
+          [disabled]="!question.trim()"
+          class="w-full sm:w-auto px-6 py-3 
+                 bg-blue-600 hover:bg-blue-700 
+                 dark:bg-blue-500 dark:hover:bg-blue-600 
+                 disabled:bg-gray-400 disabled:hover:bg-gray-400 disabled:cursor-not-allowed
+                 dark:disabled:bg-gray-600 dark:disabled:hover:bg-gray-600
+                 text-white rounded-lg font-medium 
+                 transition-colors duration-150 
+                 flex items-center justify-center gap-2
+                 shadow-sm hover:shadow-md">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+          </svg>
+          Send
+        </button>
+
+        <!-- Loading Spinner -->
+        <div *ngIf="isLoading" class="w-full sm:w-auto flex justify-center py-3">
+          <div class="relative">
+            <div class="h-8 w-8 rounded-full border-4 border-gray-200 dark:border-gray-700"></div>
+            <div class="absolute top-0 left-0 h-8 w-8 rounded-full border-4 border-transparent border-t-blue-500 dark:border-t-blue-400 animate-spin"></div>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </div>
 </div>
