@@ -28,7 +28,7 @@ jobs:
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: harrisongarden.com
+          server: morrisdev.com
           username: ${{ secrets.FTP_USERNAME }}  # Your cPanel username
           password: ${{ secrets.FTP_PASSWORD }}  # Your cPanel password
           local-dir: ./dist/morrisdev/browser/
