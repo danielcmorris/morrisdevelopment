@@ -24,7 +24,7 @@
             @if (l.isVisible) {
             <li>
                 @if (l.isExternalLink) {
-                <a [href]="l.routeURLName" target="_blank" [routerLinkActive]="['font-bold']"
+                <a [href]="l.routeURLName" [routerLinkActive]="['font-bold']"
                     [routerLinkActiveOptions]="{exact: true}" [title]="l.routeTooltipValue ?? l.routeLinkText">
                     {{ l.routeLinkText }}
                 </a>
@@ -64,7 +64,7 @@
         @if (l.isVisible) {
         <li>
             @if (l.isExternalLink) {
-            <a [href]="l.routeURLName" target="_blank" [routerLinkActive]="['font-bold']"
+            <a [href]="l.routeURLName" [routerLinkActive]="['font-bold']"
                 [routerLinkActiveOptions]="{exact: true}" [title]="l.routeTooltipValue ?? l.routeLinkText">{{
                 l.routeLinkText }}</a>
             }
