@@ -26,3 +26,4 @@ After hitting save, the API server will break down the article into paragraphs. 
 After making an edit, hitting save will have the API server delete all records in the qdrant collection for that ArticleID.  Then it will process the article as if it were new.
 
 ## Next Steps
+testing
