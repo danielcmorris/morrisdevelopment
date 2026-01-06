@@ -1,0 +1,52 @@
+name: Build and Deploy to HostGator via SSH
+
+on:
+  push:
+    branches:
+      - production
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repo
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2. Set up Node
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 3. Install deps and build
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      # 4. Set build output directory
+      - name: Set build output dir
+        id: setdir
+        run: echo "BUILD_DIR=dist/morrisdev/browser" >> $GITHUB_OUTPUT
+
+      # 5. Install rsync, SSH, and sshpass
+      - name: Install deployment tools
+        run: |
+          apt-get update
+          apt-get install -y rsync openssh-client sshpass
+
+      # 6. Deploy via rsync with password
+      - name: Deploy to HostGator
+        env:
+          SSHPASS: ${{ secrets.SSH_PASSWORD }}
+        run: |
+          echo "Deploying to ${{ secrets.SSH_HOST }} ..."
+          cd "${{ steps.setdir.outputs.BUILD_DIR }}"
+
+          sshpass -e rsync -avz --delete \
+            -e "ssh -p ${{ secrets.SSH_PORT }} -o StrictHostKeyChecking=no" \
+            ./ \
+            "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:public_html/"
