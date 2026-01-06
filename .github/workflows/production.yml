@@ -34,9 +34,9 @@ jobs:
 
       # 5. Install rsync, SSH, and sshpass
       - name: Install deployment tools
-        run: |
-          apt-get update
-          apt-get install -y rsync openssh-client sshpass
+        run: |         
+          sudo apt-get update
+          sudo apt-get install -y rsync openssh-client sshpass
 
       # 6. Deploy via rsync with password
       - name: Deploy to HostGator
