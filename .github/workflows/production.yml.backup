@@ -3,7 +3,7 @@ name: Build and Deploy to HostGator Production via SSH
 on:
   push:
     branches:
-      - production
+      - NONE
 
 jobs:
   build-and-deploy:
