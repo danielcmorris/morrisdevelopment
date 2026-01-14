@@ -73,17 +73,61 @@
             border-radius: 3px;
             font-family: "Courier New", monospace;
         }
-        .toc {
+        #toc {
             background-color: #f9f9f9;
             border: 1px solid #ddd;
-            padding: 20px;
+            padding: 20px 30px;
             margin: 20px 0;
         }
-        .toc a {
+        .toc-entry {
+            padding: 4px 0;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px dotted #ddd;
+        }
+        .toc-entry:last-child {
+            border-bottom: none;
+        }
+        .toc-entry a {
             text-decoration: none;
             color: #0066cc;
+            flex: 1;
         }
-        .toc a:hover {
+        .toc-entry a:hover {
+            text-decoration: underline;
+        }
+        .toc-page {
+            color: #888;
+            margin-left: 10px;
+            min-width: 30px;
+            text-align: right;
+        }
+        .toc-level-0 {
+            font-weight: bold;
+        }
+        .toc-level-1 {
+            padding-left: 20px;
+        }
+        .toc-level-2 {
+            padding-left: 40px;
+            font-size: 0.95em;
+        }
+        .toc-level-3 {
+            padding-left: 60px;
+            font-size: 0.9em;
+        }
+        .back-to-toc {
+            text-align: center;
+            margin: 30px 0 10px 0;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        .back-to-toc a {
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .back-to-toc a:hover {
             text-decoration: underline;
         }
         strong {
@@ -97,10 +141,16 @@
             .page-break {
                 page-break-before: always;
             }
+            .back-to-toc {
+                display: none;
+            }
         }
         @media (max-width: 600px) {
             body {
                 padding: 10px 15px;
+            }
+            .toc-level-1, .toc-level-2, .toc-level-3 {
+                padding-left: 15px;
             }
         }
     </style>
@@ -114,108 +164,111 @@
 REBUILTTM presented by Haas<br>
 V0 - Kickoff</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 2</div>
-<div class="page-content">
-<p>Contents<br>
-1 Introduction ................................................................................................................................................ 4<br>
-1.1 About FIRST® ..................................................................................................................................................... 4<br>
-1.2 In Memoriam ..................................................................................................................................................... 4<br>
-1.3 FIRST® Robotics Competition .......................................................................................................................... 5<br>
-1.4 FIRST Ethos and Core Values ........................................................................................................................... 5<br>
-1.5 Spirit of Volunteering ........................................................................................................................................ 7<br>
-1.6 This Document &amp; Its Conventions ................................................................................................................... 9<br>
-1.7 Translations &amp; Other Versions ...................................................................................................................... 10<br>
-1.8 Team Updates ................................................................................................................................................ 11<br>
-1.9 Question and Answer System ....................................................................................................................... 11<br>
-2 FIRST Season Overview ........................................................................................................................... 13<br>
-3 Game Sponsor Recognition .................................................................................................................... 14<br>
-4 Game Overview ........................................................................................................................................ 15<br>
-5 ARENA ...................................................................................................................................................... 17<br>
-5.1 Dimensions and Accuracy ............................................................................................................................. 17<br>
-5.2 FIELD ............................................................................................................................................................... 18<br>
-5.3 Areas, Zones, &amp; Markings .............................................................................................................................. 20<br>
-5.4 HUB ................................................................................................................................................................. 22<br>
-5.5 BUMP .............................................................................................................................................................. 24<br>
-5.6 TRENCH .......................................................................................................................................................... 25<br>
-5.7 DEPOT ............................................................................................................................................................ 25<br>
-5.8 TOWER ............................................................................................................................................................ 26<br>
-5.9 ALLIANCE WALL ............................................................................................................................................ 27<br>
-5.10 SCORING ELEMENTS .................................................................................................................................... 32<br>
-5.11 AprilTags ........................................................................................................................................................ 33<br>
-5.12 The FIELD Management System ................................................................................................................... 36<br>
-5.13 FIELD STAFF .................................................................................................................................................. 37<br>
-6 Game Details ............................................................................................................................................ 39<br>
-6.1 MATCH Overview ........................................................................................................................................... 39<br>
-6.2 DRIVE TEAM ................................................................................................................................................... 39<br>
-6.3 Setup ............................................................................................................................................................... 41<br>
-6.4 MATCH Periods ............................................................................................................................................. 44<br>
-6.5 Scoring ............................................................................................................................................................ 45<br>
-6.6 Violations ........................................................................................................................................................ 48<br>
-6.7 Head REFEREE and FTA Interaction ............................................................................................................. 51<br>
-6.8 Other Logistics ............................................................................................................................................... 52<br>
-7 Game Rules (G) ........................................................................................................................................ 53<br>
-7.1 Personal Safety .............................................................................................................................................. 53<br>
-7.2 Conduct .......................................................................................................................................................... 54<br>
-7.3 Pre-MATCH .................................................................................................................................................... 59<br>
-7.4 In-MATCH ....................................................................................................................................................... 62<br>
-7.5 Post-MATCH .................................................................................................................................................. 70<br>
-8 ROBOT Construction Rules (R) ............................................................................................................... 71<br>
-2 of 162</p>
+<div id="toc" class="page-content">
+<p>Contents</p>
+<div class="toc-entry toc-level-0"><a href="#section-1">1 Introduction</a><span class="toc-page">4</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-1-1">1.1 About FIRST®</a><span class="toc-page">4</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-1-2">1.2 In Memoriam</a><span class="toc-page">4</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-1-3">1.3 FIRST® Robotics Competition</a><span class="toc-page">5</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-1-4">1.4 FIRST Ethos and Core Values</a><span class="toc-page">5</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-1-5">1.5 Spirit of Volunteering</a><span class="toc-page">7</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-1-6">1.6 This Document & Its Conventions</a><span class="toc-page">9</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-1-7">1.7 Translations & Other Versions</a><span class="toc-page">10</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-1-8">1.8 Team Updates</a><span class="toc-page">11</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-1-9">1.9 Question and Answer System</a><span class="toc-page">11</span></div>
+<div class="toc-entry toc-level-0"><a href="#section-2">2 FIRST Season Overview</a><span class="toc-page">13</span></div>
+<div class="toc-entry toc-level-0"><a href="#section-3">3 Game Sponsor Recognition</a><span class="toc-page">14</span></div>
+<div class="toc-entry toc-level-0"><a href="#section-4">4 Game Overview</a><span class="toc-page">15</span></div>
+<div class="toc-entry toc-level-0"><a href="#section-5">5 ARENA</a><span class="toc-page">17</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-5-1">5.1 Dimensions and Accuracy</a><span class="toc-page">17</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-5-2">5.2 FIELD</a><span class="toc-page">18</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-5-3">5.3 Areas, Zones, & Markings</a><span class="toc-page">20</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-5-4">5.4 HUB</a><span class="toc-page">22</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-5-5">5.5 BUMP</a><span class="toc-page">24</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-5-6">5.6 TRENCH</a><span class="toc-page">25</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-5-7">5.7 DEPOT</a><span class="toc-page">25</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-5-8">5.8 TOWER</a><span class="toc-page">26</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-5-9">5.9 ALLIANCE WALL</a><span class="toc-page">27</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-5-10">5.10 SCORING ELEMENTS</a><span class="toc-page">32</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-5-11">5.11 AprilTags</a><span class="toc-page">33</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-5-12">5.12 The FIELD Management System</a><span class="toc-page">36</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-5-13">5.13 FIELD STAFF</a><span class="toc-page">37</span></div>
+<div class="toc-entry toc-level-0"><a href="#section-6">6 Game Details</a><span class="toc-page">39</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-6-1">6.1 MATCH Overview</a><span class="toc-page">39</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-6-2">6.2 DRIVE TEAM</a><span class="toc-page">39</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-6-3">6.3 Setup</a><span class="toc-page">41</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-6-4">6.4 MATCH Periods</a><span class="toc-page">44</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-6-5">6.5 Scoring</a><span class="toc-page">45</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-6-6">6.6 Violations</a><span class="toc-page">48</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-6-7">6.7 Head REFEREE and FTA Interaction</a><span class="toc-page">51</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-6-8">6.8 Other Logistics</a><span class="toc-page">52</span></div>
+<div class="toc-entry toc-level-0"><a href="#section-7">7 Game Rules (G)</a><span class="toc-page">53</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-7-1">7.1 Personal Safety</a><span class="toc-page">53</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-7-2">7.2 Conduct</a><span class="toc-page">54</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-7-3">7.3 Pre-MATCH</a><span class="toc-page">59</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-7-4">7.4 In-MATCH</a><span class="toc-page">62</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-7-5">7.5 Post-MATCH</a><span class="toc-page">70</span></div>
+<div class="toc-entry toc-level-0"><a href="#section-8">8 ROBOT Construction Rules (R)</a><span class="toc-page">71</span></div>
+<p>2 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 3</div>
 <div class="page-content">
-<p>8.1 General ROBOT Design .................................................................................................................................. 74<br>
-8.2 ROBOT Safety &amp; Damage Prevention ........................................................................................................... 77<br>
-8.3 Budget Constraints &amp; Fabrication Schedule ................................................................................................ 78<br>
-8.4 BUMPER Rules ............................................................................................................................................... 81<br>
-8.5 Motors &amp; Actuators ........................................................................................................................................ 88<br>
-8.6 Power Distribution ......................................................................................................................................... 92<br>
-8.7 Control, Command &amp; Signals System ......................................................................................................... 100<br>
-8.8 Pneumatic System ....................................................................................................................................... 105<br>
-8.9 OPERATOR CONSOLE ................................................................................................................................. 109<br>
-9 Inspection &amp; Eligibility (I) ....................................................................................................................... 111<br>
-9.1 Rules ............................................................................................................................................................. 111<br>
-10 Tournaments (T) ................................................................................................................................ 115<br>
-10.1 MATCH Schedules ....................................................................................................................................... 115<br>
-10.2 MATCH Replays ........................................................................................................................................... 115<br>
-10.3 Measurement ............................................................................................................................................... 117<br>
-10.4 Practice MATCHES ...................................................................................................................................... 117<br>
-10.5 Qualification MATCHES ............................................................................................................................... 118<br>
-10.6 Playoff MATCHES ........................................................................................................................................ 119<br>
-11 District Tournaments......................................................................................................................... 129<br>
-11.1 District Events .............................................................................................................................................. 129<br>
-11.2 District Championship Eligibility ................................................................................................................. 132<br>
-11.3 District Championships with Multiple Divisions ........................................................................................ 134<br>
-11.4 District Championship Playoffs .................................................................................................................. 134<br>
-11.5 FIRST Championship Eligibility ................................................................................................................... 136<br>
-12 Regional Tournaments ...................................................................................................................... 139<br>
-12.1 Regional Events ............................................................................................................................................ 139<br>
-12.2 FIRST Championship Eligibility ................................................................................................................... 141<br>
-13 FIRST Championship Tournament (C) ............................................................................................. 143<br>
-13.1 Advancement to the FIRST Championship ................................................................................................. 143<br>
-13.2 4-ROBOT ALLIANCES................................................................................................................................... 143<br>
-13.3 FIRST Championship Pit Crews .................................................................................................................. 144<br>
-13.4 FIRST Championship Playoffs..................................................................................................................... 144<br>
-14 Event Rules (E) ................................................................................................................................... 145<br>
-14.1 General Rules ............................................................................................................................................... 145<br>
-14.2 Machine Shops ............................................................................................................................................ 149<br>
-14.3 Wireless Rules .............................................................................................................................................. 149<br>
-14.4 Load-In .......................................................................................................................................................... 150<br>
-14.5 Pits ................................................................................................................................................................ 151<br>
-14.6 TEST AREAS and PRACTICE AREAS........................................................................................................... 152<br>
-14.7 ROBOT Carts ................................................................................................................................................ 154<br>
-14.8 Ceremonies .................................................................................................................................................. 154<br>
-14.9 In the Stands ................................................................................................................................................ 155<br>
-15 Glossary ............................................................................................................................................. 157<br>
-3 of 162</p>
+<div class="toc-entry toc-level-1"><a href="#section-8-1">8.1 General ROBOT Design</a><span class="toc-page">74</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-8-2">8.2 ROBOT Safety & Damage Prevention</a><span class="toc-page">77</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-8-3">8.3 Budget Constraints & Fabrication Schedule</a><span class="toc-page">78</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-8-4">8.4 BUMPER Rules</a><span class="toc-page">81</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-8-5">8.5 Motors & Actuators</a><span class="toc-page">88</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-8-6">8.6 Power Distribution</a><span class="toc-page">92</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-8-7">8.7 Control, Command & Signals System</a><span class="toc-page">100</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-8-8">8.8 Pneumatic System</a><span class="toc-page">105</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-8-9">8.9 OPERATOR CONSOLE</a><span class="toc-page">109</span></div>
+<div class="toc-entry toc-level-0"><a href="#section-9">9 Inspection & Eligibility (I)</a><span class="toc-page">111</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-9-1">9.1 Rules</a><span class="toc-page">111</span></div>
+<div class="toc-entry toc-level-0"><a href="#section-10">10 Tournaments (T)</a><span class="toc-page">115</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-10-1">10.1 MATCH Schedules</a><span class="toc-page">115</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-10-2">10.2 MATCH Replays</a><span class="toc-page">115</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-10-3">10.3 Measurement</a><span class="toc-page">117</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-10-4">10.4 Practice MATCHES</a><span class="toc-page">117</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-10-5">10.5 Qualification MATCHES</a><span class="toc-page">118</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-10-6">10.6 Playoff MATCHES</a><span class="toc-page">119</span></div>
+<div class="toc-entry toc-level-0"><a href="#section-11">11 District Tournaments</a><span class="toc-page">129</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-11-1">11.1 District Events</a><span class="toc-page">129</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-11-2">11.2 District Championship Eligibility</a><span class="toc-page">132</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-11-3">11.3 District Championships with Multiple Divisions</a><span class="toc-page">134</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-11-4">11.4 District Championship Playoffs</a><span class="toc-page">134</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-11-5">11.5 FIRST Championship Eligibility</a><span class="toc-page">136</span></div>
+<div class="toc-entry toc-level-0"><a href="#section-12">12 Regional Tournaments</a><span class="toc-page">139</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-12-1">12.1 Regional Events</a><span class="toc-page">139</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-12-2">12.2 FIRST Championship Eligibility</a><span class="toc-page">141</span></div>
+<div class="toc-entry toc-level-0"><a href="#section-13">13 FIRST Championship Tournament (C)</a><span class="toc-page">143</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-13-1">13.1 Advancement to the FIRST Championship</a><span class="toc-page">143</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-13-2">13.2 4-ROBOT ALLIANCES</a><span class="toc-page">143</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-13-3">13.3 FIRST Championship Pit Crews</a><span class="toc-page">144</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-13-4">13.4 FIRST Championship Playoffs</a><span class="toc-page">144</span></div>
+<div class="toc-entry toc-level-0"><a href="#section-14">14 Event Rules (E)</a><span class="toc-page">145</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-14-1">14.1 General Rules</a><span class="toc-page">145</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-14-2">14.2 Machine Shops</a><span class="toc-page">149</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-14-3">14.3 Wireless Rules</a><span class="toc-page">149</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-14-4">14.4 Load-In</a><span class="toc-page">150</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-14-5">14.5 Pits</a><span class="toc-page">151</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-14-6">14.6 TEST AREAS and PRACTICE AREAS</a><span class="toc-page">152</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-14-7">14.7 ROBOT Carts</a><span class="toc-page">154</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-14-8">14.8 Ceremonies</a><span class="toc-page">154</span></div>
+<div class="toc-entry toc-level-1"><a href="#section-14-9">14.9 In the Stands</a><span class="toc-page">155</span></div>
+<div class="toc-entry toc-level-0"><a href="#section-15">15 Glossary</a><span class="toc-page">157</span></div>
+<p>3 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 4</div>
 <div class="page-content">
 <h2 id="section-1">1 Introduction</h2>
-<h3 id="section-1.1">1.1 About FIRST®</h3>
+<h3 id="section-1-1">1.1 About FIRST®</h3>
 <p>FIRST® (For Inspiration and Recognition of Science and Technology) was founded by inventor Dean Kamen to<br>
 inspire young people’s interest in science and technology. As a robotics community that prepares young<br>
 people for the future, FIRST is the world’s leading youth-serving nonprofit advancing STEM education. For 30<br>
@@ -236,7 +289,7 @@ tomorrow. and technology are celebrated and that give young people the skills,<b
 where young people dream of confidence, and resilience to build<br>
 becoming science and technology a better world.<br>
 leaders.</p>
-<h3 id="section-1.2">1.2 In Memoriam</h3>
+<h3 id="section-1-2">1.2 In Memoriam</h3>
 <p>In October 2019, Dr. Woodie Flowers, an innovator in design and engineering education and a Distinguished<br>
 Advisor to FIRST and supporter of our mission, passed away. As thousands of heartfelt tributes to Woodie<br>
 have poured in from around the world, it is clear his legacy will live on indefinitely through the gracious nature<br>
@@ -244,10 +297,11 @@ of our community and our ongoing commitment to empowering educators and building
 Figure 1-1 Dr. Woodie Flowers, 1943-2019<br>
 Section 1 Introduction V0 - Kickoff 4 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 5</div>
 <div class="page-content">
-<h3 id="section-1.3">1.3 FIRST® Robotics Competition</h3>
+<h3 id="section-1-3">1.3 FIRST® Robotics Competition</h3>
 <p>FIRST® Robotics Competition combines the excitement of sport with the rigors of science and technology.<br>
 Teams of students are challenged to design, build, and program industrial-size robots and compete for awards,<br>
 while they also create a team identity, raise funds, hone teamwork skills, and advance respect and appreciation<br>
@@ -270,8 +324,8 @@ Saturday, January 10, 2026. At the Kickoff, all teams:<br>
 − saw the 2026 game, REBUILTTM presented by Haas, for the first time,<br>
 − learned about the 2026 game rules and regulations, and<br>
 − received a set of game specific materials.</p>
-<h3 id="section-1.4">1.4 FIRST Ethos and Core Values</h3>
-<h4 id="section-1.4.1">1.4.1 Core Values</h4>
+<h3 id="section-1-4">1.4 FIRST Ethos and Core Values</h3>
+<h4 id="section-1-4-1">1.4.1 Core Values</h4>
 <p>The FIRST Core Values are fundamental to FIRST and unique to its programs. They emphasize friendly<br>
 sportsmanship, respect for the contributions of others, teamwork, learning, and community involvement and<br>
 are part of our commitment to fostering, cultivating, and preserving a culture of unity.<br>
@@ -285,10 +339,11 @@ Teamwork: We are stronger when we work together.<br>
 Fun: We enjoy and celebrate what we do!<br>
 Section 1 Introduction V0 - Kickoff 5 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 6</div>
 <div class="page-content">
-<h4 id="section-1.4.2">1.4.2 Gracious Professionalism®, a FIRST Credo</h4>
+<h4 id="section-1-4-2">1.4.2 Gracious Professionalism®, a FIRST Credo</h4>
 <p>Gracious Professionalism is part of the ethos of FIRST. It’s a way of doing things that encourages high quality<br>
 work, emphasizes the value of others, and respects individuals and the community. Gracious Professionalism<br>
 is not clearly defined for a reason. It is an aspirational ideal to always strive towards, not a goal to be achieved<br>
@@ -321,10 +376,11 @@ team members to suggest ways in which they can demonstrate this quality themselv
 activities.<br>
 Section 1 Introduction V0 - Kickoff 6 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 7</div>
 <div class="page-content">
-<h4 id="section-1.4.3">1.4.3 Coopertition®</h4>
+<h4 id="section-1-4-3">1.4.3 Coopertition®</h4>
 <p>At FIRST, Coopertition is displaying unqualified kindness and respect in the face of fierce competition.<br>
 Coopertition is founded on the concept and philosophy that teams can and should help and cooperate with one<br>
 another even as they compete. Coopertition involves learning from teammates and mentors. Coopertition<br>
@@ -355,7 +411,7 @@ Andy Baker (3940, 45) Earl Scime (2614) Christine Sapio (2486)<br>
 Dave Kelso (131) Fredi Lajvardi (842) Mark Buckner (4265)<br>
 Paul Copioli (3310, 217) Lane Matheson (932) Norman Morgan (2468)<br>
 Mark Lawrence (1816) Francisco Guerra (4635)</p>
-<h3 id="section-1.5">1.5 Spirit of Volunteering</h3>
+<h3 id="section-1-5">1.5 Spirit of Volunteering</h3>
 <p>Message from the Global Volunteers<br>
 Welcome– we&#x27;re excited for you to discover this season. We’re even more excited to see what you<br>
 and your team can achieve this season and at the almost 200 events worldwide this season.<br>
@@ -365,6 +421,7 @@ Robotics Competition. Each year it takes thousands of volunteers donating their 
 enthusiasm to ensure that every FIRST Robotics Competition team has the opportunity to achieve<br>
 Section 1 Introduction V0 - Kickoff 7 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 8</div>
 <div class="page-content">
@@ -407,10 +464,11 @@ Global Lead Scorekeepers – Alex Herreid &amp; Andrea “Duckie” Tribo<br>
 Global Volunteer Coordinators – Laurie Shimizu &amp; Sarah Plemmons<br>
 Section 1 Introduction V0 - Kickoff 8 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 9</div>
 <div class="page-content">
-<h3 id="section-1.6">1.6 This Document &amp; Its Conventions</h3>
+<h3 id="section-1-6">1.6 This Document &amp; Its Conventions</h3>
 <p>The 2026 Game Manual is a resource for all FIRST Robotics Competition teams for information specific to the<br>
 2026 season and the REBUILT game. Its audience will find the following detail:<br>
 − a general overview of the REBUILT game,<br>
@@ -444,6 +502,7 @@ Warnings, cautions, and notes appear in blue boxes. Pay close attention to their
 contents as they’re intended to provide insight into the reasoning behind a rule,<br>
 Section 1 Introduction V0 - Kickoff 9 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 10</div>
 <div class="page-content">
@@ -473,7 +532,7 @@ a disparity, please let us know at customerservice@firstinspires.org and we will
 Team resources that aren’t generally season specific (e.g., what to expect at an event, communication<br>
 resources, team organization recommendations, ROBOT transportation procedures, and award descriptions)<br>
 can be found on the FIRST Robotics Competition website.</p>
-<h3 id="section-1.7">1.7 Translations &amp; Other Versions</h3>
+<h3 id="section-1-7">1.7 Translations &amp; Other Versions</h3>
 <p>The REBUILT manual is originally and officially written in English and is occasionally translated into other<br>
 languages for the benefit of FIRST Robotics Competition teams whose native language may not be English.<br>
 These assets are posted on the Translated Manuals section.<br>
@@ -485,10 +544,11 @@ In the event that a rule or description is modified in an alternate version of t
 as published on the Season Materials webpage is the commanding version.<br>
 Section 1 Introduction V0 - Kickoff 10 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 11</div>
 <div class="page-content">
-<h3 id="section-1.8">1.8 Team Updates</h3>
+<h3 id="section-1-8">1.8 Team Updates</h3>
 <p>Team Updates are used to notify the FIRST Robotics Competition community of revisions to the official season<br>
 documentation (e.g. the manual, drawings, etc.) or important season news. Team Update posts are scheduled<br>
 as follows:<br>
@@ -499,7 +559,7 @@ Team Updates are posted on the Season Materials webpage and are generally posted
 Generally, Team Updates follow the following convention:<br>
 − Additions are highlighted in yellow. This is an example.<br>
 − Deletions are indicated with a strikethrough. This is an example.</p>
-<h3 id="section-1.9">1.9 Question and Answer System</h3>
+<h3 id="section-1-9">1.9 Question and Answer System</h3>
 <p>The Question and Answer System (Q&amp;A) is a resource for clarifying the 2026 REBUILT Game Manual, Awards<br>
 webpages, official FIELD drawings, and/or District and Regional Events webpage content. Teams can search<br>
 for previously asked questions and responses or pose new questions. Questions can include examples for<br>
@@ -528,6 +588,7 @@ reference one or more relevant rules within the question. Some examples of quest
 answered in the Q&amp;A are:<br>
 Section 1 Introduction V0 - Kickoff 11 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 12</div>
 <div class="page-content">
@@ -540,6 +601,7 @@ Questions from “FRC 99999” represent content asked by key volunteers (e.g., 
 answered by FIRST, and are considered relevant to teams.<br>
 Section 1 Introduction V0 - Kickoff 12 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 13</div>
 <div class="page-content">
@@ -557,6 +619,7 @@ archaeology. What will you uncover? Join us for an experience for the ages.<br>
 LEARN MORE: firstinspires.org/firstage<br>
 Section 2 FIRST Season Overview V0 - Kickoff 13 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 14</div>
 <div class="page-content">
@@ -564,6 +627,7 @@ Section 2 FIRST Season Overview V0 - Kickoff 13 of 162</p>
 <p>Thank you to the 2026 FIRST® Robotics Competition season presenting sponsor, the Gene Haas Foundation.<br>
 Section 3 Game Sponsor Recognition V0 - Kickoff 14 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 15</div>
 <div class="page-content">
@@ -584,9 +648,11 @@ heights to score additional points and claim match bonuses to increase their pos
 The alliance that earns the most points wins the match!<br>
 Section 4 Game Overview V0 - Kickoff 15 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 16</div>
 <div class="page-content"><p><em>[Page contains no extractable text - may contain images or graphics]</em></p></div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 17</div>
 <div class="page-content">
@@ -595,7 +661,7 @@ Section 4 Game Overview V0 - Kickoff 15 of 162</p>
 Haas: the FIELD, SCORING ELEMENTS, queue area, team media area (when available), designated<br>
 TECHNICIAN area, and all equipment needed for FIELD control, ROBOT control, and scorekeeping.<br>
 Figure 5-1 REBUILT ARENA (queue area, TECHNICIAN area, and media area not pictured)</p>
-<h3 id="section-5.1">5.1 Dimensions and Accuracy</h3>
+<h3 id="section-5-1">5.1 Dimensions and Accuracy</h3>
 <p>All official models for the REBUILT FIELD were created in Onshape.<br>
 The specification for the REBUILT FIELD can be retrieved from a few locations:<br>
 − The 3D CAD model is the official representation of the REBUILT FIELD and how it is constructed.<br>
@@ -612,6 +678,7 @@ expected to change during MATCH play. Teams can ask the FTA to re-check specific
 measurements if they believe something is out of spec prior to a MATCH beginning.<br>
 Section 5 ARENA V0 - Kickoff 17 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 18</div>
 <div class="page-content">
@@ -624,7 +691,7 @@ to ensure that ARENAS are consistent from event to event.<br>
 However, ARENAS are assembled in different venues by different event staff and<br>
 some small variations occur. Successful teams will design ROBOTS that are<br>
 insensitive to these variations.</p>
-<h3 id="section-5.2">5.2 FIELD</h3>
+<h3 id="section-5-2">5.2 FIELD</h3>
 <p>Each FIELD for REBUILT is an approximately 317.7in (~8.07m) by 651.2in (~16.54m) carpeted area bounded<br>
 by inward facing surfaces of the ALLIANCE WALLS, OUTPOSTS, TOWER WALLS, and guardrails.<br>
 Figure 5-2 FIELD boundary in pink<br>
@@ -637,6 +704,7 @@ The FIELD is populated with and surrounded by the following elements:<br>
 <strong>− 4 TRENCHES.</strong>
 <p>Section 5 ARENA V0 - Kickoff 18 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 19</div>
 <div class="page-content">
@@ -666,6 +734,7 @@ FIRST California Welded<br>
 FIRST in Michigan Welded<br>
 Section 5 ARENA V0 - Kickoff 19 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 20</div>
 <div class="page-content">
@@ -689,12 +758,13 @@ China AndyMark<br>
 Mexico AndyMark<br>
 Türkiye AndyMark<br>
 United States Welded</p>
-<h3 id="section-5.3">5.3 Areas, Zones, &amp; Markings</h3>
+<h3 id="section-5-3">5.3 Areas, Zones, &amp; Markings</h3>
 <p>FIELD areas, zones, and markings of consequence are described below. Unless otherwise specified, the tape<br>
 used to mark lines and zones throughout the FIELD is 2.0in (5.1cm) 3M™ Premium Matte Cloth (Gaffers) Tape<br>
 (GT2), ProGaff® Premium Professional Grade Gaffer Tape, or comparable gaffers tape.<br>
 Section 5 ARENA V0 - Kickoff 20 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 21</div>
 <div class="page-content">
@@ -717,10 +787,11 @@ OUTPOST, edge of carpet, and ALLIANCE and white colored tape.<br>
 ALLIANCE’S BASE in front of two BARRIERS and an ALLIANCE HUB.<br>
 Section 5 ARENA V0 - Kickoff 21 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 22</div>
 <div class="page-content">
-<h3 id="section-5.4">5.4 HUB</h3>
+<h3 id="section-5-4">5.4 HUB</h3>
 <p>Figure 5-5 HUB<br>
 A HUB is one of two 47in by 47in (~1.19m by 1.19m) rectangular prism structures with an extended opening at<br>
 the top surface. Each ALLIANCE has a dedicated HUB centered between two BUMPS located 158.6in (~4.03m)<br>
@@ -730,6 +801,7 @@ areas from entering the opening.<br>
 Figure 5-6: HUB distance to the ALLIANCE WALL<br>
 Section 5 ARENA V0 - Kickoff 22 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 23</div>
 <div class="page-content">
@@ -742,6 +814,7 @@ of FUEL distribution from the HUB can be found on the Playing FIELD webpage.<br>
 Figure 5-8: HUB exits (approximation)<br>
 Section 5 ARENA V0 - Kickoff 23 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 24</div>
 <div class="page-content">
@@ -763,7 +836,7 @@ Purple</p>
 <p>N/A<br>
 Green FIELD is safe for all.<br>
 Off MATCH ready to start. HUB is not active. N/A</p>
-<h3 id="section-5.5">5.5 BUMP</h3>
+<h3 id="section-5-5">5.5 BUMP</h3>
 <p>Figure 5-9 BUMP<br>
 BUMPS are 73.0in (1.854m) wide, 44.4in (1.128m) deep, and 6.513in (16.54cm) tall structures on either side of<br>
 the HUB that ROBOTS drive over. The top surface of each BUMP is made up of 0.5in (1.27cm) thick, ALLIANCE<br>
@@ -771,10 +844,11 @@ colored, Orange Peel textured, HDPE ramps at a 15-degree angle with one ramp slo
 NEUTRAL ZONE and the other ramp sloping down towards the ALLIANCE ZONE.<br>
 Section 5 ARENA V0 - Kickoff 24 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 25</div>
 <div class="page-content">
-<h3 id="section-5.6">5.6 TRENCH</h3>
+<h3 id="section-5-6">5.6 TRENCH</h3>
 <p>Figure 5-10: TRENCH<br>
 TRENCHES are a 65.65in (1.668m) wide, 47.0in (1.194m) deep, and 40.25in (1.022m) tall structure that<br>
 ROBOTS drive underneath. The TRENCH extends from the guardrail to the BUMP on both sides of the FIELD.<br>
@@ -783,7 +857,7 @@ TRENCHES along the guardrail closest to the scoring table contain additional ele
 The TRENCHES along the guardrail furthest from the scoring table have a pivot arm that allows the horizontal<br>
 portion of the TRENCH to rotate into a vertical position for post-MATCH ROBOT retrieval and to let FIELD staff<br>
 reset the field between matches. The pivot arm will be locked in the horizontal position during the MATCH.</p>
-<h3 id="section-5.7">5.7 DEPOT</h3>
+<h3 id="section-5-7">5.7 DEPOT</h3>
 <p>Figure 5-11: DEPOT<br>
 A DEPOT is a 42.0in (1.07m) wide, 27.0in (68.6cm) deep structure located along the ALLIANCE WALL. There is<br>
 1 DEPOT per ALLIANCE. DEPOTS are made up of 3.0in (7.62cm) wide, 1.0in (2.54) tall steel barriers. The<br>
@@ -791,10 +865,11 @@ DEPOT is secured to the carpet using hook fastener which increases the height to
 (2.86cm).<br>
 Section 5 ARENA V0 - Kickoff 25 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 26</div>
 <div class="page-content">
-<h3 id="section-5.8">5.8 TOWER</h3>
+<h3 id="section-5-8">5.8 TOWER</h3>
 <p>Figure 5-12: TOWER<br>
 A TOWER is a 49.25in (1.251m) wide, 45.0in (1.143m) deep, and 78.25in (1.988m) tall structure made up of the<br>
 TOWER WALL, TOWER BASE, UPRIGHTS, RUNGS and supporting structures. There is 1 TOWER per ALLIANCE.<br>
@@ -814,20 +889,22 @@ Each TOWER has additional supporting structures extending from the UPRIGHT to th
 approximately 28.40in (72.14cm) and 43.38in (1.102m) off the floor.<br>
 Section 5 ARENA V0 - Kickoff 26 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 27</div>
 <div class="page-content">
 <p>Figure 5-13: TOWER Dimensions</p>
-<h3 id="section-5.9">5.9 ALLIANCE WALL</h3>
+<h3 id="section-5-9">5.9 ALLIANCE WALL</h3>
 <p>The ALLIANCE WALL separates ROBOTS from DRIVE TEAM members in the ALLIANCE AREA. It consists of 3<br>
 DRIVER STATIONS, an OUTPOST, and a TOWER WALL.<br>
 Figure 5-14: ALLIANCE WALL<br>
 Section 5 ARENA V0 - Kickoff 27 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 28</div>
 <div class="page-content">
-<h4 id="section-5.9.1">5.9.1 DRIVER STATIONS</h4>
+<h4 id="section-5-9-1">5.9.1 DRIVER STATIONS</h4>
 <p>Figure 5-15: DRIVER STATION (ALLIANCE AREA perspective and FIELD perspective)<br>
 A DRIVER STATION is 1 of 3 assemblies within an ALLIANCE WALL behind which a DRIVE TEAM operates their<br>
 ROBOT. Each DRIVER STATION is made from a 36.8in (93.5cm) tall diamond plate base topped with a 42in<br>
@@ -851,6 +928,7 @@ Teams should also speak to the FTA for any other FIELD side accommodations<br>
 needed.<br>
 Section 5 ARENA V0 - Kickoff 28 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 29</div>
 <div class="page-content">
@@ -889,6 +967,7 @@ o During the MATCH during Playoff MATCHES:<br>
 Figure 5-17 Back of team sign (during Playoff MATCH)<br>
 Section 5 ARENA V0 - Kickoff 29 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 30</div>
 <div class="page-content">
@@ -920,10 +999,11 @@ A-Stop button.<br>
 scoring table.<br>
 Section 5 ARENA V0 - Kickoff 30 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 31</div>
 <div class="page-content">
-<h4 id="section-5.9.2">5.9.2 OUTPOST</h4>
+<h4 id="section-5-9-2">5.9.2 OUTPOST</h4>
 <p>Figure 5-19 OUTPOST<br>
 An OUTPOST is an assembly through which HUMAN PLAYERS feed FUEL into the FIELD and ROBOTS can<br>
 deliver FUEL to their HUMAN PLAYERS. There are 2 OUTPOSTS, 1 on either end of the FIELD connecting the<br>
@@ -949,6 +1029,7 @@ the FIELD; however, this accommodation is available to anyone who has another<br
 physical disability that obstructs their view of the FIELD.<br>
 Section 5 ARENA V0 - Kickoff 31 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 32</div>
 <div class="page-content">
@@ -960,12 +1041,12 @@ similar dimensions) version to the event to guarantee use for every match.<br>
 This stool is available at all events within the US &amp; Canada and equivalents are<br>
 available at international events. For questions, please connect with the local<br>
 Program Delivery Partner.</p>
-<h3 id="section-5.10">5.10 SCORING ELEMENTS</h3>
+<h3 id="section-5-10">5.10 SCORING ELEMENTS</h3>
 <p>SCORING ELEMENTS are items that teams use to score points. There is one type of SCORING ELEMENT used<br>
 in REBUILT: FUEL.<br>
 In REBUILT, a ROBOT may CONTROL any number of SCORING ELEMENTS after<br>
 the start of the MATCH.</p>
-<h4 id="section-5.10.1">5.10.1 FUEL</h4>
+<h4 id="section-5-10-1">5.10.1 FUEL</h4>
 <p>Figure 5-20 FUEL<br>
 A FUEL is a 5.91in (15.0cm) diameter, high density foam ball. FUEL is a custom made SCORING ELEMENT<br>
 available for purchase on the AndyMark website, am-5801.<br>
@@ -979,10 +1060,11 @@ purely cosmetic and do not affect the function of the FUEL. Most impressions<br>
 will gradually disappear as the FUEL is used.<br>
 Section 5 ARENA V0 - Kickoff 32 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 33</div>
 <div class="page-content">
-<h3 id="section-5.11">5.11 AprilTags</h3>
+<h3 id="section-5-11">5.11 AprilTags</h3>
 <p>AprilTags are 8.125in (20.64cm) square targets located on the HUB, TOWER WALL, OUTPOST, and TRENCHES.<br>
 There are 32 unique markers on the FIELD positioned as shown in Figure 5-21.<br>
 Figure 5-21 AprilTag Locations<br>
@@ -991,6 +1073,7 @@ All markers are from the 36h11 tag family, IDs 1-32. All AprilTags are mounted t
 and marking during MATCHES they are repaired with gaffers tape.<br>
 Section 5 ARENA V0 - Kickoff 33 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 34</div>
 <div class="page-content">
@@ -1004,6 +1087,7 @@ floor as shown in Figure 5-24. One AprilTag per TOWER is centered and the other 
 offset.<br>
 Section 5 ARENA V0 - Kickoff 34 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 35</div>
 <div class="page-content">
@@ -1018,13 +1102,14 @@ one facing the NEUTRAL ZONE. TRENCH AprilTags are approximately centered on the 
 TRENCH arm and their centers are located 35in (88.9cm) off the floor as shown in Figure 5-26.<br>
 Section 5 ARENA V0 - Kickoff 35 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 36</div>
 <div class="page-content">
 <p>Figure 5-26 TRENCH AprilTags<br>
 For further marker locating information please refer to the 2026 Field Dimension Drawings. Printable copies of<br>
 the field AprilTags can be found on the Playing FIELD webpage.</p>
-<h3 id="section-5.12">5.12 The FIELD Management System</h3>
+<h3 id="section-5-12">5.12 The FIELD Management System</h3>
 <p>The FIELD Management System (FMS) is all the electronics responsible for sensing and controlling the FIRST<br>
 Robotics Competition FIELD. The FMS encompasses all FIELD electronics, including computers, REFEREE<br>
 touchscreens, the wireless access point, sensors, stack lights, A-Stops and E-Stops, etc.<br>
@@ -1051,10 +1136,11 @@ MATCH end 0:00 “Buzzer”<br>
 MATCH stopped n/a “Foghorn”<br>
 Section 5 ARENA V0 - Kickoff 36 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 37</div>
 <div class="page-content">
-<h3 id="section-5.13">5.13 FIELD STAFF</h3>
+<h3 id="section-5-13">5.13 FIELD STAFF</h3>
 <p>FIELD STAFF are responsible for making sure the MATCHES are cycled through efficiently, fairly, safely, and<br>
 with a spirit of cooperation, Gracious Professionalism, and generosity of spirit. FIELD STAFF roles are filled by<br>
 volunteers from the community who prepare for the event with thorough training and certification. There are 3<br>
@@ -1079,9 +1165,11 @@ MATCH in preparation for the subsequent MATCH. For additional details, please re
 Supervisor role description.<br>
 Section 5 ARENA V0 - Kickoff 37 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 38</div>
 <div class="page-content"><p><em>[Page contains no extractable text - may contain images or graphics]</em></p></div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 39</div>
 <div class="page-content">
@@ -1089,13 +1177,13 @@ Section 5 ARENA V0 - Kickoff 37 of 162</p>
 <p>Figure 6-1 REBUILT<br>
 In REBUILT, 2 ALLIANCES (an ALLIANCE is a cooperative of up to 4 FIRST Robotics Competition teams) play<br>
 MATCHES, set up and implemented per the details described below.</p>
-<h3 id="section-6.1">6.1 MATCH Overview</h3>
+<h3 id="section-6-1">6.1 MATCH Overview</h3>
 <p>MATCHES run on 7–10-minute cycles, which consist of pre-MATCH setup, the 2-minute and 40-second<br>
 MATCH, and the post-MATCH reset.<br>
 During the MATCH, ROBOTS collect FUEL and score in their HUB. HUMAN PLAYERS can deliver FUEL to<br>
 ROBOTS or score them in their HUB.<br>
 ROBOTS conclude the MATCH climbing on their TOWER.</p>
-<h3 id="section-6.2">6.2 DRIVE TEAM</h3>
+<h3 id="section-6-2">6.2 DRIVE TEAM</h3>
 <p>A DRIVE TEAM is a set of up to 5 people from the same FIRST Robotics Competition team responsible for<br>
 team performance for a specific MATCH. There are 4 specific roles on a DRIVE TEAM which ALLIANCES can<br>
 use to assist ROBOTS, and no more than 1 member of the DRIVE TEAM may be a non-STUDENT.<br>
@@ -1111,6 +1199,7 @@ DRIVER on their first pick, and the teams agree the first pick team will “adop
 that DRIVER and make them a member of their DRIVE TEAM for Playoffs).<br>
 Section 6 Game Details V0 - Kickoff 39 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 40</div>
 <div class="page-content">
@@ -1154,6 +1243,7 @@ Per Table 6-1, each team is allotted up to 3 STUDENTS who may be assigned as DRI
 PLAYERS. If multiple teams on an ALLIANCE do not have 3 STUDENTS at the event to act in these roles, 1 of<br>
 Section 6 Game Details V0 - Kickoff 40 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 41</div>
 <div class="page-content">
@@ -1162,12 +1252,12 @@ this case,<br>
 − the Head REFEREE must be notified,<br>
 − all HUMAN PLAYER rules now apply to this DRIVE TEAM member, and<br>
 − this DRIVE TEAM member is no longer considered a TECHNICIAN for that MATCH.</p>
-<h3 id="section-6.3">6.3 Setup</h3>
+<h3 id="section-6-3">6.3 Setup</h3>
 <p>Before each MATCH begins, FIELD STAFF stage SCORING ELEMENTS as described in section 6.3.4 SCORING<br>
 ELEMENTS. DRIVE TEAMS stage their ROBOTS (as described in section 6.3.3 ROBOTS) and OPERATOR<br>
 CONSOLES (as described in section 6.3.2 OPERATOR CONSOLES). Then, DRIVE TEAMS take their places as<br>
 described in section 6.3.1 DRIVE TEAMS.</p>
-<h4 id="section-6.3.1">6.3.1 DRIVE TEAMS</h4>
+<h4 id="section-6-3-1">6.3.1 DRIVE TEAMS</h4>
 <p>DRIVE TEAMS prepare for a MATCH by staging in the appropriate areas, according to their role on the DRIVE<br>
 TEAM, and by identifying themselves accordingly. DRIVE TEAM starting conditions are listed below, and a<br>
 DRIVE TEAM obstructing or delaying any of the conditions is at risk of violating G301.<br>
@@ -1182,11 +1272,11 @@ F. DRIVE TEAM members clearly display their designated buttons above their waist
 “Drive Coach”, DRIVERS and HUMAN PLAYERS - “Drive Team”, and TECHNICIAN - “Technician”), and<br>
 G. if a Playoff MATCH, the ALLIANCE CAPTAIN clearly displays their designated ALLIANCE CAPTAIN<br>
 identifier (e.g. hat or armband).</p>
-<h4 id="section-6.3.2">6.3.2 OPERATOR CONSOLES</h4>
+<h4 id="section-6-3-2">6.3.2 OPERATOR CONSOLES</h4>
 <p>DRIVE TEAMS set up their OPERATOR CONSOLE as soon as the DRIVE TEAM from the previous MATCH has<br>
-cleared the area. OPERATOR CONSOLES must be compliant with all relevant rules, specifically those in section<br>
-8.9 OPERATOR CONSOLE. The OPERATOR CONSOLE is plugged into the team’s assigned DRIVER STATION, as<br>
-indicated on the team sign. Any control devices worn or held by their HUMAN PLAYERS and/or DRIVERS during<br>
+cleared the area. OPERATOR CONSOLES must be compliant with all relevant rules, specifically those in section</p>
+<h3 id="section-8-9">8.9 OPERATOR CONSOLE. The OPERATOR CONSOLE is plugged into the team’s assigned DRIVER STATION, as</h3>
+<p>indicated on the team sign. Any control devices worn or held by their HUMAN PLAYERS and/or DRIVERS during<br>
 the MATCH must be disconnected from or set on or beside the OPERATOR CONSOLE before the MATCH can<br>
 begin. A DRIVE TEAM obstructing or delaying OPERATOR CONSOLE setup is at risk of violating G301.<br>
 For the purposes of FIRST Robotics Competition, any device connected to the<br>
@@ -1194,10 +1284,11 @@ OPERATOR CONSOLE is considered a control device because REFEREES are not<br>
 expected to differentiate between devices that can or cannot control the ROBOT.<br>
 Section 6 Game Details V0 - Kickoff 41 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 42</div>
 <div class="page-content">
-<h4 id="section-6.3.3">6.3.3 ROBOTS</h4>
+<h4 id="section-6-3-3">6.3.3 ROBOTS</h4>
 <p>DRIVE TEAMS stage their ROBOT in accordance with G303. A DRIVE TEAM obstructing or delaying ROBOT<br>
 setup requirements is at risk of violating G301.<br>
 If order of placement matters to either or both ALLIANCES, the ALLIANCE notifies the Head REFEREE during<br>
@@ -1216,11 +1307,12 @@ result invites the red ALLIANCE to place last.<br>
 FIELD STAFF may ask teams to indicate their intended location and are not<br>
 required to wait for a team to stage their ROBOT in its exact location before<br>
 moving to the next team.</p>
-<h4 id="section-6.3.4">6.3.4 SCORING ELEMENTS</h4>
+<h4 id="section-6-3-4">6.3.4 SCORING ELEMENTS</h4>
 <p>Before each MATCH begins, FIELD STAFF stage SCORING ELEMENTS.<br>
 Figure 6-2 SCORING ELEMENT staging positions<br>
 Section 6 Game Details V0 - Kickoff 42 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 43</div>
 <div class="page-content">
@@ -1239,7 +1331,7 @@ of FUEL staged in the NEUTRAL ZONE for any given match may fluctuate around</p>
 <p>For District Championship and/or FIRST Championship events, the quantity of FUEL staged in a MATCH may<br>
 increase up to 600. If this happens, the additional FUEL will be included as part of an updated FUEL<br>
 arrangement in the NEUTRAL ZONE.</p>
-<h4 id="section-6.3.4.1">6.3.4.1 NEUTRAL ZONE FUEL ARRANGEMENT</h4>
+<h4 id="section-6-3-4-1">6.3.4.1 NEUTRAL ZONE FUEL ARRANGEMENT</h4>
 <p>The NEUTRAL ZONE is staged by the FIELD crew by corralling all FUEL within a bounding box that is<br>
 approximately 206.0in (5.23m) wide and 72.0in (1.83m) deep. The bounding box has a solid divider in the<br>
 middle that is 2.0in (5.08cm) wide that will result in a small gap in FUEL. The dividers will be removed prior to<br>
@@ -1247,6 +1339,7 @@ the start of the MATCH.<br>
 Figure 6-3 NEUTRAL ZONE FUEL setup<br>
 Section 6 Game Details V0 - Kickoff 43 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 44</div>
 <div class="page-content">
@@ -1256,7 +1349,7 @@ match.<br>
 The placement of FUEL in the NEUTRAL ZONE is not intended to be in a perfect<br>
 grid. Teams should expect variances in the placement of FUEL in the NEUTRAL<br>
 ZONE at the start of the MATCH.</p>
-<h3 id="section-6.4">6.4 MATCH Periods</h3>
+<h3 id="section-6-4">6.4 MATCH Periods</h3>
 <p>The first period of each MATCH is 20 seconds long and called the Autonomous Period (AUTO). During AUTO,<br>
 ROBOTS operate without any DRIVE TEAM control or input. ROBOTS score SCORING ELEMENTS, may leave<br>
 their ROBOT STARTING LINE and retrieve additional SCORING ELEMENTS, and may climb their TOWER. There<br>
@@ -1275,7 +1368,7 @@ SHIFT 2 25 Seconds 1:45 – 1:20<br>
 SHIFT 3 25 Seconds 1:20 – 0:55<br>
 SHIFT 4 25 Seconds 0:55 – 0:30<br>
 END GAME 30 Seconds 0:30 – 0:00</p>
-<h4 id="section-6.4.1">6.4.1 HUB Status</h4>
+<h4 id="section-6-4-1">6.4.1 HUB Status</h4>
 <p>During the MATCH, the status of a HUB can be either active or inactive. FUEL scored in an active HUB is worth<br>
 MATCH points but FUEL scored in an inactive HUB will not earn any points as shown in Table 6-3. Both<br>
 ALLIANCE HUBS are active during AUTO, the TRANSITION SHIFT, and END GAME. During the ALLIANCE<br>
@@ -1288,6 +1381,7 @@ number of FUEL during AUTO, the FMS will randomly select an ALLIANCE and use its
 ALLIANCE SHIFTS during the MATCH.<br>
 Section 6 Game Details V0 - Kickoff 44 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 45</div>
 <div class="page-content">
@@ -1315,7 +1409,7 @@ SHIFT 4 Active Inactive Inactive Active<br>
 (0:55 – 0:30)<br>
 END GAME Active Active Active Active<br>
 (0:30 – 0:00)</p>
-<h3 id="section-6.5">6.5 Scoring</h3>
+<h3 id="section-6-5">6.5 Scoring</h3>
 <p>ALLIANCES are rewarded for accomplishing various actions throughout a MATCH, including scoring FUEL,<br>
 climbing their TOWER, and winning or tying MATCHES.<br>
 Rewards are granted either via MATCH points or Ranking Points (often abbreviated to RP, which increase the<br>
@@ -1331,6 +1425,7 @@ following TELEOP, or when all ROBOTS have come to rest following the conclusion 
 whichever happens first.<br>
 Section 6 Game Details V0 - Kickoff 45 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 46</div>
 <div class="page-content">
@@ -1339,9 +1434,9 @@ processing time.<br>
 TOWER points are evaluated and scored by human volunteers. Teams are<br>
 encouraged to make sure that it is obvious and unambiguous that the criteria are<br>
 met.</p>
-<h4 id="section-6.5.1">6.5.1 SCORING ELEMENT Scoring Criteria</h4>
+<h4 id="section-6-5-1">6.5.1 SCORING ELEMENT Scoring Criteria</h4>
 <p>A FUEL is scored in the HUB once it passes through the top opening of the HUB and through the sensor array.</p>
-<h4 id="section-6.5.2">6.5.2 ROBOT Scoring Criteria</h4>
+<h4 id="section-6-5-2">6.5.2 ROBOT Scoring Criteria</h4>
 <p>To qualify for TOWER points for a given LEVEL, a ROBOT must meet the following conditions:<br>
 − For LEVEL 1 – a ROBOT must no longer touching the CARPET or the TOWER BASE, or<br>
 − For LEVEL 2 – a ROBOT must be positioned such that its BUMPERS are completely above the LOW<br>
@@ -1359,10 +1454,11 @@ single LEVEL during TELEOP.<br>
 Figure 6-4: TOWER contact limitation for ROBOT Scoring Criteria<br>
 Section 6 Game Details V0 - Kickoff 46 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 47</div>
 <div class="page-content">
-<h4 id="section-6.5.3">6.5.3 Point Values</h4>
+<h4 id="section-6-5-3">6.5.3 Point Values</h4>
 <p>Point values for tasks in REBUILT are detailed in Table 6-4.<br>
 Table 6-4 REBUILT point values<br>
 MATCH points Ranking<br>
@@ -1395,10 +1491,11 @@ District Events Championships Championship</p>
 be announced in Team Updates.<br>
 Section 6 Game Details V0 - Kickoff 47 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 48</div>
 <div class="page-content">
-<h3 id="section-6.6">6.6 Violations</h3>
+<h3 id="section-6-6">6.6 Violations</h3>
 <p>Unless otherwise noted, all violations are assigned for each instance of a rule violation. A description of the<br>
 penalties is listed in Table 6-6. All rules throughout the Game Rules section are called as perceived by a</p>
 <strong>REFEREE.</strong>
@@ -1422,7 +1519,7 @@ VERBAL a warning issued by event staff or the Head REFEREE.</p>
 <p>ALLIANCE is An ALLIANCE is ineligible for the specified RP for that MATCH. This<br>
 ineligible for RP overrides any RP awarded through normal MATCH play or other rule<br>
 violations.</p>
-<h4 id="section-6.6.1">6.6.1 YELLOW and RED CARDS</h4>
+<h4 id="section-6-6-1">6.6.1 YELLOW and RED CARDS</h4>
 <p>In addition to rule violations explicitly listed throughout this document, YELLOW CARDS and RED CARDS are<br>
 used in FIRST Robotics Competition to address team and ROBOT behavior that does not align with the mission,<br>
 values, and culture of FIRST.<br>
@@ -1436,6 +1533,7 @@ Announcer describes the violation. During Playoff MATCHES, the card is applied t
 such “RED CARD&quot; or &quot;YELLOW CARD&quot; appears above the ALLIANCE number.<br>
 Section 6 Game Details V0 - Kickoff 48 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 49</div>
 <div class="page-content">
@@ -1451,7 +1549,7 @@ Figure 6-5 Example audience screen graphic showing YELLOW CARD indicators<br>
 All YELLOW CARDS are cleared in FMS at the conclusion of Practice, Qualification, and division Playoff<br>
 MATCHES. VERBAL WARNINGS issued by the head REFEREE are cleared after Practice MATCHES and persist<br>
 from Qualification MATCHES through subsequent tournament phases.</p>
-<h4 id="section-6.6.2">6.6.2 YELLOW and RED CARD application</h4>
+<h4 id="section-6-6-2">6.6.2 YELLOW and RED CARD application</h4>
 <p>YELLOW and RED CARDS are applied based on the following:<br>
 Table 6-7: YELLOW and RED CARD application<br>
 Time YELLOW or RED CARDS earned: MATCH to which CARD is applied:<br>
@@ -1474,17 +1572,18 @@ been posted or the Head REFEREE or their designee has indicated that teams can<b
 collect their ROBOTS, whichever is later.<br>
 Section 6 Game Details V0 - Kickoff 49 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 50</div>
 <div class="page-content">
 <p>Please see examples of the application of YELLOW and RED CARDS as shown in<br>
 section 6.6.4 Violation Details.</p>
-<h4 id="section-6.6.3">6.6.3 YELLOW and RED CARDS during Playoff MATCHES</h4>
+<h4 id="section-6-6-3">6.6.3 YELLOW and RED CARDS during Playoff MATCHES</h4>
 <p>During Playoff MATCHES, YELLOW and RED CARDS are assigned to the violating team’s entire ALLIANCE<br>
 instead of to only the violating team. If an ALLIANCE receives 2 YELLOW CARDS, the entire ALLIANCE is issued<br>
 a RED CARD which results in DISQUALIFICATION for the associated MATCH. If both ALLIANCES receive a RED<br>
 CARD, the ALLIANCE assessed the first RED CARD, chronologically, is DISQUALIFIED and loses the MATCH.</p>
-<h4 id="section-6.6.4">6.6.4 Violation Details</h4>
+<h4 id="section-6-6-4">6.6.4 Violation Details</h4>
 <p>There are several styles of violation wording used in this manual. Below are some example violations and a<br>
 clarification of the way the violation would be assessed. The examples shown do not represent all possible<br>
 violations, but rather a representative set of combinations.<br>
@@ -1517,6 +1616,7 @@ MAJOR FOUL is assessed Their count continues until the criteria to discontinue t
 count are met, and for each 3 seconds within that time,<br>
 Section 6 Game Details V0 - Kickoff 50 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 51</div>
 <div class="page-content">
@@ -1533,12 +1633,12 @@ fashion:<br>
 assessed to the ALLIANCE.<br>
 • In all other scenarios, each team on the<br>
 ALLIANCE is issued a RED CARD.</p>
-<h3 id="section-6.7">6.7 Head REFEREE and FTA Interaction</h3>
+<h3 id="section-6-7">6.7 Head REFEREE and FTA Interaction</h3>
 <p>The Head REFEREE has the ultimate authority in the ARENA during the event, but may receive input from<br>
 additional sources, e.g. Game Designers, FIRST personnel, FTA, and other event staff. The Head REFEREE<br>
 rulings are final. No event staff, including the Head REFEREE, will review video, photos, artistic renderings, etc.<br>
 of any MATCH, from any source, under any circumstances.</p>
-<h4 id="section-6.7.1">6.7.1 Question Box (Q)</h4>
+<h4 id="section-6-7-1">6.7.1 Question Box (Q)</h4>
 <p>Each ALLIANCE has a designated Question Box near the scoring table. If a DRIVE TEAM has a question about a<br>
 MATCH, the FIELD, etc., they may send up to 2 DRIVE TEAM members to their corresponding Question Box.<br>
 Depending on timing, the Head REFEREE or FTA may postpone any requested discussion until the end of the<br>
@@ -1561,6 +1661,7 @@ Q101 *Head REFEREE Interactions. A team may only address the Head REFEREE with m
 Violation: The Head REFEREE will not address non-compliant team members or peripheral conversations.<br>
 Section 6 Game Details V0 - Kickoff 51 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 52</div>
 <div class="page-content">
@@ -1574,7 +1675,7 @@ Q102 Conversations must be civil. Any team interaction with the Head REFEREE mus
 Violation: The Head REFEREE may terminate the conversation to allow time for parties to cool down. A<br>
 person with subsequent violations will not be allowed to interact with the Head REFEREE.<br>
 Examples of inappropriate behavior are outlined in G201.</p>
-<h3 id="section-6.8">6.8 Other Logistics</h3>
+<h3 id="section-6-8">6.8 Other Logistics</h3>
 <p>SCORING ELEMENTS that leave the FIELD (other than through the OUTPOST) are placed back into the FIELD<br>
 approximately at the point of exit by FIELD STAFF (REFEREES, FTAs, or other staff working around the FIELD)<br>
 at the earliest safe opportunity.<br>
@@ -1602,11 +1703,12 @@ time periods.<br>
 − REPEATED describes actions that happen more than once within a MATCH.<br>
 Section 6 Game Details V0 - Kickoff 52 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 53</div>
 <div class="page-content">
 <h2 id="section-7">7 Game Rules (G)</h2>
-<h3 id="section-7.1">7.1 Personal Safety</h3>
+<h3 id="section-7-1">7.1 Personal Safety</h3>
 <p>G101 *Humans, remain outside the FIELD. A team member may not reach into the FIELD with any part of<br>
 their body during a MATCH .<br>
 Violation: VERBAL WARNING. YELLOW CARD if subsequent violations during the event.<br>
@@ -1641,6 +1743,7 @@ navigating the FIELD. Teams should avoid carrying their ROBOT over the BUMP.<br>
 Walking over the BUMP is not considered climbing on.<br>
 Section 7 Game Rules (G) V0 - Kickoff 53 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 54</div>
 <div class="page-content">
@@ -1659,7 +1762,7 @@ COMPONENTS may not be enabled in any way on the FIELD before or after the</p>
 <p>ROBOTS need to be safely transported off the FIELD and back to the pits after the<br>
 MATCH, and there may be bystanders, doorways, or height restrictions along the<br>
 route.</p>
-<h3 id="section-7.2">7.2 Conduct</h3>
+<h3 id="section-7-2">7.2 Conduct</h3>
 <p>G201 *Be a good person. All teams must be civil toward everyone and respectful of team and event<br>
 equipment while at a FIRST Robotics Competition event.<br>
 Violation: VERBAL WARNING. YELLOW CARD if subsequent violations during the event.<br>
@@ -1684,6 +1787,7 @@ windows.<br>
 Violation: VERBAL WARNING. YELLOW CARD if subsequent violations during the event.<br>
 Section 7 Game Rules (G) V0 - Kickoff 54 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 55</div>
 <div class="page-content">
@@ -1725,6 +1829,7 @@ MATCH, to deliberately miss Ranking Points, etc. incompatible with FIRST values<
 and not a strategy any team should employ.<br>
 Section 7 Game Rules (G) V0 - Kickoff 55 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 56</div>
 <div class="page-content">
@@ -1761,6 +1866,7 @@ Qualification MATCHES.<br>
 Violation: DISQUALIFIED from the current MATCH.<br>
 Section 7 Game Rules (G) V0 - Kickoff 56 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 57</div>
 <div class="page-content">
@@ -1785,6 +1891,7 @@ This rule requires an intentional act with limited or no opportunity for the tea
 being acted on to avoid the penalty such as:<br>
 Section 7 Game Rules (G) V0 - Kickoff 57 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 58</div>
 <div class="page-content">
@@ -1832,6 +1939,7 @@ L. Intentionally scoring a large quantity of FUEL into the HUB from the NEUTRAL<
 a rule violation such as the examples given in items above, or for multiple<br>
 Section 7 Game Rules (G) V0 - Kickoff 58 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 59</div>
 <div class="page-content">
@@ -1841,7 +1949,7 @@ authority on all rules and violations at an event.<br>
 G212 *All teams can play. A team may not encourage another team to exclude their ROBOT or be BYPASSED<br>
 from a qualification MATCH for any reason.<br>
 Violation: YELLOW CARD. RED CARD if the ROBOT does not participate in the MATCH.</p>
-<h3 id="section-7.3">7.3 Pre-MATCH</h3>
+<h3 id="section-7-3">7.3 Pre-MATCH</h3>
 <p>G301 *Be prompt. A DRIVE TEAM member may not cause significant delays to the start of their MATCH.<br>
 Causing a significant delay requires both of the following to be true:<br>
 A. The expected MATCH start time has passed, and<br>
@@ -1873,6 +1981,7 @@ and the Head REFEREE perceives no good faith effort by the DRIVE TEAM(s) to quic
 ready, the offending team’s ROBOT is DISABLED.<br>
 Section 7 Game Rules (G) V0 - Kickoff 59 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 60</div>
 <div class="page-content">
@@ -1919,6 +2028,7 @@ A. be employed in a way that introduces a safety hazard,<br>
 B. extend more than 78.0in (1.981m) above the floor,<br>
 Section 7 Game Rules (G) V0 - Kickoff 60 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 61</div>
 <div class="page-content">
@@ -1958,12 +2068,13 @@ For assessment of many of the items listed above, the Head REFEREE is likely to<
 consult with the LRI.<br>
 Section 7 Game Rules (G) V0 - Kickoff 61 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 62</div>
 <div class="page-content">
-<h3 id="section-7.4">7.4 In-MATCH</h3>
+<h3 id="section-7-4">7.4 In-MATCH</h3>
 <p>Rules in this section pertain to game play once a MATCH begins.</p>
-<h4 id="section-7.4.1">7.4.1 AUTO</h4>
+<h4 id="section-7-4-1">7.4.1 AUTO</h4>
 <p>The AUTO period is the first 20 seconds of the MATCH, and the FMS blocks any DRIVER control, so ROBOTS<br>
 operate with only their pre-programmed instructions. Rules in this section apply only during the AUTO period.<br>
 G401 *Behind the lines. In AUTO, each DRIVE TEAM member must remain in their staged areas. A DRIVE<br>
@@ -1987,7 +2098,7 @@ G403 Limited AUTO opponent interaction. In AUTO, a ROBOT whose BUMPERS are compl
 CENTER LINE (i.e. to the opposite side of the CENTER LINE from its ROBOT STARTING LINE) may not<br>
 contact an opponent ROBOT.<br>
 Violation: MAJOR FOUL.</p>
-<h4 id="section-7.4.2">7.4.2 SCORING ELEMENTS</h4>
+<h4 id="section-7-4-2">7.4.2 SCORING ELEMENTS</h4>
 <p>G404 *ROBOTS: use SCORING ELEMENTS as directed. A ROBOT may not deliberately use a SCORING<br>
 ELEMENT in an attempt to ease or amplify a challenge associated with a FIELD element.<br>
 Violation: MAJOR FOUL.<br>
@@ -1999,6 +2110,7 @@ B. using SCORING ELEMENTS to elevate ROBOTS in an attempt to climb the</p>
 <strong>TOWER,</strong>
 <p>Section 7 Game Rules (G) V0 - Kickoff 62 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 63</div>
 <div class="page-content">
@@ -2037,11 +2149,12 @@ limited to:<br>
 C. intentionally sitting under the HUB to collect a large quantity of FUEL,<br>
 D. intentionally sitting under the HUB in order to redirect FUEL into your</p>
 <strong>ALLIANCE ZONE.</strong>
-<h4 id="section-7.4.3">7.4.3 ROBOT</h4>
+<h4 id="section-7-4-3">7.4.3 ROBOT</h4>
 <p>G409 *ROBOTS must be safe. A ROBOT may not pose an undue hazard to a human, an ARENA element, or<br>
 another ROBOT in the following ways:<br>
 Section 7 Game Rules (G) V0 - Kickoff 63 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 64</div>
 <div class="page-content">
@@ -2086,6 +2199,7 @@ MECHANISM, and/or re-inspection) may be required before the ROBOT will be allowe
 subsequent MATCHES.<br>
 Section 7 Game Rules (G) V0 - Kickoff 64 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 65</div>
 <div class="page-content">
@@ -2111,7 +2225,7 @@ MAJOR FOUL is issued.<br>
 G414 Don’t Climb on each other. ROBOTS may not fully support the weight of other ROBOTS on their<br>
 ALLIANCE to climb the TOWER.<br>
 Violation: Supported ROBOTS become ineligible for TOWER points for the remainder of the MATCH.</p>
-<h4 id="section-7.4.4">7.4.4 Opponent Interaction</h4>
+<h4 id="section-7-4-4">7.4.4 Opponent Interaction</h4>
 <p>Note, G415, G416, G417 are mutually exclusive. A single ROBOT to ROBOT interaction which violates more<br>
 than 1 of these rules results in the most punitive penalty, and only the most punitive penalty, being assessed.<br>
 G415 *Stay out of other ROBOTS. A ROBOT may not use a COMPONENT outside its ROBOT PERIMETER<br>
@@ -2128,6 +2242,7 @@ B. regardless of intent, by initiating contact, either directly or transitively 
 CONTROLLED by the ROBOT, inside the vertical projection of an opponent’s ROBOT PERIMETER.<br>
 Section 7 Game Rules (G) V0 - Kickoff 65 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 66</div>
 <div class="page-content">
@@ -2171,6 +2286,7 @@ Examples of violations of this rule include, but are not limited to:<br>
 A. using a wedge-like MECHANISM to tip over opponent ROBOTS,<br>
 Section 7 Game Rules (G) V0 - Kickoff 66 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 67</div>
 <div class="page-content">
@@ -2208,6 +2324,7 @@ A team’s desired direction of travel is not a consideration when determining i
 ROBOT is PINNED.<br>
 Section 7 Game Rules (G) V0 - Kickoff 67 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 68</div>
 <div class="page-content">
@@ -2234,7 +2351,7 @@ Violation: MAJOR FOUL and if the opponent ROBOT is off the ground the opponent R
 LEVEL 3 TOWER points.<br>
 Transitive contact requires that each robot is contacting the same SCORING<br>
 ELEMENT(S) simultaneously.</p>
-<h4 id="section-7.4.5">7.4.5 Human</h4>
+<h4 id="section-7-4-5">7.4.5 Human</h4>
 <p>G421 *No wandering. A DRIVE TEAM member must remain in their designated area as follows:<br>
 A. DRIVERS and DRIVE COACHES may not contact anything outside their ALLIANCE AREA,<br>
 B. a DRIVER must use the OPERATOR CONSOLE in the DRIVER STATION to which they are<br>
@@ -2251,6 +2368,7 @@ OPERATOR CONSOLE devices increase tripping hazards as the operator moves<br>
 about the ALLIANCE AREA. In the interest of avoiding nuisance penalties<br>
 Section 7 Game Rules (G) V0 - Kickoff 68 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 69</div>
 <div class="page-content">
@@ -2289,6 +2407,7 @@ ELEMENTS, unless for safety purposes.<br>
 Violation: MINOR FOUL.<br>
 Section 7 Game Rules (G) V0 - Kickoff 69 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 70</div>
 <div class="page-content">
@@ -2297,12 +2416,13 @@ Excess FUEL, defined as the CHUTE &amp; CORRAL being full, must immediately be e
 HUMAN PLAYERS making a good-faith effort to immediately move or enter additional FUEL is an<br>
 exception to this rule.<br>
 Violation: MINOR FOUL, and if CONTINUOUS, a MAJOR FOUL is assessed.</p>
-<h3 id="section-7.5">7.5 Post-MATCH</h3>
+<h3 id="section-7-5">7.5 Post-MATCH</h3>
 <p>G501 *Leave promptly. A DRIVE TEAM member may not cause significant or multiple delays to the start of a<br>
 subsequent MATCH, scheduled break content, or other FIELD activities.<br>
 Violation: VERBAL WARNING. YELLOW CARD if subsequent violations at any point during the event.<br>
 Section 7 Game Rules (G) V0 - Kickoff 70 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 71</div>
 <div class="page-content">
@@ -2347,6 +2467,7 @@ publication during the pre-season and uses them to fabricate a gearbox for their
 ROBOT during the build period following Kickoff. The design drawings are<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 71 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 72</div>
 <div class="page-content">
@@ -2392,6 +2513,7 @@ The intent of this definition is to be as inclusive as possible to permit access
 all legitimate sources, while preventing ad hoc organizations from providing<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 72 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 73</div>
 <div class="page-content">
@@ -2431,10 +2553,11 @@ FIRST Robotics Competition can be a full-contact competition and may include rig
 rules aim to limit severe damage to ROBOTS, teams should design their ROBOTS to be robust.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 73 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 74</div>
 <div class="page-content">
-<h3 id="section-8.1">8.1 General ROBOT Design</h3>
+<h3 id="section-8-1">8.1 General ROBOT Design</h3>
 <p>R101 *ROBOT PERIMETER must be fixed. The ROBOT (excluding BUMPERS) must have a ROBOT<br>
 PERIMETER, contained within the BUMPER ZONE and established while in the ROBOT’S STARTING<br>
 CONFIGURATION, that is comprised of fixed, non-articulated structural elements of the ROBOT. Minor<br>
@@ -2467,6 +2590,7 @@ For the purposes of determining compliance with the weight limitations, the foll
 excluded:<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 74 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 75</div>
 <div class="page-content">
@@ -2498,6 +2622,7 @@ tie swinging out of the ROBOT PERIMETER, including while an extension is<br>
 deployed out a different side.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 75 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 76</div>
 <div class="page-content">
@@ -2517,6 +2642,7 @@ extending over a round segment of ROBOT PERIMETER.<br>
 Figure 8-3 Examples of compliance and non-compliance of this rule<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 76 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 77</div>
 <div class="page-content">
@@ -2528,7 +2654,7 @@ height of the ROBOT from the FIELD carpet at any given time (i.e. the<br>
 measurement is made perpendicular to the ROBOT PERIMETER polygon).<br>
 R108 ROBOT extension floor interaction ROBOT extensions may not interact with the carpet, BUMPS, or<br>
 TOWER BASE such that the BUMPERS are lifted out of the BUMPER ZONE (see R405).</p>
-<h3 id="section-8.2">8.2 ROBOT Safety &amp; Damage Prevention</h3>
+<h3 id="section-8-2">8.2 ROBOT Safety &amp; Damage Prevention</h3>
 <p>R201 *No digging into carpet. Traction devices must not have surface features that could damage the<br>
 ARENA (e.g. metal, sandpaper, inflexible studs, cleats, hook-loop fasteners or similar attachments).<br>
 Traction devices include all parts of the ROBOT that are designed to transmit any propulsive and/or<br>
@@ -2562,6 +2688,7 @@ J. any ballast not secured sufficiently, including loose ballast e.g. sand, ball
 bearings, etc., such that it may become loose during a MATCH,<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 77 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 78</div>
 <div class="page-content">
@@ -2587,7 +2714,7 @@ SCORING ELEMENTS are expected to undergo a reasonable amount of wear and<br>
 tear as they are handled by ROBOTS, such as scratching or marking. Gouging,<br>
 tearing off pieces, or routinely marking SCORING ELEMENTS are violations of<br>
 this rule.</p>
-<h3 id="section-8.3">8.3 Budget Constraints &amp; Fabrication Schedule</h3>
+<h3 id="section-8-3">8.3 Budget Constraints &amp; Fabrication Schedule</h3>
 <p>R301 *Individual item cost limit. No individual, non-KOP item or software shall have a Fair Market Value<br>
 (FMV) that exceeds $600 USD. The total cost of COMPONENTS purchased in bulk may exceed $600<br>
 USD as long as the cost of an individual COMPONENT does not exceed $600 USD.<br>
@@ -2606,6 +2733,7 @@ is the cost of the item itself and does not include any duties, taxes, tariffs,<
 shipping, or other costs that may vary by locality.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 78 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 79</div>
 <div class="page-content">
@@ -2651,6 +2779,7 @@ complete assembly including all modules must fit within the price constraints<br
 defined in this rule.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 79 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 80</div>
 <div class="page-content">
@@ -2696,6 +2825,7 @@ the competition season – was built from detailed designs developed prior to<br
 Kickoff.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 80 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 81</div>
 <div class="page-content">
@@ -2720,7 +2850,7 @@ project, they publish the CAD files on a generally accessible public forum and<b
 make them available to all teams. Because they have made the design publicly<br>
 available before Kickoff, they can use the design to create an identical<br>
 transmission, fabricated after Kickoff, for use on their REBUILT ROBOT.</p>
-<h3 id="section-8.4">8.4 BUMPER Rules</h3>
+<h3 id="section-8-4">8.4 BUMPER Rules</h3>
 <p>A BUMPER is a required assembly which attaches to the ROBOT frame. BUMPERS protect ROBOTS from<br>
 damaging/being damaged by other ROBOTS and FIELD elements.<br>
 A BUMPER guide providing additional information on materials and design based on historical best practices<br>
@@ -2739,6 +2869,7 @@ An arc is considered to have infinite corners and therefore may not have a gap<b
 larger than 1.25in (3.17cm).<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 81 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 82</div>
 <div class="page-content">
@@ -2763,6 +2894,7 @@ space between the BUMPER and ROBOT frame, serve as part of the attachment system
 any other purpose.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 82 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 83</div>
 <div class="page-content">
@@ -2784,6 +2916,7 @@ Figure 8-6 BUMPER Cross Section Example<br>
 −<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 83 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 84</div>
 <div class="page-content">
@@ -2798,6 +2931,7 @@ BUMPER hard parts may extend inside the ROBOT FRAME PERIMETER.<br>
 Figure 8-8 BUMPER Hard Parts Limit<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 84 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 85</div>
 <div class="page-content">
@@ -2816,6 +2950,7 @@ material extending at least 2.25in (5.72cm) from the corner with no gaps or void
 implementation are shown in Figure 8-10.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 85 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 86</div>
 <div class="page-content">
@@ -2839,6 +2974,7 @@ may not contain any moving elements (beyond compression and flex of BUMPER mater
 electrical elements.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 86 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 87</div>
 <div class="page-content">
@@ -2880,10 +3016,11 @@ change the surface characteristics of the BUMPER. Excessive material usage as<br
 part of any team number marking will invite close scrutiny.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 87 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 88</div>
 <div class="page-content">
-<h3 id="section-8.5">8.5 Motors &amp; Actuators</h3>
+<h3 id="section-8-5">8.5 Motors &amp; Actuators</h3>
 <p>R501 *Allowable motors. The only motors and actuators permitted include the following (in any quantity):<br>
 Table 8-1 Motor allowances<br>
 Motor Name Part Numbers Available<br>
@@ -2919,6 +3056,7 @@ Thrifty Bot Pulsar 775 TTB-0350</p>
 <strong>VEX BAG 217-3351</strong>
 <p>Section 8 ROBOT Construction Rules (R) V0 - Kickoff 88 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 89</div>
 <div class="page-content">
@@ -2961,6 +3099,7 @@ Assemblies labeled am-3651 through am-3656 contain legal motors specified in<br>
 Table 8-1. These motors may be used with or without the provided gearbox.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 89 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 90</div>
 <div class="page-content">
@@ -3007,6 +3146,7 @@ c. Spark Motor Controller (P/N REV-11-1200, am-4260),<br>
 d. Spark MAX Motor Controller (P/N REV-11-2158, am-4261),<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 90 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 91</div>
 <div class="page-content">
@@ -3056,6 +3196,7 @@ VEXpro BAG<br>
 controller)<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 91 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 92</div>
 <div class="page-content">
@@ -3094,7 +3235,7 @@ A. PWM ports on the roboRIO,<br>
 B. PWM ports on a WCP Spartan Sensor Board (P/N WCP-0045),<br>
 C. REV Robotics Servo Power Module (P/N REV-11-1144), or<br>
 D. REV Robotics Servo Hub (P/N REV-11-1855).</p>
-<h3 id="section-8.6">8.6 Power Distribution</h3>
+<h3 id="section-8-6">8.6 Power Distribution</h3>
 <p>In order to maintain safety, the rules in this section apply at all times while at the event, not just while the<br>
 ROBOT is on the FIELD for MATCHES.<br>
 R601 *Battery limit – everyone has the same power. The only legal source of electrical energy for the ROBOT<br>
@@ -3112,6 +3253,7 @@ G. Battery vents must not be obstructed.<br>
 secured to the battery using a threaded fastener.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 92 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 93</div>
 <div class="page-content">
@@ -3155,6 +3297,7 @@ For example, teams may not use additional batteries as extra weight on their</p>
 ROBOT interaction including if the ROBOT is turned over or placed in any arbitrary orientation.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 93 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 94</div>
 <div class="page-content">
@@ -3190,6 +3333,7 @@ and international batteries) will have a red or pink SB50 connector installed wh
 may not be removed.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 94 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 95</div>
 <div class="page-content">
@@ -3232,6 +3376,7 @@ injector devices used with COTS Ethernet cables and COTS receiving devices (i.e.
 adapter).<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 95 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 96</div>
 <div class="page-content">
@@ -3268,6 +3413,7 @@ block, crimped splice or soldered wire splice), and the single main lead inserte
 into the terminal to power the circuit.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 96 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 97</div>
 <div class="page-content">
@@ -3308,6 +3454,7 @@ Additional VRM (non-radio)/Additional PCM/PH Up to 20A 3 total<br>
 (non-compressor)<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 97 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 98</div>
 <div class="page-content">
@@ -3346,6 +3493,7 @@ continuous and have a source incapable of delivering &gt;1A,<br>
 including but not limited to roboRIO non-PWM outputs, CAN<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 98 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 99</div>
 <div class="page-content">
@@ -3388,6 +3536,7 @@ the power leads of any motor on your ROBOT (as close to the actual motor<br>
 leads as reasonably possible) or<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 99 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 100</div>
 <div class="page-content">
@@ -3399,7 +3548,7 @@ with current draw ≤ 2A at 12V.<br>
 B. The connection is made using standard Cat5e/6/7/8 cable.<br>
 C. The VH-109 is powered using the 12V input terminals with 18AWG wire or larger (it may<br>
 additionally be powered using the PoE input if desired).</p>
-<h3 id="section-8.7">8.7 Control, Command &amp; Signals System</h3>
+<h3 id="section-8-7">8.7 Control, Command &amp; Signals System</h3>
 <p>R701 *Control the ROBOT with a roboRIO. ROBOTS must be controlled via 1 programmable NI roboRIO or<br>
 roboRIO 2.0 (P/N am3000 or am3000a, both versions referred to throughout this manual as “roboRIO”),<br>
 with image version 2026_v1.2 or later.<br>
@@ -3431,6 +3580,7 @@ the port to prevent accidental damage to devices such as laptops which may<br>
 occur if attached to this port.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 100 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 101</div>
 <div class="page-content">
@@ -3471,6 +3621,7 @@ R706 *Don’t bypass the ARENA network. All signals must originate from the OPER
 transmitted to the ROBOT via the ARENA Ethernet network.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 101 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 102</div>
 <div class="page-content">
@@ -3505,6 +3656,7 @@ modified, or adjusted in any way (tampering includes drilling, cutting, machinin
 disassembling, painting, etc.), with the following exceptions:<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 102 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 103</div>
 <div class="page-content">
@@ -3552,6 +3704,7 @@ Module, and PWM motor controller shall be connected to a corresponding port (rel
 servos, and PWM controllers to PWM ports) on the roboRIO (either directly or through a WCP Spartan<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 103 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 104</div>
 <div class="page-content">
@@ -3596,6 +3749,7 @@ via a CAN bus connection from the built-in CAN on the roboRIO (either directly o
 another CAN bus device).<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 104 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 105</div>
 <div class="page-content">
@@ -3608,7 +3762,7 @@ documentation on how to wire the CAN bus connections see How to Wire an FRC</p>
 the CTR Electronics CANivoreTM (P/N 21-678682, WCP-1522) USB-to-CAN adapter.<br>
 Any additional CAN bus added in this manner satisfies the requirements of R714<br>
 (i.e. you may connect motor controllers to this additional bus).</p>
-<h3 id="section-8.8">8.8 Pneumatic System</h3>
+<h3 id="section-8-8">8.8 Pneumatic System</h3>
 <p>In order to maintain safety, the rules in this section apply at all times while at the event, not just while the<br>
 ROBOT is on the FIELD for MATCHES.<br>
 R801 *Only use explicitly permitted pneumatic parts. To satisfy multiple constraints associated with safety,<br>
@@ -3637,6 +3791,7 @@ pneumatic COMPONENT – this would cause the part to become a prohibited<br>
 item.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 105 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 106</div>
 <div class="page-content">
@@ -3681,6 +3836,7 @@ A. 1 FIRST Robotics Competition legal compressor (per R806),<br>
 B. a pressure relief valve (per R804-B) connected and calibrated (per R811),<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 106 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 107</div>
 <div class="page-content">
@@ -3709,6 +3865,7 @@ Examples of acceptable valves include Norgren regulator P/N R07-100-RNEA and<br>
 Monnier P/N 101-3002-1.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 107 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 108</div>
 <div class="page-content">
@@ -3752,10 +3909,11 @@ even though it may be plumbed into the same device, are not violations of this<b
 rule.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 108 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 109</div>
 <div class="page-content">
-<h3 id="section-8.9">8.9 OPERATOR CONSOLE</h3>
+<h3 id="section-8-9">8.9 OPERATOR CONSOLE</h3>
 <p>R901 *Use the specified Driver Station Software. The Driver Station Software provided by National<br>
 Instruments (install instructions found here) is the only application permitted to specify and<br>
 communicate the operating mode (i.e. AUTO/TELEOP) and operating state (Enable/Disable) to the<br>
@@ -3796,6 +3954,7 @@ R905 *FIELD wireless only. Other than the system provided by the FIELD, no other
 communications shall be used to communicate to, from, or within the OPERATOR CONSOLE.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 109 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 110</div>
 <div class="page-content">
@@ -3809,6 +3968,7 @@ of other ROBOTS.<br>
 R907 *No AC inverters. OPERATOR CONSOLES must not contain AC inverters.<br>
 Section 8 ROBOT Construction Rules (R) V0 - Kickoff 110 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 111</div>
 <div class="page-content">
@@ -3840,7 +4000,7 @@ provided that its ROBOT has passed inspection, per I102.<br>
 An Inspection Checklist (coming soon) is available to help teams self-inspect<br>
 their ROBOT before their event. Teams are strongly encouraged to self-inspect<br>
 prior to their event.</p>
-<h3 id="section-9.1">9.1 Rules</h3>
+<h3 id="section-9-1">9.1 Rules</h3>
 <p>I101 *It’s your team’s ROBOT. The ROBOT and its MAJOR MECHANISMS must be built by the FIRST<br>
 Robotics Competition team.<br>
 A MAJOR MECHANISM is a group of COMPONENTS and/or MECHANISMS assembled together to<br>
@@ -3850,6 +4010,7 @@ This rule requires that the ROBOT and its MAJOR MECHANISMS were built by its<br>
 team, but isn’t intended to prohibit or discourage assistance from other teams<br>
 Section 9 Inspection &amp; Eligibility (I) V0 - Kickoff 111 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 112</div>
 <div class="page-content">
@@ -3895,6 +4056,7 @@ reconfigured ROBOT still complies with all ROBOT Construction Rules. Only MECHAN
 present during the inspection may be added, removed, or reconfigured between MATCHES without re-<br>
 Section 9 Inspection &amp; Eligibility (I) V0 - Kickoff 112 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 113</div>
 <div class="page-content">
@@ -3940,6 +4102,7 @@ rule has been violated, and the LRI works with them to select A or B for use for
 the remainder of the event.<br>
 Section 9 Inspection &amp; Eligibility (I) V0 - Kickoff 113 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 114</div>
 <div class="page-content">
@@ -3961,6 +4124,7 @@ Exceptions may be made for major conflicts, e.g. religious holidays, major<br>
 testing, transportation issues, etc.<br>
 Section 9 Inspection &amp; Eligibility (I) V0 - Kickoff 114 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 115</div>
 <div class="page-content">
@@ -3973,11 +4137,11 @@ of the Qualification MATCHES.<br>
 Qualification MATCHES allow each team to earn Ranking Points which determine their seeding position and<br>
 may qualify them for participation in the Playoff MATCHES.<br>
 Playoff MATCHES determine the event Champions.</p>
-<h3 id="section-10.1">10.1 MATCH Schedules</h3>
+<h3 id="section-10-1">10.1 MATCH Schedules</h3>
 <p>A MATCH schedule is used to coordinate MATCHES at an Event. Figure 10-1 details information shown on<br>
 each schedule. SURROGATE MATCHES are described in section 10.5.2 MATCH Assignment.<br>
 Figure 10-1 Sample MATCH schedule</p>
-<h3 id="section-10.2">10.2 MATCH Replays</h3>
+<h3 id="section-10-2">10.2 MATCH Replays</h3>
 <p>Over the course of the tournament, it may be necessary for a MATCH to be replayed. Typical causes for replays<br>
 are MATCHES that end in a tie during the Playoffs (due to criteria listed in Table 10-3. or any Finals MATCH),<br>
 MATCHES that are stopped because FIELD STAFF anticipated FIELD damage or personal injury, or if there is an</p>
@@ -3992,6 +4156,7 @@ B. power failure to a portion of the FIELD (tripping the circuit breaker in the 
 considered a power failure),<br>
 Section 10 Tournaments (T) V0 - Kickoff 115 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 116</div>
 <div class="page-content">
@@ -4034,10 +4199,11 @@ MATCHES, including prior instances of the MATCH to be replayed, are not<br>
 cleared.<br>
 Section 10 Tournaments (T) V0 - Kickoff 116 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 117</div>
 <div class="page-content">
-<h3 id="section-10.3">10.3 Measurement</h3>
+<h3 id="section-10-3">10.3 Measurement</h3>
 <p>At each event, the ARENA will be open for at least 30 minutes prior to the start of Qualification MATCHES,<br>
 during which time teams may survey and/or measure the ARENA and bring ROBOTS on the FIELD to perform<br>
 sensor calibration. Events may schedule additional measurement and calibration times. The specific time(s)<br>
@@ -4051,7 +4217,7 @@ B. Humans may touch a SCORING ELEMENT but may not practice with it (e.g. throw F
 anything resembling FUEL, or use the OUTPOST).<br>
 Violation: VERBAL WARNING, plus YELLOW CARD if subsequent violations at any point during the event<br>
 or egregious.</p>
-<h3 id="section-10.4">10.4 Practice MATCHES</h3>
+<h3 id="section-10-4">10.4 Practice MATCHES</h3>
 <p>Practice MATCHES are played before Qualification MATCHES. The Practice MATCH schedule is available as<br>
 soon as possible, but no later than the start of Practice MATCHES. For Regional events, it will also be<br>
 published and available online on the FRC-Events website, except during exceptional circumstances. Practice<br>
@@ -4060,7 +4226,7 @@ assigned an equal number of Practice MATCHES unless the number of teams multipli
 MATCHES is not divisible by 6. In this case, the FMS randomly selects some teams to play an extra Practice</p>
 <strong>MATCH.</strong>
 <p>Practice MATCHES are not guaranteed at District Events due to event schedule constraints.</p>
-<h4 id="section-10.4.1">10.4.1 Filler Line</h4>
+<h4 id="section-10-4-1">10.4.1 Filler Line</h4>
 <p>A Filler Line is used to fill open slots at events that employ scheduled Practice MATCHES or all slots at events<br>
 with an open Practice MATCH schedule. Teams from the Filler Line are used on a first come, first served basis<br>
 to fill empty spots in Practice MATCHES left by other teams that do not report to Queueing. The number of<br>
@@ -4074,16 +4240,17 @@ D. teams may not occupy more than 1 spot in the Filler Line, and<br>
 E. if a team is queued for their Practice MATCH, they may not also join the Filler Line.<br>
 Section 10 Tournaments (T) V0 - Kickoff 117 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 118</div>
 <div class="page-content">
-<h3 id="section-10.5">10.5 Qualification MATCHES</h3>
-<h4 id="section-10.5.1">10.5.1 Schedule</h4>
+<h3 id="section-10-5">10.5 Qualification MATCHES</h3>
+<h4 id="section-10-5-1">10.5.1 Schedule</h4>
 <p>The Qualification MATCH schedule is made available as soon as possible, but no later than 30 minutes before<br>
 Qualification MATCHES are scheduled to begin. Teams receive 1 hard copy and it is also available on the FRC-<br>
 Events website, except during exceptional circumstances. Each Qualification schedule consists of a series of<br>
 rounds in which each team plays 1 MATCH per round.</p>
-<h4 id="section-10.5.2">10.5.2 MATCH Assignment</h4>
+<h4 id="section-10-5-2">10.5.2 MATCH Assignment</h4>
 <p>FMS assigns each team 2 ALLIANCE partners for each Qualification MATCH using a predefined algorithm, and<br>
 teams may not switch Qualification MATCH assignments. The algorithm employs the following criteria, listed<br>
 in order of priority:<br>
@@ -4105,7 +4272,7 @@ designated as SURROGATES for the extra MATCH. If a team plays a MATCH as a SURRO
 on the MATCH schedule, it is always their third Qualification MATCH, and the outcome of the MATCH has no<br>
 effect on the team’s ranking. YELLOW and RED CARDS assigned to SURROGATES, however, do carry forward<br>
 to subsequent MATCHES.</p>
-<h4 id="section-10.5.3">10.5.3 Qualification Ranking</h4>
+<h4 id="section-10-5-3">10.5.3 Qualification Ranking</h4>
 <p>Ranking Points are units credited to a team based on their ALLIANCE’S performance in Qualification<br>
 MATCHES. Ranking Points are awarded to each eligible team at the completion of each Qualification MATCH<br>
 per Table 6-4.<br>
@@ -4114,6 +4281,7 @@ A. A SURROGATE receives 0 Ranking Points.<br>
 B. A DISQUALIFIED team, as determined by the Head REFEREE, receives 0 Ranking Points.<br>
 Section 10 Tournaments (T) V0 - Kickoff 118 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 119</div>
 <div class="page-content">
@@ -4134,13 +4302,13 @@ Order Sort Criteria<br>
 3rd Average FUEL scored in AUTO<br>
 4th Average TOWER points<br>
 5th Random sorting by the FMS</p>
-<h3 id="section-10.6">10.6 Playoff MATCHES</h3>
+<h3 id="section-10-6">10.6 Playoff MATCHES</h3>
 <p>Playoff MATCHES follow the qualification MATCHES. In the Playoffs, teams play on set ALLIANCES, chosen<br>
 during ALLIANCE selection, and advance through a double elimination bracket. Teams do not earn Ranking<br>
 Points; they advance based on winning, losing, or tying a MATCH.<br>
 A DISQUALIFIED team, as determined by the Head REFEREE, causes their ALLIANCE to receive 0 MATCH<br>
 points in a Playoff MATCH.</p>
-<h4 id="section-10.6.1">10.6.1 ALLIANCE Selection Process</h4>
+<h4 id="section-10-6-1">10.6.1 ALLIANCE Selection Process</h4>
 <p>At the end of the Qualification MATCHES, the top 8 ranked teams become the ALLIANCE Leads. The ranked<br>
 ALLIANCES are designated, in order, ALLIANCE 1, ALLIANCE 2, etc., down to ALLIANCE 8. Using the ALLIANCE<br>
 selection process described in this section, each ALLIANCE Lead chooses 2 other teams to join their</p>
@@ -4154,6 +4322,7 @@ maximum of three STUDENT team representatives. Representative(s) must report to 
 the start of ALLIANCE Selection.<br>
 Section 10 Tournaments (T) V0 - Kickoff 119 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 120</div>
 <div class="page-content">
@@ -4198,6 +4367,7 @@ the last of a round in which case the ALLIANCE receives the next highest-ranked 
 <strong>ALLIANCE.</strong>
 <p>Section 10 Tournaments (T) V0 - Kickoff 120 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 121</div>
 <div class="page-content">
@@ -4243,6 +4413,7 @@ another ALLIANCE’S invitation to participate in the Playoff tournament. Declin
 be a BACKUP TEAM.<br>
 Section 10 Tournaments (T) V0 - Kickoff 121 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 122</div>
 <div class="page-content">
@@ -4255,7 +4426,7 @@ An ALLIANCE Lead that declines an invitation from another ALLIANCE is able to in
 ALLIANCE but may not be invited to join another ALLIANCE.<br>
 At the conclusion of ALLIANCE selection, the highest ranked unselected teams are eligible to become a<br>
 BACKUP TEAM, as defined in section 10.6.3 BACKUP TEAMS.</p>
-<h4 id="section-10.6.2">10.6.2 Playoff MATCH Bracket</h4>
+<h4 id="section-10-6-2">10.6.2 Playoff MATCH Bracket</h4>
 <p>The double elimination tournament consists of an Upper and Lower bracket as shown in Figure 10-2. Each<br>
 ALLIANCE begins with a slot in the Upper bracket. If an ALLIANCE wins a MATCH in the Upper bracket, they<br>
 remain in the Upper bracket. If an ALLIANCE loses a MATCH in the Upper bracket, they transition to the Lower<br>
@@ -4269,6 +4440,7 @@ rounds and between Finals MATCHES. Breaks begin after the FIELD has been cleared
 MATCH. The Blue and Red Gap columns indicate the approximate time between each ALLIANCE’S MATCHES.<br>
 Section 10 Tournaments (T) V0 - Kickoff 122 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 123</div>
 <div class="page-content">
@@ -4314,10 +4486,11 @@ Awards: Remaining awards, Finalists, Winners, and FIRST Impact Award<br>
 ** Program Delivery Partners may choose to hold these awards until after all MATCHES are complete.<br>
 Section 10 Tournaments (T) V0 - Kickoff 123 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 124</div>
 <div class="page-content">
-<h4 id="section-10.6.2.1">10.6.2.1 Playoff MATCH ties</h4>
+<h4 id="section-10-6-2-1">10.6.2.1 Playoff MATCH ties</h4>
 <p>If final MATCH scores for both ALLIANCES are equal, the win is awarded to the ALLIANCE per criteria listed in<br>
 Table 10-3.<br>
 Table 10-3 Playoff MATCH Tiebreaker Criteria<br>
@@ -4326,7 +4499,7 @@ Order Sort Criteria<br>
 2nd ALLIANCE AUTO FUEL points<br>
 3rd ALLIANCE TOWER points<br>
 4th MATCH is replayed</p>
-<h4 id="section-10.6.2.2">10.6.2.2 Playoff Finals</h4>
+<h4 id="section-10-6-2-2">10.6.2.2 Playoff Finals</h4>
 <p>Once a single ALLIANCE remains in each Upper and Lower bracket, those ALLIANCES proceed to the Finals<br>
 round. The first ALLIANCE to win 2 MATCHES in the Finals becomes the event’s Champions.<br>
 If a Finals MATCH ends in a tie score, the tie is not broken using the criteria in Table 10-3, the MATCH remains<br>
@@ -4334,7 +4507,7 @@ a tie. In the case where an ALLIANCE hasn’t won 2 MATCHES after 3 MATCHES have
 tied MATCHES), the Playoffs proceed with up to 3 additional Finals MATCHES, called Overtime MATCHES, until<br>
 an ALLIANCE has won 2 Finals MATCHES. In the case where the Overtime MATCH scores for both ALLIANCES<br>
 are equal, the win for that Overtime MATCH is awarded based on the criteria listed in Table 10-3.</p>
-<h4 id="section-10.6.3">10.6.3 BACKUP TEAMS</h4>
+<h4 id="section-10-6-3">10.6.3 BACKUP TEAMS</h4>
 <p>During the Playoff MATCHES an ALLIANCE CAPTAIN may elect to replace one of its ROBOTS. The team whose<br>
 ROBOT and DRIVE TEAM replaces another ROBOT and DRIVE TEAM on an ALLIANCE during the Playoff<br>
 MATCHES is called the BACKUP TEAM.<br>
@@ -4344,7 +4517,7 @@ teams.<br>
 ALLIANCES submit LINEUPS (as described in section 10.6.4 LINEUPS for each<br>
 Playoff MATCH. After the BACKUP TEAM’s first Playoff MATCH, the ALLIANCE’S<br>
 LINEUP may consist of any 3 of the ALLIANCE’S 4 teams.</p>
-<h4 id="section-10.6.3.1">10.6.3.1 BACKUP TEAM Coupons</h4>
+<h4 id="section-10-6-3-1">10.6.3.1 BACKUP TEAM Coupons</h4>
 <p>Each ALLIANCE is allotted 1 BACKUP TEAM coupon during the Playoff MATCHES. If two or more ROBOTS<br>
 from the ALLIANCE become inoperable, then the ALLIANCE must play the following MATCHES with only 2 (or<br>
 even 1) ROBOTS.<br>
@@ -4354,6 +4527,7 @@ During 1 of the Playoff MATCHES, Team C’s ROBOT suffers damage to its<br>
 mechanical arm. The ALLIANCE CAPTAIN decides to bring in Team D to replace<br>
 Section 10 Tournaments (T) V0 - Kickoff 124 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 125</div>
 <div class="page-content">
@@ -4382,7 +4556,7 @@ before the expected MATCH start time in which the BACKUP TEAM is to play.<br>
 Violation: The request is denied<br>
 If the Head REFEREE is busy, and there is no designee, the ALLIANCE CAPTAIN<br>
 remains in the Question Box to submit the BACKUP TEAM coupon.</p>
-<h4 id="section-10.6.3.2">10.6.3.2 BACKUP POOL</h4>
+<h4 id="section-10-6-3-2">10.6.3.2 BACKUP POOL</h4>
 <p>After the top ranked ALLIANCE has made their final pick during ALLIANCE Selection, the lead queuer (or their<br>
 designee) polls the remaining eligible teams. In rank order, the lead queuer (or their designee) will invite<br>
 remaining teams to accept or decline a position in the BACKUP POOL, i.e. the group of teams willing and able<br>
@@ -4395,6 +4569,7 @@ STUDENT representative (and optionally 1 additional STUDENT or mentor) to a desi
 the FIELD for the duration of the Playoff MATCHES.<br>
 Section 10 Tournaments (T) V0 - Kickoff 125 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 126</div>
 <div class="page-content">
@@ -4408,17 +4583,17 @@ corrected within a reasonable amount of time.<br>
 Some events may offer an area near the FIELD where the top 1 or 2 teams in the<br>
 BACKUP POOL may choose to stage their ROBOT for quick and easy access to<br>
 the FIELD if recruited.</p>
-<h4 id="section-10.6.4">10.6.4 LINEUPS</h4>
+<h4 id="section-10-6-4">10.6.4 LINEUPS</h4>
 <p>Each ALLIANCE competing in a Playoff MATCH has the option to submit a LINEUP, which lists the 3 teams<br>
 participating in the MATCH and their selected DRIVER STATIONS.<br>
 The LINEUP is kept confidential until the FIELD is set for the MATCH at which point each ALLIANCE’S LINEUP<br>
 appears on the Team Signs.</p>
-<h4 id="section-10.6.4.1">10.6.4.1 LINEUPS for 4-team ALLIANCES</h4>
+<h4 id="section-10-6-4-1">10.6.4.1 LINEUPS for 4-team ALLIANCES</h4>
 <p>If an ALLIANCE has 4 members (either because a 3-team ALLIANCE has called a BACKUP TEAM or the event is<br>
 the FIRST Championship), a single representative from the team not on the LINEUP is allowed as a sixteenth<br>
 ALLIANCE member but must be a member of that team’s DRIVE TEAM. This additional representative may only<br>
 serve as a DRIVE COACH.</p>
-<h4 id="section-10.6.4.2">10.6.4.2 Default LINEUP</h4>
+<h4 id="section-10-6-4-2">10.6.4.2 Default LINEUP</h4>
 <p>T613 *LINEUPS due 2 minutes before the MATCH. The ALLIANCE CAPTAIN must submit their LINEUP in<br>
 writing to the Head REFEREE (or their designee) 2 minutes before their expected MATCH start time.<br>
 Violation: Late LINEUPS are denied, and the ALLIANCE’S most recent LINEUP is applied.<br>
@@ -4437,6 +4612,7 @@ If a BACKUP TEAM Coupon is accepted and the LINEUP for the next MATCH is<br>
 not submitted or it omits the BACKUP TEAM, then the ALLIANCE’S most recent<br>
 Section 10 Tournaments (T) V0 - Kickoff 126 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 127</div>
 <div class="page-content">
@@ -4447,11 +4623,11 @@ the LINEUP for the replayed MATCH is the same as the original MATCH. The sole ex
 opinion of the Head REFEREE, the ARENA FAULT rendered a ROBOT inoperable, in which case the<br>
 LINEUP can be changed.<br>
 Violation: The new LINEUP is denied.</p>
-<h4 id="section-10.6.5">10.6.5 Pit Crews</h4>
+<h4 id="section-10-6-5">10.6.5 Pit Crews</h4>
 <p>During the Playoff MATCHES and because of the distance between the FIELD and the pit area, extra team<br>
 members may be needed to maintain and otherwise assist with the ROBOT between MATCHES. Each team is<br>
 permitted to have up to 3 additional pit crew members to help with needed ROBOT repairs/maintenance.</p>
-<h4 id="section-10.6.6">10.6.6 Small Event Exceptions</h4>
+<h4 id="section-10-6-6">10.6.6 Small Event Exceptions</h4>
 <p>The scheduling algorithm described in section 10.5.2 MATCH Assignment works to minimize teams playing in<br>
 back-to-back MATCHES. However, at events with fewer than 24 teams, back-to-back plays may occur.<br>
 Multi-day events with 24 teams or fewer employ a modified Playoff MATCH format. Instead of 8 ALLIANCES,<br>
@@ -4470,16 +4646,18 @@ full set of ALLIANCES was selected (i.e. the 2nd selection of the 3-seed ALLIANC
 regardless of how many ALLIANCES are formed).<br>
 Section 10 Tournaments (T) V0 - Kickoff 127 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 128</div>
 <div class="page-content"><p><em>[Page contains no extractable text - may contain images or graphics]</em></p></div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 129</div>
 <div class="page-content">
 <h2 id="section-11">11 District Tournaments</h2>
 <p>Teams advance through the season depending on the events at which they compete: Regional or District. This<br>
 section details how District teams advance from District qualifying events to their District Championship.</p>
-<h3 id="section-11.1">11.1 District Events</h3>
+<h3 id="section-11-1">11.1 District Events</h3>
 <p>District teams are ranked throughout the season based on the points they earn at the first 2 home District<br>
 events they attend, as well as at their District Championship. Points are awarded to teams as follows:<br>
 Table 11-1 District Point Assignment<br>
@@ -4509,6 +4687,7 @@ If there is a tie in the season point total between teams, the higher ranked tea
 following additional sorting criteria:<br>
 Section 11 District Tournaments V0 - Kickoff 129 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 130</div>
 <div class="page-content">
@@ -4528,7 +4707,7 @@ Qualification or Playoff MATCH<br>
 8th Third highest Individual MATCH Score, regardless of whether that score occurred in a<br>
 Qualification or Playoff MATCH<br>
 9th Random Selection</p>
-<h4 id="section-11.1.1">11.1.1 Qualification Round Performance</h4>
+<h4 id="section-11-1-1">11.1.1 Qualification Round Performance</h4>
 <p>The calculation of Qualification performance points is done using the equation below. This equation is an<br>
 inverse error function which utilizes the following variables:<br>
 − R – the qualification rank of the team at the event at the conclusion of Qualification MATCHES (as<br>
@@ -4549,13 +4728,14 @@ event. The system will automatically generate the appropriate points for each te
 number of teams at the event.<br>
 Section 11 District Tournaments V0 - Kickoff 130 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 131</div>
 <div class="page-content">
 <p>Table 11-3 Sample Qualification Round Point Assignments<br>
 Rank 1 2 3 4 … 19 20 21 … 37 38 39 40<br>
 Points 22 21 20 19 … 13 13 12 … 6 6 5 4</p>
-<h4 id="section-11.1.2">11.1.2 ALLIANCE Selection Results</h4>
+<h4 id="section-11-1-2">11.1.2 ALLIANCE Selection Results</h4>
 <p>This attribute measures both individual team qualification round seeding performance and recognition by<br>
 peers.<br>
 ALLIANCE CAPTAINS are recognized based on their qualification round seeding rank. This rank is a result of<br>
@@ -4574,7 +4754,7 @@ number of points as the third ALLIANCE CAPTAIN. Numerical analysis supports the 
 CAPTAINS are about as strong in ROBOT performance as equivalently drafted teams. An additional minor<br>
 benefit to this system is that it allows teams who would traditionally not be a top ranked team the opportunity<br>
 to be an ALLIANCE CAPTAIN.</p>
-<h4 id="section-11.1.3">11.1.3 Playoff Performance</h4>
+<h4 id="section-11-1-3">11.1.3 Playoff Performance</h4>
 <p>This attribute measures team performance as part of an ALLIANCE.<br>
 Teams that advance to at least MATCH 12 earn Double Elimination (DE) Points per the formula below, where β<br>
 is defined in Table 11-4.<br>
@@ -4591,6 +4771,7 @@ In most cases, unless a BACKUP is recruited, a team plays 100% of the DE MATCHES
 thus their DE Points simply equal β. If a team does not play 100% of the DE MATCHES won by their ALLIANCE,<br>
 Section 11 District Tournaments V0 - Kickoff 131 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 132</div>
 <div class="page-content">
@@ -4602,7 +4783,7 @@ For example, if Team X’s ALLIANCE wins the event, but Team X only played in 2<
 MATCHES won by their ALLIANCE, MATCH 13 and Final 1, Team X’s Playoff<br>
 Performance points are 20 * (1/5) + 5 = 9 points.<br>
 The maximum number of Playoff Performance Points a team can earn is 30 (20 DE points + 10 Finals Points).</p>
-<h4 id="section-11.1.4">11.1.4 Team Judged Awards</h4>
+<h4 id="section-11-1-4">11.1.4 Team Judged Awards</h4>
 <p>This attribute measures team performance with respect to team awards judged at the event.<br>
 The points earned for team awards in this system are not intended to capture the full value of the award to the<br>
 team winning the award, or to represent the full value of the award to FIRST. In many ways, the team’s<br>
@@ -4615,23 +4796,24 @@ ranking system.<br>
 Teams only receive points for team awards judged at the event. If an award is not judged, is not for a team<br>
 (e.g. the Dean’s List Award) or is not judged at the event (e.g. Safety Animation Award, sponsored by UL), no<br>
 points are earned.</p>
-<h4 id="section-11.1.5">11.1.5 Team Age</h4>
+<h4 id="section-11-1-5">11.1.5 Team Age</h4>
 <p>This attribute recognizes the difficulty in being a rookie or relatively new team.<br>
 Points are awarded to 2025 and 2026 rookie teams in recognition of the unique challenges teams face in those<br>
 early years, and to increase the chance that they will make it to the District Championship to compete with<br>
 their ROBOTS. Like our dedicated Rookie awards, these additional points are intended to recognize and<br>
 motivate newer participants in FIRST Robotics Competition. These points are awarded once at the beginning of<br>
 the season. Rookie year is calculated based on the year in which FIRST recognizes the team as a rookie.</p>
-<h4 id="section-11.1.6">11.1.6 Regional Participation</h4>
+<h4 id="section-11-1-6">11.1.6 Regional Participation</h4>
 <p>District teams neither earn points for their actions at any Regionals, nor are eligible for any FIRST<br>
 Championship qualifying benefits at that Regional (awards, etc.).</p>
-<h3 id="section-11.2">11.2 District Championship Eligibility</h3>
+<h3 id="section-11-2">11.2 District Championship Eligibility</h3>
 <p>A team competing in a District qualifies for their District Championship by meeting 1 of the following criteria:<br>
 A. District FIRST Impact Award Winner,<br>
 B. District Ranking (based on total points earned at their first 2 home District events as detailed in section</p>
-<h3 id="section-11.1">11.1 District Events),</h3>
+<h3 id="section-11-1">11.1 District Events),</h3>
 <p>Section 11 District Tournaments V0 - Kickoff 132 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 133</div>
 <div class="page-content">
@@ -4668,10 +4850,11 @@ located in (Northern or Southern California) and advance to one of two District 
 teams in each area (North and South) advance to their District Championship.<br>
 Section 11 District Tournaments V0 - Kickoff 133 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 134</div>
 <div class="page-content">
-<h3 id="section-11.3">11.3 District Championships with Multiple Divisions</h3>
+<h3 id="section-11-3">11.3 District Championships with Multiple Divisions</h3>
 <p>If a District Championship has too many teams to allow all teams 12 Qualification MATCHES, then the event<br>
 hosts multiple divisions. These events have 2 or 4 divisions (based on the number of teams participating, see<br>
 Table 11-5) with approximately 40–60 teams in each division. Teams are assigned divisions by FIRST using a<br>
@@ -4703,13 +4886,14 @@ Distribution of strength 1 2.5<br>
 Distribution of strength for “top” teams 1.5 2<br>
 6. If all 3 criteria met, event organizers publish the assignments. If any of the 3 criteria are not met,<br>
 assignments are rejected, and the process returns to Step 3.</p>
-<h3 id="section-11.4">11.4 District Championship Playoffs</h3>
+<h3 id="section-11-4">11.4 District Championship Playoffs</h3>
 <p>In these cases:<br>
 − Division winning ALLIANCES play each other in District Championship Playoffs, employing the brackets<br>
 shown in Figure 11-1 and Figure 11-2 (and detailed in Table 11-7) that corresponds to their District, until<br>
 a winning ALLIANCE for the event is determined.<br>
 Section 11 District Tournaments V0 - Kickoff 134 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 135</div>
 <div class="page-content">
@@ -4717,6 +4901,7 @@ Section 11 District Tournaments V0 - Kickoff 134 of 162</p>
 Figure 11-2 2-division District Championship Playoff Bracket<br>
 Section 11 District Tournaments V0 - Kickoff 135 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 136</div>
 <div class="page-content">
@@ -4747,9 +4932,9 @@ Finals 8* W5 W3 17m 17m<br>
 − If any of these ALLIANCES has recruited a BACKUP TEAM, these points are divided amongst the teams<br>
 as described in section 11.1.3 Playoff Performance.<br>
 − If an ALLIANCE in a District Championship Playoff has not yet recruited a BACKUP TEAM per section</p>
-<h4 id="section-10.6.3">10.6.3 BACKUP TEAMS, the ALLIANCE CAPTAIN may bring in only the highest ranked team from their</h4>
+<h4 id="section-10-6-3">10.6.3 BACKUP TEAMS, the ALLIANCE CAPTAIN may bring in only the highest ranked team from their</h4>
 <p>division’s BACKUP POOL to join its ALLIANCE.</p>
-<h3 id="section-11.5">11.5 FIRST Championship Eligibility</h3>
+<h3 id="section-11-5">11.5 FIRST Championship Eligibility</h3>
 <p>Each District determines the number of Dean’s List Finalists, FIRST Impact Awards, Rookie All Star Awards, and<br>
 Engineering Inspiration Awards to present at their District Championship, within a range established by FIRST.<br>
 The team counts are based on the team representation of the respective District at the Championship. For the<br>
@@ -4762,6 +4947,7 @@ teams.<br>
 Championship District teams to one Dean’s List Finalist for every six Championship District teams.<br>
 Section 11 District Tournaments V0 - Kickoff 136 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 137</div>
 <div class="page-content">
@@ -4782,6 +4968,7 @@ and subtracting the number of pre-qualified teams. This overall calculation uses
 have registered and paid as of three weeks after initial season payment was due.<br>
 Section 11 District Tournaments V0 - Kickoff 137 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 138</div>
 <div class="page-content">
@@ -4824,13 +5011,14 @@ located in (Northern or Southern California) and advance to one of two District 
 teams from the entire District advance to FIRST Championship.<br>
 Section 11 District Tournaments V0 - Kickoff 138 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 139</div>
 <div class="page-content">
 <h2 id="section-12">12 Regional Tournaments</h2>
 <p>Teams advance through the season depending on the events at which they compete: Regional or District. This<br>
 section details how Regional teams advance from Regional events to FIRST Championship.</p>
-<h3 id="section-12.1">12.1 Regional Events</h3>
+<h3 id="section-12-1">12.1 Regional Events</h3>
 <p>Regional teams are ranked throughout the season based on the points they earn at the first 2 Regional events<br>
 they attend. Points are awarded to teams as follows:<br>
 Table 12-1 Regional Point Assignment<br>
@@ -4857,6 +5045,7 @@ If there is a tie in the event point total between teams, the higher ranked team
 following additional sorting criteria:<br>
 Section 12 Regional Tournaments V0 - Kickoff 139 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 140</div>
 <div class="page-content">
@@ -4874,7 +5063,7 @@ Qualification or Playoff MATCH<br>
 6th Third highest Individual MATCH Score, regardless of whether that score occurred in a<br>
 Qualification or Playoff MATCH<br>
 7th Random Selection</p>
-<h4 id="section-12.1.1">12.1.1 Team Judged Awards</h4>
+<h4 id="section-12-1-1">12.1.1 Team Judged Awards</h4>
 <p>This attribute measures team performance with respect to team awards judged at the event.<br>
 Much of what is stated in section 11.1.4 Team Judged Awards is also relevant to Regional events. Points are<br>
 assigned to awards to recognize that FIRST continues to be “More than Robots®” and to elevate award-winning<br>
@@ -4885,7 +5074,7 @@ events than District events because Districts reward those teams with slots at a
 competition: their District Championship. Regional teams do not have an intermediate competition level and<br>
 FIRST wants those teams to have an opportunity to share their stories and celebrate their success outside of<br>
 their regional event.</p>
-<h4 id="section-12.1.2">12.1.2 Team Age</h4>
+<h4 id="section-12-1-2">12.1.2 Team Age</h4>
 <p>This attribute recognizes the difficulty in being a rookie or relatively new team.<br>
 Much of what is stated in section 11.1.5 Team Age is also relevant to Regional events. Points are awarded to<br>
 2025 and 2026 rookie teams. Unlike in the District events where these points are awarded once per season, for<br>
@@ -4894,14 +5083,15 @@ assist rookies with earning one of the three per-event qualification slots start
 calculated based on the year in which FIRST recognizes the team as a rookie.<br>
 Section 12 Regional Tournaments V0 - Kickoff 140 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 141</div>
 <div class="page-content">
-<h3 id="section-12.2">12.2 FIRST Championship Eligibility</h3>
+<h3 id="section-12-2">12.2 FIRST Championship Eligibility</h3>
 <p>Regional teams can qualify for FIRST Championship in one of two ways:<br>
 1. Direct Event Qualification<br>
 2. Regional Pool</p>
-<h4 id="section-12.2.1">12.2.1 Direct Event Qualification</h4>
+<h4 id="section-12-2-1">12.2.1 Direct Event Qualification</h4>
 <p>At every regional event, teams earn points based on the point system. Regional teams can earn points from<br>
 and qualify directly for the FIRST Championship at any Regional event they attend. The top x number of teams<br>
 who earned the most points at each event and who have not already qualified for the FIRST Championship<br>
@@ -4912,7 +5102,7 @@ Any team who wins the FIRST Impact Award at a Regional event and does not qualif
 via a direct slot or from the Regional Pool will be offered a remote interview to be eligible to win at FIRST<br>
 Championship. Teams who win the award and qualify for the FIRST Championship must still attend the event<br>
 in order to receive an interview.</p>
-<h4 id="section-12.2.2">12.2.2 Regional Pool</h4>
+<h4 id="section-12-2-2">12.2.2 Regional Pool</h4>
 <p>All Regional event teams not already qualified for the FIRST Championship are ranked together in the “Regional<br>
 Pool” based on the points earned from their first two regional events. The top ranked teams from this pool<br>
 earn FIRST Championship qualification spots on a weekly basis beginning after week 2. This list helps ensure<br>
@@ -4925,7 +5115,7 @@ are invited to the FIRST Championship from the Regional Pool on a weekly basis b
 Our goal is to release enough slots each week so that the same proportion of Championship slots have been<br>
 filled as events have been completed. For example, if 35 of 56 (~68%) Regional Events are completed after<br>
 Week 4, we plan to have approximately the same percentage of Regional slots filled by that point.</p>
-<h4 id="section-12.2.2.1">12.2.2.1 Single-event team points calculation</h4>
+<h4 id="section-12-2-2-1">12.2.2.1 Single-event team points calculation</h4>
 <p>If a team has only played one event at the end of the interval, they are awarded second event points using this<br>
 formula:<br>
 𝑆𝑒𝑐𝑜𝑛𝑑 𝑒𝑣𝑒𝑛𝑡 𝑝𝑜𝑖𝑛𝑡𝑠 = 0.6∗(𝑓𝑖𝑟𝑠𝑡 𝑒𝑣𝑒𝑛𝑡 𝑝𝑜𝑖𝑛𝑡𝑠)+14<br>
@@ -4934,9 +5124,11 @@ how many points would be earned by the average team who earned X points at their
 not a whole number, the value is rounded to the nearest integer.<br>
 Section 12 Regional Tournaments V0 - Kickoff 141 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 142</div>
 <div class="page-content"><p><em>[Page contains no extractable text - may contain images or graphics]</em></p></div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 143</div>
 <div class="page-content">
@@ -4950,11 +5142,11 @@ assigned in Step 1 (i.e. a team in Division 1, a team in Division 2, a team in D
 Division 1 again, until Rookies are all assigned to a division).<br>
 3. Step 2 is repeated with veteran teams, with additional assignments as necessary to balance the total<br>
 teams in each division.<br>
-Each division plays a standard tournament as described in section 10.5 Qualification MATCHES and section<br>
-10.6 Playoff MATCHES to produce the division Champions. Those 8 division Champions proceed to the<br>
-Championship Playoffs, on the Einstein FIELDS, to determine the 2026 FIRST Robotics Competition<br>
+Each division plays a standard tournament as described in section 10.5 Qualification MATCHES and section</p>
+<h3 id="section-10-6">10.6 Playoff MATCHES to produce the division Champions. Those 8 division Champions proceed to the</h3>
+<p>Championship Playoffs, on the Einstein FIELDS, to determine the 2026 FIRST Robotics Competition<br>
 Championship Winners, per section 13.4 FIRST Championship Playoffs.</p>
-<h3 id="section-13.1">13.1 Advancement to the FIRST Championship</h3>
+<h3 id="section-13-1">13.1 Advancement to the FIRST Championship</h3>
 <p>Details on how teams earn eligibility to attend the FIRST Championship can be found in section 11.5 FIRST<br>
 Championship Eligibility and section 12.2 FIRST Championship Eligibility. Teams that are pre-qualified can be<br>
 found on the FIRST Championship eligibility webpage.</p>
@@ -4968,13 +5160,14 @@ reversed again, with ALLIANCE 1 picking first and ALLIANCE 8 picking last. This 
 ALLIANCES of 4 teams each.<br>
 ALLIANCES may start with any 3 of the 4 ROBOTS on their ALLIANCE during division Playoff MATCHES and<br>
 during the Championship Playoffs. ALLIANCES submit LINEUPS for their MATCHES as described in section</p>
-<strong>10.6.4 LINEUPS.</strong>
+<h4 id="section-10-6-4">10.6.4 LINEUPS.</h4>
 <p>Section 13 FIRST Championship Tournament (C) V0 - Kickoff 143 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 144</div>
 <div class="page-content">
-<h3 id="section-13.3">13.3 FIRST Championship Pit Crews</h3>
+<h3 id="section-13-3">13.3 FIRST Championship Pit Crews</h3>
 <p>FIRST distributes buttons to the ALLIANCE CAPTAINS during the ALLIANCE CAPTAIN meeting, which takes<br>
 place on the division FIELDS. These buttons provide the necessary access to the ARENA for pit crew members.<br>
 C301 *Wear your buttons. Only team members wearing proper buttons are allowed on the ARENA floor<br>
@@ -4985,7 +5178,7 @@ Teams should assume they may be chosen for an ALLIANCE and think about the<br>
 logistics of button distribution and set a plan prior to the ALLIANCE selection<br>
 process. It is each ALLIANCE CAPTAIN’S responsibility to distribute buttons to<br>
 their pit crew members.</p>
-<h3 id="section-13.4">13.4 FIRST Championship Playoffs</h3>
+<h3 id="section-13-4">13.4 FIRST Championship Playoffs</h3>
 <p>The 8 division Champions play a Double Elimination style tournament as described in section 10.6 Playoff<br>
 MATCHES to determine the 2026 FIRST Robotics Competition Champions. Exact MATCH timing is provided to<br>
 FIRST Championship Playoff teams. ALLIANCES are paired as shown in Figure 13-1.<br>
@@ -4994,6 +5187,7 @@ During the Einstein Finals, if the MATCH score of each ALLIANCE is equal, the MA
 circumstance, the LINEUP may be changed.<br>
 Section 13 FIRST Championship Tournament (C) V0 - Kickoff 144 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 145</div>
 <div class="page-content">
@@ -5017,7 +5211,7 @@ Safety is always paramount, and many rules are intended to establish norms at<br
 each event that will mitigate injury risk to all participants.<br>
 Event staff have the final decision authority for all safety-related issues within a<br>
 venue.</p>
-<h3 id="section-14.1">14.1 General Rules</h3>
+<h3 id="section-14-1">14.1 General Rules</h3>
 <p>E101 *Personal safety comes first. All team members must observe the following safety practices<br>
 throughout the event:<br>
 A. wear safety glasses (only ANSI-approved, UL Listed, CE EN166 rated, AS/NZS certified, or CSA<br>
@@ -5036,6 +5230,7 @@ For more information about safety at FIRST Robotics Competition events, please<b
 reference the Safety Manual.<br>
 Section 14 Event Rules (E) V0 - Kickoff 145 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 146</div>
 <div class="page-content">
@@ -5080,6 +5275,7 @@ Once a team’s consent and release forms are submitted at Pit Administration,<b
 each team will receive their DRIVE TEAM &amp; Safety Captain buttons.<br>
 Section 14 Event Rules (E) V0 - Kickoff 146 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 147</div>
 <div class="page-content">
@@ -5119,6 +5315,7 @@ E112 *Make FIRST loud, but with restrictions. Do not invite or bring live bands 
 play loud music.<br>
 Section 14 Event Rules (E) V0 - Kickoff 147 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 148</div>
 <div class="page-content">
@@ -5158,6 +5355,7 @@ proving someone’s error can escalate a discussion and is likely to increase it
 adversarial nature.<br>
 Section 14 Event Rules (E) V0 - Kickoff 148 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 149</div>
 <div class="page-content">
@@ -5173,7 +5371,7 @@ and belts/chains is not considered a “ROBOT.” If any of those COMPONENTS are
 incorporated, the assembly is now considered a “ROBOT.”<br>
 This rule does not prohibit teams from bringing in ROBOTS from other FIRST<br>
 programs for the purposes of awards presentations or pit displays.</p>
-<h3 id="section-14.2">14.2 Machine Shops</h3>
+<h3 id="section-14-2">14.2 Machine Shops</h3>
 <p>Some events host a machine shop, open during specific hours (see the event’s agenda), to help teams with<br>
 repair and fabrication of their ROBOT. Machine shops are typically sponsored by NASA or local organizations.<br>
 While the machine shops vary, FIRST strives to have welding and a variety of high-powered tools available at all<br>
@@ -5189,7 +5387,7 @@ Teams may travel to the off-site machine shop on their own, either by walking or
 using their own vehicle, but all STUDENT team members must be accompanied<br>
 by an adult at all times. Teams should strongly consider including a third team<br>
 member per the FIRST Youth Protection Program guidelines.</p>
-<h3 id="section-14.3">14.3 Wireless Rules</h3>
+<h3 id="section-14-3">14.3 Wireless Rules</h3>
 <p>E301 *No wireless communication. Teams may not set up their own 802.11a/b/g/n/ac/ax/be wireless<br>
 communication (e.g. access points or ad-hoc networks) in the venue.<br>
 A wireless hot spot created by a cellular device, camera, smart TV, etc. is<br>
@@ -5198,6 +5396,7 @@ Some smart TVs have access points enabled by factory default. Please make<br>
 sure that functionality is disabled for any TVs brought to the event.<br>
 Section 14 Event Rules (E) V0 - Kickoff 149 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 150</div>
 <div class="page-content">
@@ -5211,7 +5410,7 @@ Violation: Subsequent violations may lead to dismissal from event and/or legal a
 applicable laws.<br>
 E303 *Tethered operation outside FIELDS/PRACTICE AREAS. ROBOTS may only be operated by tether when<br>
 outside the FIELD or PRACTICE AREA.</p>
-<h3 id="section-14.4">14.4 Load-In</h3>
+<h3 id="section-14-4">14.4 Load-In</h3>
 <p>Events set specific time frames, published on the event’s schedule, in which teams are invited to load their<br>
 ROBOT and equipment into their pit areas before pits officially open. At a typical District qualifier, events have<br>
 pits open and load in marked as the same time on the public agenda and thus some of these rules will not<br>
@@ -5241,6 +5440,7 @@ during any Load-In period prior to pits opening.<br>
 Violation: Extra team members must leave the venue.<br>
 Section 14 Event Rules (E) V0 - Kickoff 150 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 151</div>
 <div class="page-content">
@@ -5259,7 +5459,7 @@ If an event has designated Early Pit Setup times both the evening before and the
 morning before pits officially open, a team may use both periods for Load-In and<br>
 setup, but per this rule must leave once pit setup is complete.<br>
 Violation: Teams will be asked to leave the pit area.</p>
-<h3 id="section-14.5">14.5 Pits</h3>
+<h3 id="section-14-5">14.5 Pits</h3>
 <p>A team pit is the designated space, usually 120.0in by 120.0in by 120.0in (3.048m x 3.048m x 3.048m), where<br>
 a team may work on their ROBOT. Each team is assigned a pit space marked with their team number. This<br>
 helps team members, judges, and visitors find teams easily. Each team pit has a power outlet and a table may<br>
@@ -5282,6 +5482,7 @@ Examples of tools that violate this rule include, but are not limited to, welder
 bench and angle grinders, gas torches, etc.<br>
 Section 14 Event Rules (E) V0 - Kickoff 151 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 152</div>
 <div class="page-content">
@@ -5310,7 +5511,7 @@ E510 *No automated tools overnight. Teams may not run a 3D printer or other auto
 process overnight in the pit.<br>
 E511 *Pit Power Limit. Power to team pits is often shared between multiple teams. Team pits that are<br>
 causing breakers to trip may be asked to reduce power consumption.</p>
-<h3 id="section-14.6">14.6 TEST AREAS and PRACTICE AREAS</h3>
+<h3 id="section-14-6">14.6 TEST AREAS and PRACTICE AREAS</h3>
 <p>FIRST Robotics Competition events have TEST AREAS. TEST AREAS are areas at events where teams can test<br>
 their ROBOT with representative FIELD elements. Teams may also be able to test their starting AUTO modes<br>
 but they are not designed for multiple SCORING ELEMENT AUTO modes or full FIELD play. TEST AREAS are<br>
@@ -5324,6 +5525,7 @@ the TEST AREA may print copies of other tags to bring to events but should not r
 Printable copies of the field AprilTags can be found on the Playing FIELD webpage. Teams may temporarily<br>
 Section 14 Event Rules (E) V0 - Kickoff 152 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 153</div>
 <div class="page-content">
@@ -5366,10 +5568,11 @@ Violation: VERBAL WARNING. TEST/PRACTICE AREA suspension if subsequent violation
 event.<br>
 Section 14 Event Rules (E) V0 - Kickoff 153 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 154</div>
 <div class="page-content">
-<h3 id="section-14.7">14.7 ROBOT Carts</h3>
+<h3 id="section-14-7">14.7 ROBOT Carts</h3>
 <p>Most teams use carts to transport their ROBOT throughout an event. Carts are not required but are strongly<br>
 recommended (to minimize risk of muscle strains, dropped ROBOTS, and other hazards). In addition to the<br>
 rules listed below, teams are strongly encouraged to put the team’s number on the cart, refer to the FIRST<br>
@@ -5387,7 +5590,7 @@ E705 *No motor driven carts. ROBOT carts may not use powered propulsion.<br>
 E706 *Small ROBOT carts are allowed on the FIELD. ROBOT carts smaller than 30.0in (76.2cm) by 36.0in<br>
 (91.4cm) may be brought onto the FIELD to aid in staging and retrieving the ROBOT provided they are<br>
 not left unattended and do not pose any other safety hazards.</p>
-<h3 id="section-14.8">14.8 Ceremonies</h3>
+<h3 id="section-14-8">14.8 Ceremonies</h3>
 <p>At every event, there are Opening and Closing Ceremonies to show honor and respect for represented<br>
 countries, sponsors, teams, mentors, volunteers, and award winners. Ceremonies provide everyone with the<br>
 opportunity to collectively applaud the successes of all participants. They also give teams a chance to &quot;meet&quot;<br>
@@ -5409,12 +5612,13 @@ peaceful behavior during the presentation of all national anthems. Traditionally
 to face the flag, remove hats, and either sing along or maintain a respectful silence during the anthems<br>
 Section 14 Event Rules (E) V0 - Kickoff 154 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 155</div>
 <div class="page-content">
 <p>of all nations present at the event. If team members wish to abstain, they have a right to do so, as long<br>
 as they remain silent and non-disruptive.</p>
-<h3 id="section-14.9">14.9 In the Stands</h3>
+<h3 id="section-14-9">14.9 In the Stands</h3>
 <p>E901 *No saving seats. Teams are not permitted to save or designate seats for team members that are not<br>
 present.<br>
 Teams may not hang banners or ribbons or otherwise designate seating. (Event<br>
@@ -5427,9 +5631,11 @@ accommodations.<br>
 E902 *Don’t throw items from the stands. Items may not be thrown from audience seating.<br>
 Section 14 Event Rules (E) V0 - Kickoff 155 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 156</div>
 <div class="page-content"><p><em>[Page contains no extractable text - may contain images or graphics]</em></p></div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 157</div>
 <div class="page-content">
@@ -5470,6 +5676,7 @@ BYPASSED any ROBOT which is unable or ineligible to participate in that MATCH, a
 determined by the FTA, LRI, or Head REFEREE<br>
 Section 15 Glossary V0 - Kickoff 157 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 158</div>
 <div class="page-content">
@@ -5511,6 +5718,7 @@ constructed, concocted, created, cut, heat treated, machined,<br>
 manufactured, modified, painted, produced, surface coated, or conjured<br>
 Section 15 Glossary V0 - Kickoff 158 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 159</div>
 <div class="page-content">
@@ -5552,6 +5760,7 @@ individual COMPONENTS without damage to the parts.<br>
 MID RUNG A RUNG located 45.0in (114.3cm) from the floor<br>
 Section 15 Glossary V0 - Kickoff 159 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 160</div>
 <div class="page-content">
@@ -5593,6 +5802,7 @@ an ALLIANCE’S BASE in front of two BARRIERS and an ALLIANCE HUB<br>
 RP Ranking Points<br>
 Section 15 Glossary V0 - Kickoff 160 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 161</div>
 <div class="page-content">
@@ -5632,6 +5842,7 @@ UPRIGHTS 72.1in (1.831m) tall, 1.5in (3.81cm) thick, 3.5in (8.89cm) deep sheet m
 box frames that extend vertically up from the TOWER BASE<br>
 Section 15 Glossary V0 - Kickoff 161 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 <div class="page-break"></div>
 <div class="page-number">Page 162</div>
 <div class="page-content">
@@ -5643,6 +5854,7 @@ YELLOW CARD issued by the Head REFEREE for egregious ROBOT or team member<br>
 behavior or rule violations<br>
 Section 15 Glossary V0 - Kickoff 162 of 162</p>
 </div>
+<div class="back-to-toc"><a href="#toc">↑ Back to Contents</a></div>
 
 </body>
 </html>
